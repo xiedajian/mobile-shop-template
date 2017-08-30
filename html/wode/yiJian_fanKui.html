@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../../css/wode/yiJian_fanKui.css" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-action-back back">
+		    	<img src="../../img/shouye/icon_back@2x.png" alt="" />
+		    </a>
+		    <h1 class="mui-title">意见反馈</h1>
+		</header>
+		<div class="mui-content">
+		   	<textarea name="" rows="" cols="" placeholder="请输入您的意见我们将尽快回复您，感谢您的支持" id="yijian"></textarea>
+		</div>	
+        <nav class="mui-bar mui-bar-tab">
+            <a href="javascript:;">
+            	提交反馈
+            </a>
+        </nav>
+		<script src="../../js/mui.min.js"></script>
+		<script src="../../js/jquery-1.7.2.js"></script>
+		<script src="../../js/common.js"></script>
+		<script type="text/javascript">
+			mui.init();
+            var userId = 1;
+
+            if (localStorage.getItem('userId') && localStorage.getItem('userId') != '') {
+                //获取用户信息
+                userId = localStorage.getItem('userId');
+            } else {
+                //登陆
+                mui.alert('需要重新登录', function () {
+                    window.location.href = "../enter/enter.html";
+                });
+            }
+
+			$('a').click(function () {
+				var val=$('#yijian').val();
+				console.log(val);
+				if(val==''){
+				    mui.alert('内容不能为空');
+				    return;
+				}
+				//提交意见   (等待接口)
+                $.ajax({
+                    url:rootPath+"/userLoginRegisterjfsc/optionSubmit",
+					type:"POST",
+					data:{
+                        userId:userId,
+						option:val
+					},
+                    dataType:'json',
+//                    async:false,
+                    success:function (data) {
+                        if(data.result=="success"){
+                            mui.alert('反馈成功',function () {
+                                history.go(-1);location.reload();
+                            })
+                        }else {
+                            mui.alert(data.msg);
+//                            return false;
+                        }
+                    },
+                    error:function (err) {
+                        console.log(err);
+                        return false;
+                    }
+                });
+
+            });
+		</script>
+	</body>
+
+</html>

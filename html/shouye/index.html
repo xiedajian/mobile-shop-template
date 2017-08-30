@@ -1,0 +1,194 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../../css/shouye/shouye.css" />
+		<link rel="stylesheet" href="http://cache.amap.com/lbs/static/main1119.css"/>
+		<script src="../../js/jquery-1.7.2.js"></script>
+		<script src="../../js/zepto-1.1.6.min.js"></script>
+		<script src="../../js/common.js"></script>
+		<script src="../../js/mui.min.js"></script>
+		<script src="../../js/shouye/shouye.js"></script>
+		<script src="../../js/shouye/index.js"></script>
+		<script src="../../js/template-web.js"></script>
+    	<script type="text/javascript" src="http://webapi.amap.com/maps?v=1.3&key=af688a3d486106b0a18ad7a618ad33ee&plugin=AMap.DistrictSearch"></script>
+    	<script type="text/javascript" src='http://webapi.amap.com/maps?v=1.3&key=af688a3d486106b0a18ad7a618ad33ee&plugin=AMap.ToolBar'></script>
+    	<script src="https://webapi.amap.com/ui/1.0/main.js"></script>
+    	<script type="text/javascript" src="http://cache.amap.com/lbs/static/addToolbar.js"></script>
+    	<script src="../../js/dingwei.js"></script>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+		   <ul class="head">
+			   	<!--<li class="city" id="city">-->
+			   	<li class="city-2" id="city">
+			   		<a>
+			   			<span class="weizhi mui-ellipsis" >濮阳</span>
+			   		    <img src="../../img/shouye/jiantou.png" alt="" />
+			   		</a>
+			   		
+			   	</li>		   
+			   	<li class="link" >
+			   		<a href="javascript:;">
+				   		<img src="../../img/shouye/icon_sousuo_hui@2x.png" alt="" />
+				   		<input data-link="search.html" type="search" placeholder="搜索附近门店" id="searchBox"/>
+			   		</a>
+			   	</li>
+			   	<!--<li class="sys" id="erweima">
+			   		<a href="javascript:;">
+			   		    <p><img src="../../img/shouye/icon_saoyisao@2x.png" alt="" /></p>
+			   		</a>
+			   	</li>			   	-->
+		   </ul>
+		</header>
+		<div class="mui-content">	
+			
+	    	<div id="slider" class="mui-slider" >
+	    	    
+	    	</div>	
+	    	<div class="nav" >
+	    			<script id="category" type="text/html">
+						<ul>
+   							 {{each data value i}}
+        						<li>
+	    							<a href="javascript:void(0);" onclick="getShopsByCategory('{{value.categoryid}}')">
+		    						<img src="{{value.picture}}" alt="" />
+		    						<span>{{value.name}}</span>	
+	    							</a>
+	    						</li>
+  							 {{/each}}
+<!--							<li>
+	    						<a href="javascript:;">
+		    					<img src="../../img/shouye/more@2x.png" alt="" />
+		    					<span>更多</span>	
+	    						</a>
+	    					</li>-->
+						</ul>
+					</script>
+	    	</div>
+	    	<div class="huodong">
+	    		<div class="huodong_tit">
+	    			<p>
+	    				<img src="../../img/shouye/130@2x.png" alt="" />
+	    				<span>推荐活动</span>
+	    			</p>
+	    		</div>	
+	    		<div class="huodong_txt" id="huodong_txt">
+	    			<script id="activity" type="text/html">
+						{{each list value i}}
+							<a style="height: 180px;" href="javascript:void(0);" data-adverttype="{{value.adverttype}}" data-shoporproductid="{{value.shoporproductid}}" data-adverturl="{{value.adverturl}}"><img src="{{value.advertpic}}" height="170px" width="100%"/></a>
+						{{/each}}
+						<div style="clear: both;"></div>
+					</script>
+	    		</div>
+	    	</div>
+	    	<div class="fenlei">
+	    		<div class="fenlei_tit">
+	    			<p>
+	    				<img src="../../img/shouye/tjfl@2x.png" alt="" style="width: 12px;"/>
+	    				<span>推荐分类</span>
+	    			</p>
+	    		</div>	
+	    		<div class="fenlei_txt" id="recommendCategory">
+	    			<script id="recommendCategory_templete" type="text/html">
+	    				{{each list value i}}
+							<a href="javascript:void(0);" data-adverttype="{{value.adverttype}}" data-shoporproductid="{{value.shoporproductid}}" data-adverturl="{{value.adverturl}}" >
+		    					<img src="{{value.advertpic}}"/>
+		    					<span>{{value.advertname}}</span>
+		    				</a>
+						{{/each}}
+						<div style="clear: both;"></div>
+	    			</script>	
+	    		</div>
+	    	</div>
+	    	<div class="shangpin">
+	    		<div class="huodong_tit">
+	    			<p>
+	    				<img src="../../img/shouye/tjsp@2x.png" alt="" style="width: 13px;"/>
+	    				<span>推荐商品</span>
+	    			</p>
+	    		</div>	
+	    		<div class="shangpin_top sp" id="shangpin_top">
+	    			<script id="recommendProductBig" type="text/html">
+	    				{{each data value i}}
+							{{if i<2}}
+								<a href="javascript:void(0);" data-adverttype="{{value.adverttype}}" data-shoporproductid="{{value.shoporproductid}}" data-adverturl="{{value.adverturl}}">
+		    						<img src="{{value.advertpic}}" style="width: 49vw; height: 49vw;"/>
+		    						<span  class="mui-ellipsis">{{value.advertname}}</span>
+		    					</a>
+							{{/if}}
+						{{/each}}
+						
+	    			</script>
+	    			<div style="clear: both;"></div>
+	    		</div>
+	    		<div class="shangpin_bot sp" id="shangpin_bot">
+	    			<script id="recommendProductSmall" type="text/html">
+	    				{{each data value i}}
+							{{if i>=2}}
+	    					<a style="height: 115px;" href="javascript:void(0);"  data-adverttype="{{value.adverttype}}" data-shoporproductid="{{value.shoporproductid}}" data-adverturl="{{value.adverturl}}">
+	    						<img height="105px" src="{{value.advertpic}}"/>
+	    						<span class="mui-ellipsis">{{value.advertname}}</span>
+	    					</a>
+							{{/if}}
+						{{/each}}
+						<div style="clear: both;"></div>
+	    			</script>
+	    		</div>
+	    	</div>
+		</div>
+		<nav class="mui-bar mui-bar-tab">
+			<a href="javascript:;">
+			  	<img src="../../img/shouye/Home@2x.png"/>
+			  	<span>首页</span>
+			</a>
+			<a href="../fujin/fujin.html">
+			  	<img src="../../img/shouye/fujin@2x.png"/>
+			  	<span>附近</span>
+			</a>
+			<a href="../jiFen_shangCheng/jiFen_shangCheng.html">
+			  	<img src="../../img/shouye/jifenshagncheng@2x.png"/>
+			  	<span>积分商城</span>
+			</a>
+			<a href="../wode/geRen_center.html">
+			  	<img src="../../img/shouye/wode@2x.png"/>
+			  	<span>我的</span>
+			</a>
+		</nav>
+		
+		<script type="text/javascript">
+			mui.init()
+			$('.city').on('tap',function(){
+				AMapUI.setDomLibrary(Zepto);
+				//////加载MobiCityPicker，loadUI的路径参数为模块名中 'ui/' 之后的部分
+				AMapUI.loadUI(['misc/MobiCityPicker'], function(MobiCityPicker) {
+				var cityPicker = new MobiCityPicker({
+				 		
+				});
+				//////监听城市选中事件
+				cityPicker.on('citySelected', function(cityInfo) {
+				////  //隐藏城市列表
+					cityPicker.hide();
+					console.log(cityInfo.adcode);
+					$('.weizhi').html(cityInfo.name);
+					localStorage.setItem('adode',cityInfo.adcode);	
+				
+				////  //选中的城市信息
+				}); 
+				//////显示城市列表，可以用某个click事件触发
+				cityPicker.show();
+				});
+				});
+				
+				$('.city-2').on('tap',function() {
+					mui.alert('暂不支持其他城市');
+				})
+			    
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<body>
+<p id="demo">全国地区划分</p>
+<button onclick="getLocation()">获取信息</button>
+<script src="../../js/jquery-1.7.2.js"></script>
+<script>
+var x=document.getElementById("demo");
+function getLocation(){
+	$.getJSON("../../region.json",function(data){ 
+		console.log(JSON.stringify(data.districtList));
+	});
+}	
+</script>
+</body>
+</html>

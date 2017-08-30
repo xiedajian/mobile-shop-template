@@ -1,0 +1,153 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="format-detection" content="telephone=no">
+		<meta http-equiv="x-rim-auto-match" content="none">
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../../css/mui.picker.min.css" />
+		<link rel="stylesheet" href="../../css/order/submit_order.css" />
+		
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back back">
+				<img src="../../img/wode/icon_back@2x.png" alt="" />
+			</a>
+			<div class="mui-title">
+				提交订单
+			</div>			
+		</header>
+		<div class="mui-content">
+			<div class="main_one">
+				<div class="one_top">					
+					<div class="one_top_left">
+						<img src="../../img/shouye/weizhi.png"/>
+					</div>
+					<div class="one_top_mid">
+						<p class="mui-ellipsis" id="address">郑州  中原国家广告产业园7号楼</p>
+						<p id="name"></p>
+						<p id="phone"></p>
+					</div>
+					<div class="one_top_right">
+						<img src="../../img/wode/right.png"/>
+					</div>
+					<a id="select_address_page"></a>
+				</div>
+				<!--<div class="one_bot" id='demo5'>
+					<div class="one_bot_left">
+						<img src="../../img/order/time.png"/>
+					</div>
+					<div class="one_bot_mid">
+						<p class="time">送达时间</p>						
+					</div>
+					<div class="one_bot_right">
+						<img src="../../img/wode/right.png"/>
+					</div>
+				</div>-->
+			</div>
+		    <div class="main_two" id="order_info">
+		    	<script type="text/html" id="order_info_templete">
+		    		<div class="two_tit" >
+			    		<a href="javascript:;">
+				    		<span></span>
+				    		<span>{{shopName}}</span>
+				    		<span><img src="../../img/wode/right.png" alt="" /></span>
+			    		</a>
+		    		</div>
+			    	<div class="two_txt">
+			    		{{each orderChildList value i}}
+			    		<div class="two_txt_list">
+			    			<div>
+			    				<img src="{{value.pictures}}"/>
+			    			</div>
+			    			<div>
+			    				<p>
+			    					<span>{{value.name}}</span>
+			    					<span>￥{{value.price}}</span>
+			    				</p>
+			    				<p>
+			    					x{{value.quantity}}
+			    				</p>
+			    			</div>
+			    			<p style="clear: both;"></p>
+			    		</div>
+			    		{{/each}}
+			    	</div>
+			    	<!--<div class="two_peisong">
+			    		<div>
+			    			<p>
+				    			<span>配送费</span>
+				    			<span>￥3.00</span>
+				    		</p>
+				    		<p>
+				    			<span>餐盒费</span>
+				    			<span>￥2.00</span>
+				    		</p>
+			    		</div>
+			    		
+			    	</div>-->
+			    	<div class="two_jiage">
+			    		<p>
+			    			<span>应付</span>
+			    			<span>￥{{actualPayment}}</span>
+			    		</p>
+			    	</div>
+				</script>
+			</div>	
+		    <div class="main_three">
+		    	<p>
+		    		<span>支付方式</span>
+		    		<span>在线支付</span>
+		    	</p>
+		    	<p class="ps_type">
+		    		<span>配送方式</span>
+		    		<span class="ps_type_txt" id="shipping_method"></span>
+		    		<span><img src="../../img/wode/right.png"/></span>
+		    	</p>
+		    	
+		    	<p>
+		    		<span>备注</span>
+		    		<img src="../../img/wode/right.png"/>
+		    		<input type="text" id="remark" placeholder="请填写备注要求等"/>
+		    		
+		    	</p>		    	
+		    </div>
+		</div> 
+		
+		
+		
+		
+		
+		
+		<nav class="mui-bar mui-bar-tab">
+			<p class="nav">
+				<span>待支付</span><span id="waitingPayTotal">￥68.00</span>
+			</p>
+			<p class="submit_order" id="submit">
+				<a >
+				提交订单
+				</a>
+			</p>
+		</nav>
+	</body>
+	
+	
+	
+	<script src="../../js/mui.min.js"></script>
+	<script src="../../js/mui.picker.min.js"></script>
+	<script src="../../js/jquery-1.7.2.js"></script>
+	<script type="text/javascript" src="../../js/common.js" ></script>
+	<script src="../../js/order/submit_order.js"></script>
+	<script type="text/javascript" src="../../js/template-web.js" ></script>
+	<script type="text/javascript">
+		
+	</script>
+	<script>
+	</script>
+
+</html>

@@ -1,0 +1,168 @@
+body {
+	width: 100%;
+	background-color: #f5f5f5;
+	font-family: "微软雅黑";
+	color: black;
+}
+
+img{padding:0; border:0;margin:0;display:block;}
+/*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
+
+::-webkit-scrollbar {
+	width: 1px;
+	height: 1px;
+	background-color: transparent;
+}
+
+
+/*定义滚动条轨道 内阴影+圆角*/
+
+::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px transparent;
+	border-radius: 1px;
+	background-color: transparent;
+}
+
+
+/*定义滑块 内阴影+圆角*/
+
+::-webkit-scrollbar-thumb {
+	border-radius: 1px;
+	-webkit-box-shadow: inset 0 0 6px transparent;
+	background-color: transparent;
+}
+
+html {
+	width: 100%;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+li {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+	color: black
+}
+
+img {
+	border: none;
+}
+
+
+/* 去除IE下默认边框,顶部对齐 */
+
+p {
+	margin: 0;
+	padding: 0;
+}
+
+.mui-bar {
+	padding: 0 !important;
+	height: 44px;
+	padding: 0 10px;
+	background: #fd5100;
+}
+
+.mui-bar .back {
+	float: left;
+	width: 10.325%;
+	height: 44px;
+	display: inline-block;
+	position: relative;
+}
+
+.mui-bar .back img {
+	width: 11px;
+	height: 19px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%);
+}
+
+.mui-title {
+	float: left;
+	text-align: center;
+	color: #fff;
+	font-size: 15px;
+}
+
+.mui-bar-nav~.mui-content {
+	padding-top: 44px;
+	margin-bottom: 60px;
+	background: #f5f5f5;
+}
+.main_one{
+	width: 100%;
+	background: #fff;
+}
+.main_one p{
+	width: 100%;
+	height: 44px;
+	padding: 14px 10px;
+	border-bottom: 1px solid #ccc;
+	
+}
+.main_one p span{
+	display: inline-block;
+	line-height: 15px;
+	color: #333333;
+	font-size: 12px;
+}
+.main_one p span.check{
+	float: right;
+	width: 15px;
+	height: 15px;
+	border-radius: 50%;
+	overflow: hidden;
+	position: relative;
+	border: 1px solid #ccc;
+}
+.check1{
+	width: 15px;
+	height:15px;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+textarea{
+	padding: 10px;
+	margin-top: 10px;
+	width: 100%;
+	height: 100px;
+	border-radius: 0;
+	border: none;
+	border-top: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	color: #333;
+	font-size: 12px;
+}
+/*placeholder样式*/
+::-webkit-input-placeholder {color:#999;font-size: 12px;}
+::-moz-placeholder {color:#999;font-size: 12px;} /* firefox 19+ */
+:-ms-input-placeholder {color:#999;font-size: 12px;} /* ie */
+input:-moz-placeholder {color:#999;font-size: 12px;}
+/**/
+.btn{
+	padding: 0 25px;
+	margin-top:165px ;
+	width: 100%;
+	height: 40px;
+}
+.btn p{
+	width: 100%;
+	height: 40px;
+	text-align: center;
+	line-height: 40px;
+	color: #fff;
+	font-size: 15px;
+	background: #FD5100;
+	border-radius: 3px;
+}

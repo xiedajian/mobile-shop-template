@@ -1,0 +1,147 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="format-detection" content="telephone=no">
+		<meta http-equiv="x-rim-auto-match" content="none">
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../../css/order/order_detail_3.css" />
+		
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="back">
+				<img src="../../img/wode/icon_back@2x.png" alt="" />
+			</a>
+			<div class="mui-title">
+				订单详情
+			</div>			
+		</header>
+		<div class="mui-content">
+			<div class="main_two" id="order_info">
+				<script type="text/html" id="order_info_templete">
+				<div class="two_tit">
+		    		<a href="javascript:;">
+			    		<span></span>
+			    		<span>{{shopName}}</span>
+			    		<span><img src="../../img/wode/right.png" alt="" /></span>
+		    		</a>
+		    	</div>
+		    	<div class="txt">
+		    		<div class="two_txt">
+		    			{{each orderChildList value i}}
+						<div class="two_txt_top">
+							<span>{{value.name}}</span>
+							<span>￥{{value.price}}</span>
+						</div>
+						<div class="two_txt_bot">
+							<p>
+								<span>数量：</span>
+								<span>x{{value.quantity}}</span>
+							</p>						
+						</div>
+						{{/each}}
+					</div>
+		    	</div>	
+		    	</script>
+			</div>
+			<div class="main_one" id="express_info">
+				<script type="text/html" id="express_info_templete" >
+				<p>
+					<span>有效期至</span>
+					<span>2017-12-31</span>
+					{{if orderStatus<=2}}
+					<span class="yiWanCheng link" data-link="tuikuan.html?orderId={{orderId}}">申请退款</span>
+					{{/if}}
+				</p>
+				<p>
+					<span>状态/兑换码</span>
+					<span>{{password}}</span>
+					<span>{{status}}</span>
+				</p>
+				</script>
+			</div>			
+			<div class="main_three" id="order">
+				<script type="text/html" id="order_templete">
+				<div class="two_tit">
+		    		<a href="javascript:void(0);">
+			    		<span></span>
+			    		<span>订单详情</span>			    	
+		    		</a>
+		    	</div>
+		    	<div class="main_fore">
+			    	<p>
+			    		<span>订单号码</span>
+			    		<span>{{orderId}}</span>
+			    	</p>
+			    	<p>
+			    		<span>购买手机</span>
+			    		<span>
+			    			{{shippingPhone}}
+			    		</span>
+			    	</p>
+			    	<p>
+			    		<span>订单时间</span>
+			    		<span>
+			    			{{createTimeStr}}
+			    		</span>
+			    	</p>
+			    	<!--<p>
+			    		<span>购买数量</span>
+			    		<span>
+			    			{{quantity}}
+			    		</span>
+			    	</p>-->
+			    	<p>
+			    		<span>总<b>价</b></span>
+			    		<span>
+			    			￥{{actualPayment}}
+			    		</span>
+			    	</p>
+			    	<p>
+			    		<span>支付方式</span>
+			    		<span>在线支付</span>
+			    	</p>
+			    	<p>
+			    		<span>备注留言</span>
+			    		<span>{{remark}}</span>
+			    	</p>
+			    </div>
+			   </script>
+			</div>
+		   
+		</div> 
+												
+		<!--<nav class="mui-bar mui-bar-tab">
+			<p class="nav">
+				<a href="javascript:;">
+				 取消订单
+				</a>
+			</p>
+			<p class="submit_order">
+				<a href="fuKuan.html">
+				   去支付
+				</a>
+			</p>
+		</nav>-->
+	</body>
+	
+	
+	
+	<script src="../../js/mui.min.js"></script>
+	<script src="../../js/jquery-1.7.2.js"></script>
+	<script type="text/javascript" src="../../js/common.js" ></script>
+	<script type="text/javascript" src="../../js/template-web.js" ></script>
+	<script type="text/javascript" src="../../js/order/order_detail_2.js" ></script>
+	<script src="../../js/tianzhuan.js"></script>
+	<script type="text/javascript">
+		
+	</script>
+	<script>
+	</script>
+
+</html>

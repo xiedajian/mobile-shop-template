@@ -1,0 +1,86 @@
+body{
+	width: 100%;
+	height: 100%;
+	background-color:#f5f5f5;
+	font-family: "微软雅黑";
+	color: black;
+}
+html{
+	width: 100%;
+	height: 100%;
+}
+*{
+	margin: 0;
+	padding: 0;
+}
+li { list-style:none; }
+a { text-decoration:none;color: black }
+img { border:none;}  /* 去除IE下默认边框,顶部对齐 */
+p{margin: 0;padding: 0;}
+.mui-bar{
+	padding: 0 !important;
+	height:44px;
+	padding: 0 10px;
+	background: #fd5100;
+	box-shadow: none;
+	-webkit-box-shadow: none;
+}
+.mui-bar .back{
+	float: left;
+	width: 10.325%;
+	height: 44px;
+	display: inline-block;
+	position: relative;
+}
+.mui-bar .back img{
+	width: 11px;
+	height: 19px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	-webkit-transform: translate(-50%,-50%);
+}
+.mui-title{
+	color: #fff;
+	font-size:15px ;
+}
+.mui-bar-nav~.mui-content{
+	padding: 0 10px;
+	width: 100%;
+	padding-top:44px;
+	background: #f5f5f5;
+
+}
+/**/
+textarea{
+	padding: 10px;
+	margin-top: 10px;
+	width: 100%;
+	height: 126px;
+	background: #fff;
+	box-shadow: #ccc -1px -1px 2px;
+	border: none;
+	color: #333333;
+	font-size: 12px;
+}
+/*placeholder样式*/
+::-webkit-input-placeholder {color:#999;font-size: 12px; }
+::-moz-placeholder {color:#999;font-size: 12px; } /* firefox 19+ */
+:-ms-input-placeholder {color:#999;font-size: 12px;} /* ie */
+input:-moz-placeholder {color:#999;font-size: 12px;}
+nav{
+	width: 100%;
+	height: 40px !important;
+	
+}
+nav a{
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	line-height: 40px;
+	color: #fff;
+	font-size: 12px;
+	background: #FD5100 !important;
+}

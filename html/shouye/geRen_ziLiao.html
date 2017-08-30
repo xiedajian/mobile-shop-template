@@ -1,0 +1,258 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>个人中心</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../../css/wode/geRen_ziLiao.css" />
+		
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-action-back back">
+		    	<img src="../../img/shouye/icon_back@2x.png" alt="" />
+		    </a>
+		    <h1 class="mui-title">个人资料</h1>
+		</header>	
+		<div class="mui-content" style="background: #F5F2F4;">
+		    <div class="main_top" id="head">
+		    	<a href="javascript:;">
+		    		<span class="sctx"><img src="../../img/wode/grzl_tx.png" class="imgbox"/></span>
+		    		
+		    		<span><img src="../../img/wode/right.png"/></span>
+		    		<span>修改头像</span>
+		    		<!--<input type="file" value="请选择图片" onchange="uploads(this)" accept="image/*">-->
+		    		<input type="file" id="file1" name="file1" />
+		    	</a>
+		    </div>
+		    <div class="main_bot">
+		    	<p class="NC">
+		    		<span class="bot1">昵称</span>
+		    		<span class="bot2 nichen">阿积士</span>
+		    		<img src="../../img/wode/right.png"/>    				    		
+		    	</p>
+		    	<p class="link" data-link="updata_phone.html">
+		    		<span class="bot1">手机号</span>
+		    		<span class="bot2 phone">18000000000</span>
+		    		<img src="../../img/wode/right.png"/>
+		    		<!--<a href="updata_phone.html"></a>-->
+		    	</p>
+		    	<p class="xingbie" >
+		    		<span class="bot1">性别</span>
+		    		<span class="bot2 sex">女</span>
+		    		<img src="../../img/wode/right.png"/>
+		    	</p>
+		    	<p class="link" data-link="wode_diZhi.html">
+		    		<span class="bot1">收货地址</span>
+		    		<span class="bot2 area">河南省郑州市</span>
+		    		<img src="../../img/wode/right.png"/>
+		    		<!--<a href="wode_diZhi.html"></a>-->
+		    	</p>
+		    </div>
+		</div>
+		<div class="xingbie_pop">
+			<div>
+				<p class="nan">
+					<span class="xb_txt">男</span>
+					<span class="radio">
+						<img src="../../img/wode/checked.png" class="ok"/>
+					</span>
+					
+				</p>
+				<p class="nan">
+					<span class="xb_txt">女</span>
+					<span class="radio">
+						
+					</span>
+					
+				</p>
+			</div>
+		</div>
+		<div class="pop">
+			<div>
+				<p>请输入昵称</p>				
+				<p><input type="txt" class="nctxt"/></p>
+				<p class="queren">确认修改</p>
+				<p class="quxiao"><img src="../../img/shouye/chacha.png"/></p>
+			</div>
+		</div>
+		<script src="../../js/mui.min.js"></script>
+		<script src="../../js/jquery-1.7.2.js"></script>
+		<script src="../../js/ajaxfileupload.js"></script>
+		<script src="../../js/tianzhuan.js"></script>
+		<script src="../../js/wode/geRen_ziLiao.js"></script>
+		<script type="text/javascript">
+			mui.init();
+//			var u=navigator.userAgent;
+//		    var isAndroid=u.indexOf("Android") >-1 || u.indexOf("Adr") > -1;//android 终端
+//		    var isIos=!!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);//ios终端
+//
+//		function uploads(obj){
+//			//判断是否是图片类型
+//			if(!obj.value.slice(obj.value.lastIndexOf(".")).match(/.jpg|.gif|.png|.bmp|.jpeg|.webp/i)){
+//				alert("抱歉,请选择图片");
+//			}else {
+//				var oDiv=$(obj).parent().parent().find(".sctx").get(0);
+//				oDiv.innerHTML="";
+//				if(obj.files && obj.files[0]){  //兼容高级浏览器
+//					var txt=obj.files[0].name.slice(0,obj.files[0].name.lastIndexOf('.'));
+//					var hz=obj.files[0].name.slice(obj.files[0].name.lastIndexOf('.'))
+//					var img=new Image();
+//					img.src=window.navigator.userAgent.indexOf("Chrome") >= 1 || window.navigator.userAgent.indexOf("Safari") >= 1 ? window.webkitURL.createObjectURL(obj.files[0]): window.URL.createObjectURL(obj.files[0]);
+//					console.log(img.src);
+//					var urlarea=img.src;
+//					$.ajax({
+//						type:"post",
+//						url:"http://192.168.3.135:8080/jfsc/userLoginRegisterjfsc/setuserinfo",
+//						async:true,
+//						data:{
+//							'userid':'5',
+//				    		'portail':urlarea
+//				    		
+//						},
+//						success:function(data){
+//							console.log(data.info);
+//						},
+//						error:function(err){
+//							console.log(err)
+//						}
+//					});
+//					img.className="imgbox";
+//					oDiv.appendChild(img);
+//					
+//				}else{  //兼容IE浏览器
+//					  obj.select();
+//					  obj.blur();
+//					  var url = document.selection.createRange().text; //运用ie滤镜获取上传时选定的文件路径
+//					  var img=new Image();
+//					  img.setAttribute("src",url);
+//					  img.className="imgbox";
+//					  oDiv.appendChild(img);  
+//					
+//				}
+//				var picture=$(obj).parent().parent().find(".sctx").find("img").get(0);
+//				picture.onload=function(){
+//					var maxWidth=$(obj).parent().parent().find(".sctx").width();
+//					var maxHeight=$(obj).parent().parent().find(".sctx").height();
+//					imgSize(maxWidth,maxHeight,this);
+//				}
+//			}			
+//		}
+//		function imgSize(maxWidth,maxHeight,obj){ //改变上传时图片大小的比例
+//			var img=new Image();
+//			img.src=obj.src;
+//			var Ratio=1;
+//			var w=img.width;
+//			var h=img.height;
+//			var wRatio=maxWidth/w;
+//			var hRatio=maxHeight/h;
+//			if(maxWidth==0 && maxHeight== 0){
+//				Ratio=1;
+//			}else if(maxWidth==0){
+//				if(hRatio <1){
+//					Ratio=wRatio;
+//				}
+//			}else if(maxHeight==0){
+//				if (wRatio < 1){
+//					Ratio = wRatio;
+//				}
+//			}else if(wRatio < 1 || hRatio < 1){
+//				 Ratio = (wRatio <= hRatio ? wRatio : hRatio);
+//			}
+//			if (Ratio < 1) {
+//				w = w * Ratio;
+//				h = h * Ratio;
+//			}
+//			obj.height = h;
+//			obj.width = w;
+//		}	
+		////////////////////////////
+		var nickName=$('.nichen').val();
+		
+		var sex=$('.sex').html();
+		if(sex=='女'){
+			sex=false
+		}else{
+			sex=true;
+		}
+//		$.ajax({
+//	    	type:"post",
+//	    	url:"http://192.168.3.135:8080/jfsc/userLoginRegisterjfsc/setuserinfo",
+//	    	async:true,
+//	    	data:{
+//	    		'userid':'5',
+//	    		'nickName': nickName,
+//	    		'portail':urlarea,
+//	    		'sex':sex
+//	    	},
+//	    	success:function(result){
+//	    		console.log(result.info);
+//	    	},
+//	    	error:function(err){
+//	    		console.log(err)
+//	    	}
+//	    });
+
+ $(function () {
+            $("#head").change(function () {
+                ajaxFileUpload1();
+            })
+        })
+        function ajaxFileUpload1() {
+            $.ajaxFileUpload
+            (
+                {
+                    url: 'http://192.168.3.88:8080/jfsc/userLoginRegisterjfsc/setuserinfo', //用于文件上传的服务器端请求地址
+                    secureuri: false, //是否需要安全协议，一般设置为false
+                    fileElementId: 'file1', //文件上传域的ID
+                    dataType: 'json', //返回值类型 一般设置为json
+                    success: function (data, status)  //服务器成功响应处理函数
+                    {
+                    	alert(success);
+                        $(".imgbox").attr("src", data.portail);
+                        if (typeof (data.error) != 'undefined') {
+                            if (data.error != '') {
+                                alert(data.error);
+                            } else {
+                                alert(data.msg);
+                            }
+                        }
+                    },
+                    error: function (data, status, e)//服务器响应失败处理函数
+                    {
+                    	alert(2);
+                        alert(e);
+                    }
+                }
+            )
+            return false;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+		</script>
+	</body>
+
+</html>

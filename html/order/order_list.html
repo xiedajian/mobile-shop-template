@@ -1,0 +1,157 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../../css/order/order_list.css" />
+		<style>
+			.mui-col-xs-2 {
+				width: 20%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back back">
+				<img src="../../img/shouye/icon_back@2x.png" alt="" />
+			</a>
+			<h1 class="mui-title">订单列表</h1>
+		</header>
+		<div class="mui-content">
+			<div id="slider" class="mui-slider">
+				<div id="sliderSegmentedControl" class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+					<a data-value="0" class="mui-control-item" href="#item1mobile">全部</a>
+					<a data-value="1" class="mui-control-item" href="#item2mobile">待付款</a>
+					<a data-value="2" class="mui-control-item" href="#item3mobile">待使用</a>
+					<a data-value="3" class="mui-control-item" href="#item4mobile">待评价</a>
+					<a data-value="4" class="mui-control-item" href="#item5mobile">退款/售后</a>
+				</div>
+				<div id="sliderProgressBar" class="mui-slider-progress-bar mui-col-xs-2"></div>
+				<div class="mui-slider-group">
+					<div id="item1mobile" class="mui-slider-item bb mui-control-content">
+						<div class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<div class="main">
+
+								</div>
+							</div>
+						</div>
+					</div>
+					<div id="item2mobile" class="mui-slider-item bb mui-control-content">
+						<div class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<div class="main">
+
+								</div>
+							</div>
+						</div>
+					</div>
+					<div id="item3mobile" class="mui-slider-item bb mui-control-content">
+						<div class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<div class="main">
+
+								</div>
+							</div>
+						</div>
+					</div>
+					<div id="item4mobile" class="mui-slider-item bb mui-control-content">
+						<div class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<div class="main">
+
+								</div>
+							</div>
+						</div>
+					</div>
+					<div id="item5mobile" class="mui-slider-item bb mui-control-content">
+						<div class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<div class="main">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script id="main_templete" type="text/html">
+			{{each list value i}}
+			<div class="main_list2">
+				<div class="list_left">
+					<img src="{{value.pLogo}}" alt="" />
+				</div>
+				<div class="list_right">
+					<p>
+						<span class="mui-ellipsis">上海迪士尼乐园</span>
+						<span>{{value.status}}</span>
+					</p>
+					<p>
+						<span>下单时间：</span>
+						<span>{{value.creattime}}</span>
+					</p>
+					{{if value.shopId==0}}
+					<p>
+						<span>总积分：</span>
+						<span>{{value.actualPay}}</span>
+					</p>
+					{{/if}} {{if value.shopId!=0}}
+					<p>
+						<span>总价：</span>
+						<span>￥{{value.actualPay}}</span>
+					</p>
+					{{/if}}
+					<!--<p>
+											<span>数量：</span>
+											<span>2</span>
+										</p>-->
+					<!--{{if value.order_status==1}}
+					<p class="zhuangTai">去支付</p>
+					{{/if}} {{if value.order_status==2}}
+					<p class="zhuangTai">去使用</p>
+					{{/if}} {{if value.order_status==3}}
+					<p class="zhuangTai">订单详情</p>
+					{{/if}} {{if value.order_status==4}}
+					<p class="zhuangTai">去评价</p>
+					{{/if}} {{if value.order_status==5}}
+					<p class="zhuangTai">订单详情</p>
+					{{/if}} {{if value.order_status==6}}
+					<p class="zhuangTai">退款信息</p>
+					{{/if}}-->
+					<!--<p class="zhuangTai">退款信息</p>-->
+					{{if value.order_status==1}}
+					<p class="link zhuangTai" data-link="../../html/order/order_detail.html?orderId={{value.order_id}}">去支付</p>
+					{{/if}} {{if value.order_status==2}}
+					<p class="link zhuangTai" data-link="../../html/order/order_detail_3.html?orderId={{value.order_id}}">去使用</p>
+					{{/if}} {{if value.order_status==3}}
+					<p class="link zhuangTai" data-link="../../html/order/order_detail_3.html?orderId={{value.order_id}}">订单详情</p>
+					{{/if}} {{if value.order_status==4}}
+					<p class="link zhuangTai" data-link="../../html/order/faBiao_pingJia.html?orderId={{value.order_id}}">去评价</p>
+					{{/if}} {{if value.order_status==5}}
+					<p class="link zhuangTai" data-link="../../html/order/order_detail_3.html?orderId={{value.order_id}}">订单详情</a>
+					{{/if}} {{if value.order_status==6}}
+					<p class="link zhuangTai" data-link="../../html/order/tuiKuan_detail.html?orderId={{value.order_id}}">退款信息</p>
+					{{/if}}
+				</div>
+
+				<div style="clear: both;"></div>
+			</div>
+			{{/each}}
+		</script>
+
+		<script src="../../js/mui.min.js"></script>
+		<script src="../../js/jquery-1.7.2.js"></script>
+		<script src="../../js/common.js"></script>
+		<script src="../../js/mui.pullToRefresh.js"></script>
+		<script src="../../js/mui.pullToRefresh.material.js"></script>
+		<script src="../../js/template-web.js"></script>
+		<script src="../../js/tianzhuan.js"></script>
+		<script src="../../js/order/order_list.js"></script>
+	</body>
+
+</html>

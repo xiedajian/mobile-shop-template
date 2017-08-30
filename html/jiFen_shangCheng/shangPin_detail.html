@@ -1,0 +1,456 @@
+<!doctype html>
+<html id="controlor">
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../../css/jiFen_shangCheng/shangPin_detail.css" />
+		<script src="../../js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/vue.min.js"></script>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back back">
+				<img src="../../img/shouye/icon_back@2x.png" alt="" />
+			</a>
+			<h1 class="mui-title">商品详情</h1>
+			
+			<!--<a class="ss">-->
+				<!--<img src="../../img/jiFen_shangCheng/gengduo.png" alt="" />-->
+			<!--</a>-->
+
+		</header>
+
+		<div class="mui-content">
+
+			<div id="slider" class="mui-slider">
+
+				<!--<script  id="jiajuTemplate1" type="text/html">
+                          {{each list value i}}
+                          <li  data-link="shangPin_detail.html?productId={{value.ProductId}}" class="success"><p><img src="{{value.Pictures}}" alt="" /></p>
+                          <p class="mui-ellipsis">{{value.Name}}</p>
+                          <p>{{value.Price}}积分</p><a href="javascript:;" class="flaggg"></a></li>
+                          {{/each}}
+                </script>	-->
+
+				<!--<script  id="jiajuTemplate2" type="text/html">
+                          {{each list value i}}
+                          <li  data-link="shangPin_detail.html?productId={{value.ProductId}}" class="success"><p><img src="{{value.Pictures}}" alt="" /></p>
+                          <p class="mui-ellipsis">{{value.Name}}</p>
+                          <p>{{value.Price}}积分</p><a href="javascript:;" class="flaggg"></a></li>
+                          {{/each}}
+                </script>	
+                        -->
+
+				<div class="mui-slider-group mui-slider-loop" id="product_img">
+					<!--<script id="product_img_templet" type="text/html">
+                        <a href="javascript:void(0);">
+                            <img src="{{rootPath}}{{pictures}}" alt="" />
+                         </a>
+                 </script>-->
+					<!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+					<div class="mui-slider-item mui-slider-item-duplicate ">
+						<a href="#">
+							<img src="../../img/jiFen_shangCheng/images_8 (2).png" class="img1">
+						</a>
+					</div>
+					<!--第一张-->
+					<div class="mui-slider-item ">
+						<a href="#">
+							<img src="../../img/jiFen_shangCheng/images_8 (2).png" class="img1">
+						</a>
+					</div>
+					<!--第二张-->
+					<div class="mui-slider-item">
+						<a href="#">
+							<img src="../../img/jiFen_shangCheng/images_8 (2).png" class="img2">
+						</a>
+					</div>
+					<!--第san张-->
+					<div class="mui-slider-item ">
+						<a href="#">
+							<img src="../../img/jiFen_shangCheng/images_8 (2).png" class="img3">
+						</a>
+					</div>
+					<!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+					<div class="mui-slider-item mui-slider-item-duplicate img3">
+						<a href="#">
+							<img src="../../img/jiFen_shangCheng/images_8 (2).png" class="img3">
+						</a>
+					</div>
+				</div>
+				<div class="mui-slider-indicator">
+					<div class="mui-indicator mui-active"></div>
+					<div class="mui-indicator"></div>
+					<div class="mui-indicator"></div>
+				</div>
+			</div>
+			<div class="cp_tit" id="product_info">
+				<!--<script id="product_info_templet" type="text/html">
+                <p>
+                    <span >{{name}}</span>
+                    <span class="mui-ellipsis">{{labelnotice}}</span>
+                </p>               
+                <p>
+                    <span>积分</span><span>{{promoPrice}}</span>                
+                </p>               
+            </script>-->
+
+				<p>
+					<span style="font-size: 13px;" class="title">羚花姣妍彩影亮唇膏持久保湿不脱色玫瑰豆沙色学生咬唇装口红</span><br />
+					<span class="mui-ellipsis pro" style="line-height: 20px;font-size: 11px;color: #FD5100;">颜色鲜艳，永不褪色</span>
+				</p>
+				<p>
+					<span>恒币</span>
+					<span style="color: #fe5300;" class="price">88</span>
+				</p>
+				<p class="yanse">
+					<span>选择规格分类</span>
+					<img src="../../img/wode/right.png" alt="" />
+				</p>
+			</div>
+			<!--<div class="cp_tit">
+		        <p class="yanse">
+                   <span>选择颜色分类</span>        
+                </p>
+		    </div>-->
+			<div id="slider1" class="mui-slider">
+				<div id="sliderSegmentedControl1" class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+					<a class="mui-control-item mui-active" href="#item1mobile">
+						<span>礼品介绍</span>
+					</a>
+					<a class="mui-control-item" href="#item2mobile">
+						<span>规格参数</span>
+					</a>
+					<a class="mui-control-item" href="#item3mobile" id="pingJia">
+						<span style="border: none;">星级评价</span>
+					</a>
+				</div>
+				<div id="sliderProgressBar1" class="mui-slider-progress-bar mui-col-xs-4"></div>
+				<div class="mui-slider-group">
+					<div id="item1mobile" class="mui-slider-item mui-control-content mui-active mui-row mui-fullscreen">
+						<div class="item1_tit">
+							<p>细节实拍</p>
+							<p>THE DETAILS WILL</p>
+						</div>
+						<div class="item1_txt" id="product_intro">
+
+							<!--<script id="product_intro_templete" type="text/html">                                
+                               {{#intro}}                                                                                                   
+                           </script>-->
+
+							<img src="../../img/jiFen_shangCheng/images_5 (2).png" alt="" />
+							<img src="../../img/jiFen_shangCheng/images_6 (2).png" alt="" />
+							<img src="../../img/jiFen_shangCheng/images_7 (2).png" alt="" />
+							<p>
+								凝聚天然草本精华，通过植物因子激发皮肤自身抵抗力，治理痘痘问题，让你重现净致平滑肌肤。一切的健康美丽都基于身体与心灵在大自然中得到和谐。 自19世纪50年代法国人研制出植物精华护肤品以来，越来越多的品牌致力于研发天然护肤品。而朴芝兰属于精研天然草本萃取精华来解决痘肌的后起之秀，承中医养生精髓，倡导天然护肤的理念。
+							</p>
+						</div>
+					</div>
+					<div id="item2mobile" class="mui-slider-item mui-control-content mui-row mui-fullscreen">
+						<div class="item1_tit">
+							<p>产品参数</p>
+							<p>THE DETAILS WILL</p>
+						</div>
+						<div class="item2_txt" id="product_contentFlag">
+							<!--<script id="product_content_templete" type="text/html">                                
+                                     {{#content}}                                                                                                   
+                            </script>-->
+							<ul id="product_content">
+								<li>
+									<div class="item2_txt_left">
+										产品概诉
+									</div>
+									<div class="item2_txt_left">
+										<p>凝聚天然草本精华，通过植物因子激发皮肤自身抵抗力，治理痘痘问题，让你重现净致平滑肌肤。一切的健康美丽都基于身体与心灵在大自然中得到和谐。
+										</p>
+									</div>
+								</li>
+								<li>
+									<div class="item2_txt_left">
+										产品保修
+									</div>
+									<div class="item2_txt_left">
+										<p>收到商品发现商品破损，从收货起72小时内联系商家退还，运费由商家承担，无理由退还，运费由客户自行承担。</p>
+									</div>
+								</li>
+								<li>
+									<div class="item2_txt_left">
+										产品产地
+									</div>
+									<div class="item2_txt_left">
+										<p>
+											<span>生产厂家：</span>
+											<span>广东华强集团有限公司</span>
+										</p>
+										<p>
+											<span>生产地址：</span>
+											<span>广东省廉江市九州大道中26号</span>
+										</p>
+									</div>
+								</li>
+								<li>
+									<div class="item2_txt_left">
+										包装清单
+									</div>
+									<div class="item2_txt_left">
+										<p>
+											以客户收到的实际商品为准
+										</p>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div id="item3mobile" class="mui-slider-item mui-control-content mui-row mui-fullscreen">
+						<ul class="item3_txt" id="item3txt">
+
+							<!--<li>
+								<span>
+									<img src="../../img/shouye/pingjiatx.png"/>
+								</span>
+								<span>YNGNI</span>
+								<span>
+									<img src="../../img/shouye/star@2x.png" alt="" />
+									<img src="../../img/shouye/star@2x.png" alt="" />
+									<img src="../../img/shouye/star@2x.png" alt="" />
+									<img src="../../img/shouye/star@2x.png" alt="" />
+									<img src="../../img/shouye/star_1@2x.png" alt="" />
+								</span>	
+								<span>
+									2017-7-12
+								</span>
+							</li>
+							<li>
+								<span>
+									<img src="../../img/shouye/pingjiatx.png"/>
+								</span>
+								<span>YNGNI</span>
+								<span>
+									<img src="../../img/shouye/star@2x.png" alt="" />
+									<img src="../../img/shouye/star@2x.png" alt="" />
+									<img src="../../img/shouye/star@2x.png" alt="" />
+									<img src="../../img/shouye/star@2x.png" alt="" />
+									<img src="../../img/shouye/star_1@2x.png" alt="" />
+								</span>	
+								<span>
+									2017-7-12
+								</span>
+							</li>
+							<li>
+								<span>
+									<img src="../../img/shouye/pingjiatx.png"/>
+								</span>
+								<span>YNGNI</span>
+								<span>
+									<img src="../../img/shouye/star@2x.png" alt="" />
+									<img src="../../img/shouye/star@2x.png" alt="" />
+									<img src="../../img/shouye/star@2x.png" alt="" />
+									<img src="../../img/shouye/star@2x.png" alt="" />
+									<img src="../../img/shouye/star_1@2x.png" alt="" />
+								</span>	
+								<span>
+									2017-7-12
+								</span>
+							</li>
+							<li>
+								<span>
+									<img src="../../img/shouye/pingjiatx.png"/>
+								</span>
+								<span>YNGNI</span>
+								<span>
+									<img src="../../img/shouye/star@2x.png" alt="" />
+									<img src="../../img/shouye/star@2x.png" alt="" />
+									<img src="../../img/shouye/star@2x.png" alt="" />
+									<img src="../../img/shouye/star@2x.png" alt="" />
+									<img src="../../img/shouye/star_1@2x.png" alt="" />
+								</span>	
+								<span>
+									2017-7-12
+								</span>
+							</li>
+							<li>
+								<span>
+									<img src="../../img/shouye/pingjiatx.png"/>
+								</span>
+								<span>YNGNI</span>
+								<span>
+									<img src="../../img/shouye/star@2x.png" alt="" />
+									<img src="../../img/shouye/star@2x.png" alt="" />
+									<img src="../../img/shouye/star@2x.png" alt="" />
+									<img src="../../img/shouye/star@2x.png" alt="" />
+									<img src="../../img/shouye/star_1@2x.png" alt="" />
+								</span>	
+								<span>
+									2017-7-12
+								</span>
+							</li>
+							<li>
+								<span>
+									<img src="../../img/shouye/pingjiatx.png"/>
+								</span>
+								<span>YNGNI</span>
+								<span>
+									<img src="../../img/shouye/star@2x.png" alt="" />
+									<img src="../../img/shouye/star@2x.png" alt="" />
+									<img src="../../img/shouye/star@2x.png" alt="" />
+									<img src="../../img/shouye/star@2x.png" alt="" />
+									<img src="../../img/shouye/star_1@2x.png" alt="" />
+								</span>	
+								<span>
+									2017-7-12
+								</span>
+							</li> -->
+						</ul>
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="gengduo_pop">
+			<a href="../../html/shouye/shouye.html">
+				<img src="../../img/jiFen_shangCheng/shouye.png" />
+				<span>首页</span>
+			</a>
+			<a href="../../html/jiFen_shangCheng/Search.html">
+				<img src="../../img/shouye/icon_sousuo_hui@2x.png" />
+				<span>搜索</span>
+			</a>
+			<a class="gwc" style="border: none;" href="shop_car.html">
+				<img src="../../img/jiFen_shangCheng/xiao_gouwuche.png" />
+				<span>购物车</span>
+			</a>
+			<b></b>
+		</div>
+		
+		<!--==========规格弹窗=============-->
+		<div class="yanse_pop" id="yanse">
+			<div class="yanse_main">
+				<div class="yanse_top">
+					<p>
+						<img src="../../img/jiFen_shangCheng/images_9 (2).png" / class="proImgUrl">
+					</p>
+					<p class="title" id="popTitle">羚花姣妍彩影亮唇膏持久保湿不脱色玫瑰豆沙色学生咬唇装口红</p>
+				</div>
+				<div id="guige_pop">
+					<div style="height: 0;">
+						<p>支付方式</p>
+						<p class="price">88888</p>恒币
+					</div>
+					
+<!--					<div class="guige_desc" data-specItemId="35" data-spacItemIdName="颜色" data-categoryId="17">
+						<p>选择颜色</p>
+						<ul class="ys">
+							<li data-sizenameId="sizename">玫瑰红</li>
+							<li data-sizenameId="sizename">豆沙红</li>
+						</ul>
+					</div>-->
+					
+					<div class="guige_desc" v-for="(_guige,index) in productguige">
+						<p>选择{{_guige.spacItemIdName}}</p>
+						<ul class="ys">
+							<!--<li v-for="l in _guige.psList" class="is_active" onclick="changeStyle()" @click="select_guige(index,_guige.specItemId,l.id)" :class="(_guige.sselectAttrId==l.id) ? 'is_active' : 'not_active'">{{l.sizename}}</li>-->
+							<li v-for="(l,index2) in _guige.psList" v-bind:class="l.className" @click="select_guige(index,_guige.specItemId,index2,l.id)">{{l.sizename}}</li>
+						</ul>
+					</div>
+
+					<div class="pop_select_num">
+						<p>选择数量</p>
+						<p class="choose">
+							<span class="sub" @click="delNum()"></span>
+							<span id="sp">{{total}}</span>
+							<span class="add" @click="addNum()"></span>
+						</p>
+					</div>
+				</div>
+				<div class="yanse_bot">
+					<!--<p class="gwc1">加入购物车</p>-->
+					<!--<p class="fenleiBuy">立即兑换</p>-->
+					<div class="yanse_bot queren" @click="makeOrder()">
+						积分兑换
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--==========规格弹窗END========-->
+		
+		<!--========备用===========-->
+<!--		<div class="yanse_pop" id="duihuan">
+			<div class="yanse_main">
+				<div class="yanse_top">
+					<p>
+						<img src="../../img/jiFen_shangCheng/images_9 (2).png" class="proImgUrl" />
+					</p>
+					<p class="title">羚花姣妍彩影亮唇膏持久保湿不脱色玫瑰豆沙色学生咬唇装口红</p>
+				</div>
+				<div class="yanse_mid">
+					<div>
+						<p>支付方式</p>
+						<p class="price" style="font-size: 16px;font-weight: bold;"></p>恒币
+					</div>
+					<div>
+						<p>选择规格</p>
+						<ul class="ys">
+							<li>玫瑰红</li>
+							<li>豆沙红</li>
+						</ul>
+					</div>
+					<div>
+						<p>选择数量</p>
+						<p class="choose">
+							<span class="sub"></span>
+							<span id="sp1">1</span>
+							<span class="add"></span>
+						</p>
+					</div>
+				</div>
+				<div class="yanse_bot queren">
+					确定
+				</div>
+			</div>
+		</div>-->
+		<!--===============END==============-->
+		
+		<div class="gwc_pop">
+			<div>
+				<p>
+					<img src="../../img/jiFen_shangCheng/duihao.png" />
+				</p>
+				<p>
+					添加成功，在购物车等亲~
+				</p>
+			</div>
+
+		</div>
+		<img src="../../img/jiFen_shangCheng/huishou.png" alt="" class="xuanfu link" id="xuanfu" data-link="jiFen_shangCheng.html" />
+		<nav class="mui-bar mui-bar-tab">
+			<!--<p class="link" data-link="shop_car.html">
+				<img src="../../img/jiFen_shangCheng/gouwuche.png" />
+				<span class="fenshu"></span>
+			</p>
+			<p class="gwc1">
+				加入购物车
+			</p>
+			<p class="duihuan">
+				立即兑换
+
+			</p>-->
+			<div class="yanse_bot queren" onclick="showPop()">
+				积分兑换
+			</div>
+		</nav>
+		<script src="../../js/jquery-1.7.2.js"></script>
+		<script src="../../js/common.js"></script>
+		<script src="../../js/template-web.js"></script>
+		<script src="../../js/mui.min.js"></script>
+		<script src="../../js/tianzhuan.js"></script>
+		<script src="../../js/jiFen_shangCheng/shangPin_detail.js"></script>
+		<script type="text/javascript">
+			mui.init();
+		</script>
+	</body>
+
+</html>

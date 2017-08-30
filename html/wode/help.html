@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../../css/wode/help.css" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-action-back back">
+		    	<img src="../../img/shouye/icon_back@2x.png" alt="" />
+		    </a>
+		    <h1 class="mui-title">帮助</h1>
+		</header>
+		<div class="mui-content">
+		   	<p class="tel">
+		   		<a href="javascript:;">
+			   		<span>客服热线</span>
+			   		<img src="../../img/wode/right.png"/>
+		   		</a>
+		   	</p>
+		   	<p>
+		   		<a href="yiJian_fanKui.html">
+			   		<span>意见反馈</span>
+			   		<img src="../../img/wode/right.png"/>
+		   		</a>
+		   	</p>
+		   	<p>
+		   		<a href="yonghuxieyi.html">
+			   		<span>用户协议</span>
+			   		<img src="../../img/wode/right.png"/>
+		   		</a>
+		   	</p>
+		</div>	
+        <div class="tel_pop">
+        	<div>
+        		<p>400-0000-0000</p>
+        		<p>
+        			<a class="quxiao">取消</a>
+        			<a href="tel:13000000000">拨打客服</a>
+        		</p>
+        	</div>
+        </div>
+		<script src="../../js/mui.min.js"></script>
+		<script src="../../js/jquery-1.7.2.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			$('.tel').on('tap',function(){
+				$('.tel_pop').css('display','block')
+			})
+			$('.quxiao').on('tap',function(){
+				$('.tel_pop').css('display','none')
+			})
+		</script>
+	</body>
+
+</html>

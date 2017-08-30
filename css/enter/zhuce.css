@@ -1,0 +1,166 @@
+body{
+	width: 100%;
+	height: 100%;
+	background-color:#Fff ;
+	font-family: "微软雅黑";
+	color: black;
+}
+html{
+	width: 100%;
+	height: 100%;
+}
+*{
+	margin: 0;
+	padding: 0;
+}
+li { list-style:none; }
+a { text-decoration:none;color: black }
+img { border:none;}  /* 去除IE下默认边框,顶部对齐 */
+p{margin: 0;padding: 0;}
+
+/*去除content与header之间的线*/
+.mui-bar{
+	padding: 0 !important;
+	height:44px;
+	padding: 0 10px;
+	background: #fd5100;
+}
+.mui-bar .back{
+	float: left;
+	width: 10.325%;
+	height: 44px;
+	display: inline-block;
+	position: relative;
+}
+.mui-bar .back img{
+	width: 11px;
+	height: 19px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	-webkit-transform: translate(-50%,-50%);
+}
+.mui-bar .ss{
+	display: inline-block;
+	float: right;
+	width: 10.325%;
+	height: 44px;
+	line-height: 44px;
+	color: #fff;
+	position: relative;
+	font-size: 12px;
+}
+
+.mui-title{
+	color: #fff;
+	font-size:15px ;
+}
+.mui-bar-nav~.mui-content{
+	width: 100%;
+	height: 100%;
+	padding-top:44px;
+	padding-bottom: 60px;
+	background: #fff;
+}
+#login-form{
+	margin: auto;
+	width:84.375%;
+	margin-top:57px;
+	background: transparent;
+}
+.mui-input-group .mui-input-row{
+	margin: auto;
+	width:100%;
+	height:42px;
+	line-height: 50px;
+   
+}
+#account{
+	 background: url(../../img/enter/phone.png) no-repeat 16px 7px;
+	background-size:11px 16px;
+}
+#password{
+	float: left;
+	padding: 15px 0 0 36px;
+	width: 72%;
+	background: url(../../img/enter/yzm.png) no-repeat 16px 20px;
+	background-size:14px 14px;
+	font-size: 12px;
+}
+#password1{
+	float: left;
+	margin-top: 6px;
+	padding: 15px 0 0 36px;
+	width: 72%;
+	background: url(../../img/enter/psw.png) no-repeat 18px 14px;
+	background-size:11px 14px;
+}
+.yzm span{
+	float: left;
+	display: inline-block;
+	margin:15px 4.075% 0 0;
+	width: 23.705%;
+	height: 20px;
+	text-align: center;
+	line-height: 20px;
+	color: #fff;
+	font-size:11px;
+	background: #F66147;
+	border-radius: 3px;
+}
+.mui-input-group:before{
+	height: 0;
+}
+.mui-input-group:after{
+	height: 0;
+}
+/*placeholder样式*/
+::-webkit-input-placeholder { color:#999; font-size: 11px; }
+::-moz-placeholder { color:#999;font-size: 11px; } /* firefox 19+ */
+:-ms-input-placeholder { color:#999;font-size: 11px;  } /* ie */
+input:-moz-placeholder { color:#999;font-size: 11px; }
+input[type=number],
+input[type=password]{
+	padding: 0;
+	padding-left: 36px;
+	margin: 0;
+	width:98.7%;
+	height: 30px;
+	line-height: 30px;
+	color: #333;
+	font-size: 11px;
+}
+
+.mui-input-group .mui-input-row:after{
+	left: 0;
+}
+.mui-content-padded {
+	margin: auto;
+	margin-top:240px;
+}
+#login{
+	padding: 0;
+	margin: auto;
+	width:76%;
+	height:43px;
+	text-align: center;
+	line-height:43px;
+	color: #fff;
+	font-size: 16px;
+	border: none;
+	background:#FD5100;
+	border-radius: 3px;
+}
+.mui-content-padded p{
+	width: 100%;
+	height: 49px;
+	line-height: 49px;
+	text-align: center;
+	color: #666666;
+	font-size: 11px;
+}
+.mui-content-padded p span{
+	color: #2F9EF0;
+}
+

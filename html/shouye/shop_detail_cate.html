@@ -1,0 +1,200 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="format-detection" content="telephone=no">
+		<meta http-equiv="x-rim-auto-match" content="none">
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../../css/shouye/shop_detail.css" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back back">
+				<img src="../../img/wode/icon_back@2x.png" alt="" />
+			</a>
+			<div class="mui-title">
+				商品详情
+			</div>
+			<a href="javascript:;" class="ss">
+				<img src="../../img/wode/fenxiang.png" alt="" />
+			</a>
+		</header>
+		<div class="mui-content">
+			<div class="banner">
+				<div id="product_img">
+					<script id="product_img_templet" type="text/html">
+						<a href="javascript:void(0);">
+							<img src="{{pictures}}" alt="" />
+						</a>
+					</script>
+				</div>
+
+			</div>
+			<div id="product_info">
+			<script id="product_info_templet" type="text/html" >
+				<div class="projectList1"  data-id="{{productId}}" data-price="{{price}}" data-name="{{name}}">
+				<p>
+					<span class="mui-ellipsis">
+						<a href="javascript:void(0);">{{name}}</a>
+					</span>
+				</p>
+				<p>
+					月售：<span>{{}}</span>
+				</p>
+				<p>
+					￥{{price}}
+				</p>
+			
+				<p class="choose">
+					<span class="sub ss"></span>
+					<span class="fenshu1" id="{{PRODUCTKEY}}{{productId}}">0</span>
+					<span class="add aa"></span>
+				</p>
+				</div>
+			</script>
+			</div>
+			<div class="main_two">
+				<div class="dianpu" id="shop"> 
+				<script id="shop_templet" type="text/html">          
+			    	<div class="dianpu_left">
+			    		<img src="{{shopLogo}}"/>
+			    	</div>
+			    	<div class="dianpu_right">
+			    		<p class="mui-ellipsis">{{shopName}}</p>
+			    		<p class="mui-ellipsis">{{shopNotice}}</p>
+			    	</div>
+				</script>
+			    </div>
+			</div>
+			<div class="main_three">
+				<div class="three_tit">
+					<span></span>
+					<span>商品详情</span>
+				</div>
+				<div class="three_txt" id="product_content">
+					<script id="product_content_templete" type="text/html">
+					<p>
+						{{#content}}
+					</p>
+					</script>
+				</div>
+			</div>		
+		</div>
+		<div id="bottomPopover" class="mui-popover mui-popover-bottom Q">
+			<p id="buy_car_shopname"><script type="text/html" id="buy_car_shopname_templete">{{shopName}}<span id="clear_buy_car"><img src="../../img/shouye/qingkong.png"/>清空购物车</span></script></p>
+			<div class="mui-scroll-wrapper">
+				<div class="mui-scroll">
+					<ul class="mui-table-view UL" id="buy_car_info">
+						
+					</ul>
+					<script type="text/html" id="buy_car_info_templete">
+						{{each keys value i}}
+							<li class="mui-table-view-cell LI" data-id="{{data[value].productId}}" data-price="{{data[value].price}}" data-name="{{data[value].name}}">
+								<p>
+									{{data[value].name}}
+								</p>
+								<p>
+									￥{{data[value].price}}
+								</p>
+								<p class="choose1">
+									<span class="sub1 ss"></span>
+									<span class="fenshu1" >{{data[value].quantity}}</span>
+									<span class="add1 aa"></span>
+								</p>
+							</li>
+						{{/each}}	
+					</script>
+				</div>
+			</div>
+
+		</div>
+		<div class="fenxiang">
+			<div class="fenxiang_box">
+				<p>分享至</p>
+				<ul>
+					<li>
+						<img src="../../img/shouye/icon_wechat@2x.png" alt="" />
+						<span>微信</span>
+					</li>
+					<li>
+						<img src="../../img/shouye/icon_weibo@2x.png" alt="" />
+						<span>微博</span>
+					</li>
+					<li>
+						<img src="../../img/shouye/icon_qqzone@2x.png" alt="" />
+						<span>QQ空间</span>
+					</li>
+					<li>
+						<img src="../../img/shouye/pengyouquan .png" alt="" />
+						<span>朋友圈</span>
+					</li>
+					<li>
+						<img src="../../img/shouye/icpn_duanxin@2x.png" alt="" />
+						<span>短信</span>
+					</li>
+					<li>
+						<img src="../../img/shouye/icon_copy@2x.png" alt="" />
+						<span>复制</span>
+					</li>
+				</ul>
+			</div>
+		</div> 
+		<nav class="mui-bar mui-bar-tab">
+			<p class="nav">
+				<a href="#bottomPopover">
+					<img src="../../img/shouye/gwc.png" alt="" id="end" />
+					<span class="fenshu"></span>
+				</a>
+				<span class="sum">¥0</span>
+					<span class="sum1">
+			   		<b id="total_money">￥0.00</b>
+			   		<b class="mui-ellipsis">另需配送费￥3.00，餐盒费￥2.00</b>
+			   	</span>
+			</p>
+			<p class="submit_order" id="submit">
+				去结算
+			</p>
+			<div></div>
+		</nav>
+	</body>
+	
+	
+	
+	<script src="../../js/mui.min.js"></script>
+	<!-- <script src="../../js/mui.picker.min.js"></script> -->
+	<script src="../../js/jquery-1.7.2.js"></script>
+	<script src="../../js/common.js"></script>
+	<script type="text/javascript" src="../../js/map.js" ></script>
+    <script type="text/javascript" src="../../js/shouye/buy_car_product.js" ></script>
+	<script src="../../js/shouye/shop_detail.js"></script>
+	<script src="../../js/template-web.js"></script>
+	<script type="text/javascript">
+		mui.init({
+			swipeBack: false
+		});
+		(function($) {
+			$('.mui-scroll-wrapper').scroll({
+				indicators: true //是否显示滚动条
+			});
+
+			var item2 = document.getElementById('item2mobile');
+			var item3 = document.getElementById('item3mobile');
+			var item4 = document.getElementById('item4mobile');
+			var sliderSegmentedControl = document.getElementById('sliderSegmentedControl');
+			$('.mui-input-group').on('change', 'input', function() {
+				if(this.checked) {
+					sliderSegmentedControl.className = 'mui-slider-indicator mui-segmented-control mui-segmented-control-inverted mui-segmented-control-' + this.value;
+					//force repaint
+					sliderProgressBar.setAttribute('style', sliderProgressBar.getAttribute('style'));
+				}
+			});
+		})(mui);
+	</script>
+	<script>
+	</script>
+
+</html>

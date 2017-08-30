@@ -1,0 +1,170 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../../css/fujin/fujin.css" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a href="javascript:;">
+				<span>附近</span>
+				<!--<span class="weizhi mui-ellipsis" >丹尼斯(科学大道)</span>-->
+				<!--<img src="../../img/shouye/jiantou.png" alt="" />-->
+			</a>
+			<a href="javascript:;">
+				<img src="../../img/shouye/icon_sousuo_hui@2x.png" alt="" />
+				<input type="text" placeholder="搜索附近吃喝玩乐" id="searchBox" />
+			</a>
+		</header>
+		<div class="mui-content">
+			<div id="slider" class="mui-slider">
+				<div id="sliderSegmentedControl" class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+					<a value="1" class="mui-control-item mui-active" href="#item1mobile">
+						爱美食
+					</a>
+					<a value="2" class="mui-control-item" href="#item2mobile">
+						享休闲
+					</a>
+					<a value="3" class="mui-control-item" href="#item3mobile">
+						爱逛街
+					</a>
+					<a value="4" class="mui-control-item" href="#item4mobile">
+						全部
+					</a>
+				</div>
+				<div id="sliderProgressBar" class="mui-slider-progress-bar mui-col-xs-3"></div>
+				<div class="mui-slider-group">
+					<div id="item1mobile" class="mui-slider-item aa mui-control-content mui-active">
+						<div class="mui-scroll">
+							<div class="main">
+								<script type="text/html" id="main_templete">
+									<div class="main_list2">
+
+										{{each list value i}}
+										<div class="item" data-shopId="{{value.shopId}}">
+											<div class="list_left">
+												<img src="{{value.shopLogo}}" alt="" />
+											</div>
+											<div class="list_right">
+												<p>
+													<span class="mui-ellipsis"><a href="javascript:;">{{value.shopName}}</a><a href="javascript:;"></a></span>
+													<!--<img src="../../img/shouye/waimai.png"/>-->
+
+												</p>
+												<p>
+													{{if (value.shopGrade==1)}}
+													<span>
+					    							<img src="../../img/shouye/star@2x.png" alt="" />
+					    							<img src="../../img/shouye/star_1@2x.png" alt="" />
+					    							<img src="../../img/shouye/star_1@2x.png" alt="" />
+					    							<img src="../../img/shouye/star_1@2x.png" alt="" />
+					    							<img src="../../img/shouye/star_1@2x.png" alt="" />
+					    						</span> {{/if}} {{if (value.shopGrade==2)}}
+													<span>
+					    							<img src="../../img/shouye/star@2x.png" alt="" />
+					    							<img src="../../img/shouye/star@2x.png" alt="" />
+					    							<img src="../../img/shouye/star_1@2x.png" alt="" />
+					    							<img src="../../img/shouye/star_1@2x.png" alt="" />
+					    							<img src="../../img/shouye/star_1@2x.png" alt="" />
+					    						</span> {{/if}} {{if (value.shopGrade==3)}}
+													<span>
+					    							<img src="../../img/shouye/star@2x.png" alt="" />
+					    							<img src="../../img/shouye/star@2x.png" alt="" />
+					    							<img src="../../img/shouye/star@2x.png" alt="" />
+					    							<img src="../../img/shouye/star_1@2x.png" alt="" />
+					    							<img src="../../img/shouye/star_1@2x.png" alt="" />
+					    						</span> {{/if}} {{if (value.shopGrade==4)}}
+													<span>
+					    							<img src="../../img/shouye/star@2x.png" alt="" />
+					    							<img src="../../img/shouye/star@2x.png" alt="" />
+					    							<img src="../../img/shouye/star@2x.png" alt="" />
+					    							<img src="../../img/shouye/star@2x.png" alt="" />
+					    							<img src="../../img/shouye/star_1@2x.png" alt="" />
+					    						</span> {{/if}} {{if (value.shopGrade==5)}}
+													<span>
+					    							<img src="../../img/shouye/star@2x.png" alt="" />
+					    							<img src="../../img/shouye/star@2x.png" alt="" />
+					    							<img src="../../img/shouye/star@2x.png" alt="" />
+					    							<img src="../../img/shouye/star@2x.png" alt="" />
+					    							<img src="../../img/shouye/star@2x.png" alt="" />
+					    						</span> {{/if}}
+													<span>
+				    							{{value.shopGrade}}
+				    						</span>
+													<span>
+				    							人均{{value.avgPrice}}元
+				    						</span>
+												</p>
+												<p>
+													<span>{{value.shopNotice}}</span>
+													<span>{{value.distance}}m</span>
+												</p>
+											</div>
+											<a href="javascript:;"></a>
+											<div style="clear: both;"></div>
+										</div>
+										{{/each}}
+									</div>
+								</script>
+							</div>
+						</div>
+					</div>
+					<div id="item2mobile" class="mui-slider-item bb mui-control-content">
+						<div class="mui-scroll">
+							<div class="main">
+
+							</div>
+						</div>
+					</div>
+					<div id="item3mobile" class="mui-slider-item cc mui-control-content">
+						<div class="mui-scroll">
+							<div class="main">
+
+							</div>
+						</div>
+					</div>
+					<div id="item4mobile" class="mui-slider-item dd mui-control-content">
+						<div class="mui-scroll">
+							<div class="main">
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<nav class="mui-bar mui-bar-tab">
+			<a href="../shouye/index.html">
+				<img src="../../img/shouye/Home@2x (2).png" />
+				<span>首页</span>
+			</a>
+			<a href="javascript:;">
+				<img src="../../img/shouye/Send@2x.png" />
+				<span>附近</span>
+			</a>
+			<a href="../jiFen_shangCheng/jiFen_shangCheng.html">
+				<img src="../../img/shouye/jifenshagncheng@2x.png" />
+				<span>积分商城</span>
+			</a>
+			<a href="../wode/geRen_center.html">
+				<img src="../../img/shouye/wode@2x.png" />
+				<span>我的</span>
+			</a>
+		</nav>
+
+		<script src="../../js/mui.min.js"></script>
+		<script src="../../js/template-web.js"></script>
+		<script src="../../js/jquery-1.7.2.js"></script>
+		<script src="../../js/mui.pullToRefresh.js"></script>
+		<script src="../../js/mui.pullToRefresh.material.js"></script>
+		<script src="../../js/common.js"></script>
+		<script src="../../js/fujin/fujin.js"></script>
+	</body>
+
+</html>

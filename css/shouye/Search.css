@@ -1,0 +1,131 @@
+body{
+	width: 100%;
+	height: 100%;
+	background-color:#f5f5f5 ;
+	font-family: "微软雅黑";
+	color: black;
+}
+html{
+	width: 100%;
+	height: 100%;
+}
+*{
+	margin: 0;
+	padding: 0;
+}
+li { list-style:none; }
+a { text-decoration:none;color: black }
+img { border:none;}  /* 去除IE下默认边框,顶部对齐 */
+p{margin: 0;padding: 0;}
+.mui-bar{
+	height:44px;
+	padding: 0;
+	background: #fd5100;
+}
+ul.head>li{
+	float: left;
+	height:44px;
+}
+ul.head>li:nth-child(1) {
+	width:13.75%;
+	position: relative;
+}
+ul.head>li:nth-child(1) a{
+	display: block;
+	width:100%;
+	height: 44px;
+	line-height: 44px;
+	position: absolute;
+	top: 0;
+}
+
+ul.head>li:nth-child(1) a img{
+	width:11px;
+	position: absolute;
+	top: 50%;
+	left: 12px;
+	transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+}
+ul.head>li:nth-child(3){
+	float: right;
+	width: 16%;
+	height: 44px;
+}
+ul.head>li:nth-child(3) a{
+	display: block;
+	width:100%;
+	height: 100%;
+	line-height: 44px;
+	text-align: center;
+	color: #fff;
+	font-size: 14px;
+}
+
+
+ul.head>li:nth-child(2){
+	margin:8px 0 0 0;
+	width:70%;
+	height:29px;
+	line-height:29px;
+	border-radius:15px;
+    background: #fff;
+	background-size: contain;
+}
+ul.head>li:nth-child(2) a{
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+}
+ul.head>li:nth-child(2)  a img{
+	float: left;
+	width:14px;
+	height:13px;
+	margin:8px 0 0 14px;
+	
+}
+ul.head>li:nth-child(2) a input{
+	float: left;
+	width:70%;
+	height:25px;
+	line-height:25px;
+	margin:2px 7px ;
+	padding: 0;
+	padding-top: 2px;
+	border: none;
+	font-size:12px;
+	color:#333;
+	vertical-align: bottom;
+}
+::-webkit-input-placeholder { color:#999;font-size:12px; }
+::-moz-placeholder { color:#999; font-size:12px;} /* firefox 19+ */
+:-ms-input-placeholder { color:#999; font-size:12px;} /* ie */
+input:-moz-placeholder { color:#999; font-size:12px;}
+
+.mui-bar-nav~.mui-content{
+	width: 100%;
+	height: 100%;
+	background: #fff;
+	padding:44px 10px;
+}
+.tit,.btn{
+	width: 100%;
+	height: 34px;
+	line-height: 34px;
+	color: #999999;
+	font-size:12px;
+}
+.tit{
+	border-bottom: 1px solid #eeeeee;
+}
+.btn{
+	text-align: center;
+}
+.mui-content ul li{
+	width: 100%;
+	height: 34px;
+	line-height: 34px;
+	color: #333333;
+	font-size: 12px;
+	border-bottom: 1px solid #eeeeee;
+}

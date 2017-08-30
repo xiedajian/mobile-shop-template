@@ -1,0 +1,235 @@
+body{
+	width: 100%;
+	background-color:#f5f5f5;
+	font-family: "微软雅黑";
+	color: black;
+}
+html{
+	width: 100%;
+}
+*{
+	margin: 0;
+	padding: 0;
+}
+li { list-style:none; }
+a { text-decoration:none;color: black }
+p{margin: 0;padding: 0;}
+img{padding:0; border:0;margin:0;display:block;}
+.mui-bar{
+	padding: 0 !important;
+	height:44px;
+	padding: 0 10px;
+	background: #fd5100;
+}
+.mui-bar .back{
+	float: left;
+	width: 10.325%;
+	height: 44px;
+	display: inline-block;
+	position: relative;
+}
+.mui-bar .back img{
+	width: 11px;
+	height: 19px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	-webkit-transform: translate(-50%,-50%);
+}
+.mui-bar .ss{
+	display: inline-block;
+	float: right;
+	width: 10.325%;
+	height: 44px;
+	position: relative;
+}
+.mui-bar .ss img{
+	float: left;
+	width:14px;
+	height:13px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	-webkit-transform: translate(-50%,-50%);
+}
+.mui-title{
+	color: #fff;
+	font-size:15px ;
+}
+.mui-bar-nav~.mui-content{
+	padding-top:40px;
+	padding-bottom: 60px;
+	background: #f5f5f5;
+}
+#pullrefresh{
+	margin-top: 60px;
+	height: 1200px;
+}
+
+/**/
+.main{
+	width: 100%;
+}
+.main ul{
+	padding: 0 1.565%;
+	width: 100%;
+}
+.main ul li{
+	float: left;
+	padding:0.969%;
+    margin: 0 1.615% 3.23% 1.615%;
+    width:46.77%;
+    height: 131px;
+    background: #fff;
+    border: 1px solid #e7e7e7;
+    border-radius: 6px;
+    position: relative;
+    
+}
+.main ul li p:nth-child(1){
+	width: 100%;
+	height: 84px;
+	overflow: hidden;
+	
+}
+.main ul li p:nth-child(1) img{
+	width: 100%;
+}
+.main ul li p:nth-child(2){
+	width: 100%;
+	height: 25px;
+	line-height: 25px;
+	color: #333333;
+	font-size: 12px;
+	
+}
+.main ul li p:nth-child(3){
+	width: 100%;
+	height: 10px;
+	line-height: 10px;
+	font-size: 10px;
+	color: #FD5100;
+	
+}
+.main ul li a{
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 3;
+}
+/**/
+nav{
+	padding: 0 !important;
+	width: 100%;
+	height: 50px !important;
+	background: #fff !important;
+	box-shadow: none !important;
+	border-top: 1px solid #ccc !important;
+}
+nav a{
+	display: inline-block;
+	float: left;
+	width: 25%;
+	height: 50px;
+	position: relative;
+}
+nav a img{
+	margin: 8px auto;
+	width: 20px;
+	height: 20px;
+}
+nav a span{
+	display: inline-block;
+	width: 100%;
+	height: 10px;
+	text-align: center;
+	line-height: 10px;
+	color: #333333;
+	font-size: 10px;
+	position: absolute;
+	bottom: 4px;
+}
+nav a:nth-child(3) span{
+	color: #fd5100;
+}
+/**/
+.fenlei_pop{
+	width: 100%;
+}
+.fenlei_pop .mui-slider{
+	z-index: 9;
+	/* height: 50px; */
+}
+.fenlei_pop .mui-slider-indicator.mui-segmented-control{
+	height: 48px;
+	background: #fff;
+	border-bottom: 1px solid #ccc !important;
+}
+.fenlei_pop .mui-segmented-control.mui-scroll-wrapper .mui-scroll{
+	padding: 0 7px;
+	height: 48px;
+}
+.mui-segmented-control .mui-control-item{
+	padding:15px 0  !important;
+	margin: 0 5px;
+	width: 65px !important;
+	height: 47px;
+	position: relative;
+}
+.mui-segmented-control .mui-control-item span{
+	display: inline-block;	
+	width: 65px;
+	height: 18px;
+	text-align: center;
+	line-height: 17px;
+	border: 1px solid #ccc;
+	background: #ccc;
+	border-radius: 6px;
+	color: #333333;
+	font-size:11px ;
+	position: absolute;
+	top: 15px;
+	left: 0;
+}
+.mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active{
+	border-bottom: 2px solid #FD5100 !important;
+}
+
+.mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active span{
+	border: 1px solid #FD5100;
+	background: #fff;
+	color: #FD5100;
+}
+.mui-fullscreen .mui-segmented-control~.mui-slider-group{
+	display: none;
+	width: 100%;
+}
+.mui-slider-item {
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.5);
+	position: fixed;
+	top: 0px;
+	left: 0;
+	z-index: 9;
+}
+.wrapper{
+	padding: 0 12px;
+	width: 100%;
+	background: #FFF;
+}
+.mui-slider-item p{
+	width: 100%;
+	height:40px;
+	line-height: 40px;
+	color: #333333;
+	font-size:11px;
+	border-bottom: 1px dotted #ccc;
+	background: #fff;
+
+}

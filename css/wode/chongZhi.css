@@ -1,0 +1,166 @@
+body{
+	width: 100%;
+	height: 100%;
+	background-color:#F5F5F5 ;
+	font-family: "微软雅黑";
+	color: black;
+}
+html{
+	width: 100%;
+	height: 100%;
+}
+*{
+	margin: 0;
+	padding: 0;
+}
+li { list-style:none; }
+a { text-decoration:none;color: black }
+img { border:none;}  /* 去除IE下默认边框,顶部对齐 */
+p{margin: 0;padding: 0;}
+.mui-bar{
+	padding: 0 !important;
+	height:44px;
+	padding: 0 10px;
+	background: #fd5100;
+	box-shadow: none;
+	-webkit-box-shadow: none;
+}
+.mui-bar .back{
+	float: left;
+	width: 10.325%;
+	height: 44px;
+	display: inline-block;
+	position: relative;
+}
+.mui-bar .back img{
+	width: 11px;
+	height: 19px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	-webkit-transform: translate(-50%,-50%);
+}
+.mui-title{
+	color: #fff;
+	font-size:15px ;
+}
+.mui-bar-nav~.mui-content{
+	width: 100%;
+	height: 100%;
+	padding-top:44px;
+	padding-bottom: 60px;
+}
+/**/
+
+.wzz_list{
+	padding: 0 15px;
+	width: 100%;
+	background: #fff;
+	border-bottom: 1px solid #dbdbdb;
+}
+.wzz_list p{
+	padding: 11px 0;
+	width: 100%;
+	height: 42px;
+	font-size: 13px;
+	border-bottom: 1px dotted #dbdbdb;
+	position: relative;
+}
+.wzz_list p:last-child{
+	border-bottom: none;
+}
+.wzz_list p span:nth-child(1){
+	display: inline-block;
+	margin-right: 3px;
+	width: 18px;
+	height: 18px;
+	position: relative;
+}
+.wzz_list p span:nth-child(1) img{
+	width: 18px;
+	position: absolute;
+	top: 2px;
+}
+.wzz_list p span:nth-child(2){
+	display: inline-block;
+	height: 18px;
+	line-height: 18px;
+	color: #333;
+	position: absolute;
+	left: 28px;
+	top: 13px;
+}
+.wzz_list p span:nth-child(3){
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	position: absolute;
+	top:13px;
+	right: 0;
+}
+/**/
+.wzz_list p:nth-child(1) span:nth-child(3){
+	background: none;
+}
+.wzz_list p:nth-child(3){
+	margin-top: -12px;
+	margin-bottom: 3px;
+}
+.wzz_list p:nth-child(2){
+	margin-top: 3px;
+}
+.check{
+	border: 1px solid #ccc;
+	border-radius: 3px;
+}
+.wzz_list p:nth-child(2) .check{
+	border: none;
+}
+.dui{
+	width: 17.5px;
+	position: relative;
+	top: -4px;
+	left: 0;
+}
+/**/
+.jine{
+	margin-top: 10px;
+	margin-bottom: 30px;
+	padding: 0 15px;
+	width: 100%;
+	height: 42px;
+	border-bottom: 1px solid #dbdbdb;
+	background: #fff;
+}
+.jine input{
+	padding: 0;
+	margin: 0;
+	width:100%;
+	height: 40px;
+	border: none;
+	line-height: 40px;
+	color: #333;
+	font-size: 13px;
+}
+/*placeholder样式*/
+::-webkit-input-placeholder { color:#666;font-size: 13px; }
+::-moz-placeholder { color:#666;font-size: 13px; } /* firefox 19+ */
+:-ms-input-placeholder { color:#666;font-size: 13px; } /* ie */
+input:-moz-placeholder { color:#666;font-size: 13px; }
+
+nav{
+	width: 100%;
+	height: 40px !important;
+	
+}
+nav a{
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	line-height: 40px;
+	color: #fff;
+	font-size: 12px;
+	background: #FD5100 !important;
+}

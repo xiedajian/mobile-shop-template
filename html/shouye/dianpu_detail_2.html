@@ -1,0 +1,442 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="format-detection" content="telephone=no">
+		<meta http-equiv="x-rim-auto-match" content="none">
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../../css/shouye/dianpu_detail_2.css" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back back">
+				<img src="../../img/wode/icon_back@2x.png" alt="" />
+			</a>
+			<div class="mui-title">
+				店铺详情
+			</div>
+			<a href="javascript:;" class="ss">
+				<img src="../../img/wode/fenxiang.png" alt="" />
+			</a>
+		</header>
+		<div class="mui-content">
+		<input type="hidden" id="product_templete" value="1"/>
+		<div id="pullrefresh">
+		<div class="mui-scroll">
+			<div class="main">
+    			<div class="main_list" id="main_list">
+    				<script id="main_list_templete" type="text/html">
+    				<div class="list_left">
+    					<img src="{{shopLogo}}" alt="" />
+    				</div>
+    				<div class="list_right">
+    					<p>
+    						<span class="mui-ellipsis"><a href="javascript:;">{{shopName}}</a><a href="javascript:;">(科学大道店)</a></span>
+    						
+    					</p>
+							{{if shopGrade==1}}
+    						<p>
+								<img src="../../img/shouye/star@2x.png" alt="" />
+								<img src="../../img/shouye/star_1@2x.png" alt="" />
+								<img src="../../img/shouye/star_1@2x.png" alt="" />
+								<img src="../../img/shouye/star_1@2x.png" alt="" />
+								<img src="../../img/shouye/star_1@2x.png" alt="" />
+							</p>
+							{{/if}}
+							{{if shopGrade==2}}
+							<p>
+								<img src="../../img/shouye/star@2x.png" alt="" />
+								<img src="../../img/shouye/star@2x.png" alt="" />
+								<img src="../../img/shouye/star_1@2x.png" alt="" />
+								<img src="../../img/shouye/star_1@2x.png" alt="" />
+								<img src="../../img/shouye/star_1@2x.png" alt="" />
+							</p>
+							{{/if}}
+							{{if shopGrade==3}}
+							<p>
+								<img src="../../img/shouye/star@2x.png" alt="" />
+								<img src="../../img/shouye/star@2x.png" alt="" />
+								<img src="../../img/shouye/star@2x.png" alt="" />
+								<img src="../../img/shouye/star_1@2x.png" alt="" />
+								<img src="../../img/shouye/star_1@2x.png" alt="" />
+							</p>
+							{{/if}}
+							{{if shopGrade==4}}
+							<p>
+								<img src="../../img/shouye/star@2x.png" alt="" />
+								<img src="../../img/shouye/star@2x.png" alt="" />
+								<img src="../../img/shouye/star@2x.png" alt="" />
+								<img src="../../img/shouye/star@2x.png" alt="" />
+								<img src="../../img/shouye/star_1@2x.png" alt="" />
+							</p>
+							{{/if}}
+							{{if shopGrade==5}}
+							<p>
+								<img src="../../img/shouye/star@2x.png" alt="" />
+								<img src="../../img/shouye/star@2x.png" alt="" />
+								<img src="../../img/shouye/star@2x.png" alt="" />
+								<img src="../../img/shouye/star@2x.png" alt="" />
+								<img src="../../img/shouye/star@2x.png" alt="" />
+							</p>
+							{{/if}}
+    					<p>
+    						<img src="../../img/shouye/hui.png"/>
+    						<span>3种优惠券可选</span>
+    					</p>
+    				</div>
+    				<a href="javascript:;"></a>
+    				<div style="clear: both;"></div>
+    				</script>
+    			</div>
+    			
+    			<div class="dianpu">				
+					<div class="dianpu_bottom" id="dianpu_bottom">
+						<script id="dianpu_bottom_templete" type="text/html">
+						<i class="i_left"><img src="../../img/wode/zuobiao.png"/></i>
+						<span class="mui-ellipsis" id="coordinate" data-coordinate="{{coordinate}}">
+							{{shopAddress}}
+						</span>
+						<i class="i_right"><img src="../../img/wode/right.png"/></i>
+					</script>	
+					</div>
+			    </div>	
+			    </div>
+    		
+			
+			<div id="slider" class="mui-slider">
+				<div id="sliderSegmentedControl" class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+					<a class="mui-control-item mui-active" href="#item1mobile">
+						兑换券
+					</a>
+					<a class="mui-control-item" href="#item2mobile">
+						评价
+					</a>
+					<a class="mui-control-item" href="#item3mobile">
+						店铺
+					</a>
+				</div>
+				<div id="sliderProgressBar" class="mui-slider-progress-bar mui-col-xs-4"></div>
+				<div class="mui-slider-group">
+					<div id="item1mobile" class="mui-slider-item mui-control-content mui-active mui-row mui-fullscreen">
+						<ul class="list_main listt" id="product_list">																
+								<script id="product_list_templete"  type="text/html">	
+								{{each list value i}}															
+								<li class="product-li">	
+									<div class="listt_left">
+										<img src="{{value.pictures}}" alt="" />
+									</div>
+									<div class="listt_right"  data-id="{{value.productId}}" data-price="{{value.price}}" data-name="{{value.name}}">
+										<p>
+										     {{value.name}}
+										</p>										
+										<p>
+											月售:<span>186</span>           
+										</p>
+										<p>
+											<span>¥{{value.price}}</span>											
+										</p>
+										<p class="mai">
+										
+										</p>
+										<p class="choose">
+											<input type="button" class="sub ss"/>
+											<span class="fenshu1" id="jfscproductkey{{value.productId}}">0</span>
+											<input type="button" class="add aa"/>
+										</p>
+									</div>
+									<a class="clickSkip" data-product-id="{{value.productId}}" style="position:absolute;top:0;left:0;width:70%;height:100%"></a>
+									<p style="clear: both;"></p>
+								</li>
+								{{/each}}
+								</script>
+							</ul>
+
+					</div>
+					<div id="item2mobile" class="mui-slider-item mui-control-content mui-row mui-fullscreen">
+					<script id="item2mobile_templete1" type="text/html">
+						<p class="item2_tit">
+							<span>商家服务</span>
+							<span>{{shopGrade}}</span>
+							{{if shopGrade==1}}
+							<span>
+								<img src="../../img/shouye/star@2x.png" alt="" />
+								<img src="../../img/shouye/star_1@2x.png" alt="" />
+								<img src="../../img/shouye/star_1@2x.png" alt="" />
+								<img src="../../img/shouye/star_1@2x.png" alt="" />
+								<img src="../../img/shouye/star_1@2x.png" alt="" />
+							</span>
+							{{/if}}
+							{{if shopGrade==2}}
+							<span>
+								<img src="../../img/shouye/star@2x.png" alt="" />
+								<img src="../../img/shouye/star@2x.png" alt="" />
+								<img src="../../img/shouye/star_1@2x.png" alt="" />
+								<img src="../../img/shouye/star_1@2x.png" alt="" />
+								<img src="../../img/shouye/star_1@2x.png" alt="" />
+							</span>
+							{{/if}}
+							{{if shopGrade==3}}
+							<span>
+								<img src="../../img/shouye/star@2x.png" alt="" />
+								<img src="../../img/shouye/star@2x.png" alt="" />
+								<img src="../../img/shouye/star@2x.png" alt="" />
+								<img src="../../img/shouye/star_1@2x.png" alt="" />
+								<img src="../../img/shouye/star_1@2x.png" alt="" />
+							</span>
+							{{/if}}
+							{{if shopGrade==4}}
+							<span>
+								<img src="../../img/shouye/star@2x.png" alt="" />
+								<img src="../../img/shouye/star@2x.png" alt="" />
+								<img src="../../img/shouye/star@2x.png" alt="" />
+								<img src="../../img/shouye/star@2x.png" alt="" />
+								<img src="../../img/shouye/star_1@2x.png" alt="" />
+							</span>
+							{{/if}}
+							{{if shopGrade==5}}
+							<span>
+								<img src="../../img/shouye/star@2x.png" alt="" />
+								<img src="../../img/shouye/star@2x.png" alt="" />
+								<img src="../../img/shouye/star@2x.png" alt="" />
+								<img src="../../img/shouye/star@2x.png" alt="" />
+								<img src="../../img/shouye/star@2x.png" alt="" />
+							</span>
+							{{/if}}
+						</p>
+						<ul class="item2_txt" id="item2mobile2">
+						</ul>
+						</script>
+						
+					</div>
+						<script id="item2mobile_templete2" type="text/html">
+						{{each list value j}}
+							<li>
+								<span>
+									<img src="{{value.Portail}}"/>
+								</span>
+								<span>{{value.NickName}}</span>
+								{{if value.shopstart==1}}
+							<span>
+								<img src="../../img/shouye/star@2x.png" alt="" />
+								<img src="../../img/shouye/star_1@2x.png" alt="" />
+								<img src="../../img/shouye/star_1@2x.png" alt="" />
+								<img src="../../img/shouye/star_1@2x.png" alt="" />
+								<img src="../../img/shouye/star_1@2x.png" alt="" />
+							</span>
+							{{/if}}
+							{{if value.shopstart==2}}
+							<span>
+								<img src="../../img/shouye/star@2x.png" alt="" />
+								<img src="../../img/shouye/star@2x.png" alt="" />
+								<img src="../../img/shouye/star_1@2x.png" alt="" />
+								<img src="../../img/shouye/star_1@2x.png" alt="" />
+								<img src="../../img/shouye/star_1@2x.png" alt="" />
+							</span>
+							{{/if}}
+							{{if value.shopstart==3}}
+							<span>
+								<img src="../../img/shouye/star@2x.png" alt="" />
+								<img src="../../img/shouye/star@2x.png" alt="" />
+								<img src="../../img/shouye/star@2x.png" alt="" />
+								<img src="../../img/shouye/star_1@2x.png" alt="" />
+								<img src="../../img/shouye/star_1@2x.png" alt="" />
+							</span>
+							{{/if}}
+							{{if value.shopstart==4}}
+							<span>
+								<img src="../../img/shouye/star@2x.png" alt="" />
+								<img src="../../img/shouye/star@2x.png" alt="" />
+								<img src="../../img/shouye/star@2x.png" alt="" />
+								<img src="../../img/shouye/star@2x.png" alt="" />
+								<img src="../../img/shouye/star_1@2x.png" alt="" />
+							</span>
+							{{/if}}
+							{{if value.shopstart==5}}
+							<span>
+								<img src="../../img/shouye/star@2x.png" alt="" />
+								<img src="../../img/shouye/star@2x.png" alt="" />
+								<img src="../../img/shouye/star@2x.png" alt="" />
+								<img src="../../img/shouye/star@2x.png" alt="" />
+								<img src="../../img/shouye/star@2x.png" alt="" />
+							</span>
+							{{/if}}
+								<span>
+									{{value.creattime}}
+								</span>
+							</li>
+						{{/each}}
+						</script>>
+					<div id="item3mobile" class="mui-slider-item mui-control-content mui-row mui-fullscreen">
+						<div class="item3_txt" id="item3_txt">
+							<script id="item3_txt_templete" type="text/html">
+							<p class="item3_list">
+								<span>电话：</span>
+								<span class="mui-ellipsis">{{shopPhone}}</span>
+								<span><img src="../../img/shouye/phone.png" style="width: 11px;"/></span>
+							</p>
+							<p class="item3_list">
+								<span>地址：</span>
+								<span class="mui-ellipsis">{{shopAddress}}</span>							
+							</p>
+							<p class="item3_list">
+								<span>营业时间：</span>
+								<span class="mui-ellipsis">{{businesstime}}</span>
+								
+							</p>
+							<p id="business_license" class="item3_list" data-business-license="{{businessLicense}}">
+								<span>营业执照：</span>
+								<span class="mui-ellipsis"></span>
+								<span><img src="../../img/wode/right.png" class="right"/></span>
+							</p>
+							<div class="huanjing">
+								<p>商家环境照片</p>
+								<ul>
+									<li>
+										<img src="../../img/shouye/huangjing1.png"/>
+										<span>门面</span>
+									</li>
+									<li>
+										<img src="../../img/shouye/huangjing1.png"/>
+										<span>门面</span>
+									</li>
+									<li>
+										<img src="../../img/shouye/huangjing1.png"/>
+										<span>门面</span>
+									</li>
+									<li>
+										<img src="../../img/shouye/huangjing1.png"/>
+										<span>门面</span>
+									</li>
+									<div style="clear: both;"></div>
+								</ul>
+							</div>
+						</div>
+						</script>
+					</div>																					  
+				</div>		
+				</div>
+			
+			</div>
+			</div>
+          </div>    
+		</div>
+		<div id="bottomPopover" class="mui-popover mui-popover-bottom Q">
+			<p id="buy_car_shopname"><script type="text/html" id="buy_car_shopname_templete">{{shopName}}<span id="clear_buy_car"><img src="../../img/shouye/qingkong.png"/>清空购物车</span></script></p>
+			<div class="mui-scroll-wrapper">
+				<div class="mui-scroll">
+					<ul class="mui-table-view UL" id="buy_car_info">
+						
+					</ul>
+					<script type="text/html" id="buy_car_info_templete">
+						{{each keys value i}}
+							<li class="mui-table-view-cell LI" data-id="{{data[value].productId}}" data-price="{{data[value].price}}" data-name="{{data[value].name}}">
+								<p>
+									{{data[value].name}}
+								</p>
+								<p>
+									￥{{data[value].price}}
+								</p>
+								<p class="choose1">
+									<span class="sub1 ss"></span>
+									<span class="fenshu1">{{data[value].quantity}}</span>
+									<span class="add1 aa"></span>
+								</p>
+							</li>
+						{{/each}}	
+					</script>
+				</div>
+			</div>
+		</div>
+		<div class="fenxiang">
+			<div class="fenxiang_box">
+				<p>分享至</p>
+				<ul>
+					<li>
+						<img src="../../img/shouye/icon_wechat@2x.png" alt="" />
+						<span>微信</span>
+					</li>
+					<li>
+						<img src="../../img/shouye/icon_weibo@2x.png" alt="" />
+						<span>微博</span>
+					</li>
+					<li>
+						<img src="../../img/shouye/icon_qqzone@2x.png" alt="" />
+						<span>QQ空间</span>
+					</li>
+					<li>
+						<img src="../../img/shouye/pengyouquan .png" alt="" />
+						<span>朋友圈</span>
+					</li>
+					<li>
+						<img src="../../img/shouye/icpn_duanxin@2x.png" alt="" />
+						<span>短信</span>
+					</li>
+					<li>
+						<img src="../../img/shouye/icon_copy@2x.png" alt="" />
+						<span>复制</span>
+					</li>
+				</ul>
+			</div>
+		</div> 
+		<nav class="mui-bar mui-bar-tab">
+			<p class="nav">
+				<a href="#bottomPopover">
+					<img src="../../img/shouye/gwc.png" alt="" id="end" />
+					<span class="fenshu"></span>
+				</a>
+				<span class="sum" >¥0</span>
+					<span class="sum1">
+			   		<b id="total_money">￥0.00</b>
+			   		<!--<b class="mui-ellipsis">另需配送费￥3.00，餐盒费￥2.00</b>-->
+			   	</span>
+			</p>
+			<p class="submit_order">
+				去结算
+			</p>
+			<div></div>
+		</nav>
+	</body>
+	<script src="../../js/mui.min.js"></script>
+    <script src="../../js/jquery-1.7.2.js"></script>
+	<script src="../../js/mui.picker.min.js"></script>
+	<script type="text/javascript" src="../../js/map.js" ></script>
+	<script type="text/javascript" src="../../js/common.js" ></script>
+    <script src="../../js/shouye/dianPu_detail_2.js"></script>
+    <script type="text/javascript" src="../../js/shouye/buy_car.js" ></script>
+    <script src="../../js/template-web.js"></script>
+	<script type="text/javascript">
+		mui.init({
+			swipeBack: false
+		});
+		(function($) {
+			$('.mui-scroll-wrapper').scroll({
+				indicators: true //是否显示滚动条
+			});
+
+			var item2 = document.getElementById('item2mobile');
+			var item3 = document.getElementById('item3mobile');
+			var item4 = document.getElementById('item4mobile');
+			var sliderSegmentedControl = document.getElementById('sliderSegmentedControl');
+			$('.mui-input-group').on('change', 'input', function() {
+				if(this.checked) {
+					sliderSegmentedControl.className = 'mui-slider-indicator mui-segmented-control mui-segmented-control-inverted mui-segmented-control-' + this.value;
+					//force repaint
+					sliderProgressBar.setAttribute('style', sliderProgressBar.getAttribute('style'));
+				}
+			});
+		})(mui);
+//		setInterval(function(){
+			var left=parseInt($('.listt li').innerHeight())-10;
+		    $('.listt_right').css('height',left);
+//		},10)
+		
+	
+	</script>
+	<script>
+	</script>
+
+</html>

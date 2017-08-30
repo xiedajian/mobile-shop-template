@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>个人中心</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../../css/wode/geRen_ziLiao.css" />
+		
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-action-back back">
+		    	<img src="../../img/shouye/icon_back@2x.png" alt="" />
+		    </a>
+		    <h1 class="mui-title">个人资料</h1>
+		</header>	
+		<div class="mui-content" style="background: #F5F2F4;">
+		    <div class="main_top">
+		    	<a href="javascript:;">
+		    		<span><img src="../../img/wode/grzl_tx.png" id="txPic"/></span>
+		    		
+		    		<span><img src="../../img/wode/right.png"/></span>
+					<span onclick="uploadPic()">修改头像</span>
+					<form  enctype="multipart/form-data" action="" method="post" id="picForm">
+						<!--<input type="file" id="choosefile" />-->
+						<!--<input type="file"  id="f" style="display:none;" />-->
+						<!--<input type="text" value="上传文件" name="username" />-->
+						<input type="file" id="fileId" name="fileId" value="上传图片" onchange="getUrl(this.files);" hidden/>
+					</form>
+
+
+		    	</a>
+		    </div>
+		    <div class="main_bot">
+		    	<p>
+		    		<span class="bot1">昵称</span>
+		    		<input type="text" value="" class="bot2" id="nickName" onblur="updateNickname()"/>
+		    	</p>
+		    	<p class="link" data-link="updata_phone.html">
+		    		<span class="bot1">手机号</span>
+		    		<span class="bot2" id="mobilePhone">暂无</span>
+		    		<img src="../../img/wode/right.png"/>
+		    		<!--<a href="updata_phone.html"></a>-->
+		    	</p>
+		    	<p class="xingbie" >
+		    		<span class="bot1">性别</span>
+		    		<span class="bot2" id="sexName">男</span>
+		    		<img src="../../img/wode/right.png"/>
+		    	</p>
+		    	<p class="select-address">
+		    		<span class="bot1">收货地址</span>
+		    		<span class="bot2" id="address">暂无地址</span>
+		    		<img src="../../img/wode/right.png"/>
+		    		<!--<a href="wode_diZhi.html"></a>-->
+		    	</p>
+		    </div>
+		</div>
+		<div class="xingbie_pop">
+			<div>
+				<p class="nan" data-sex="true">
+					<span class="xb_txt">男</span>
+					<span class="radio">
+						<img src="../../img/wode/checked.png" class="ok"/>
+					</span>
+					
+				</p>
+				<p class="nan" data-sex="false">
+					<span class="xb_txt">女</span>
+					<span class="radio">
+						<img src="../../img/wode/checked.png" class="ok"/>
+					</span>
+					
+				</p>
+			</div>
+		</div>			
+		<script src="../../js/mui.min.js"></script>
+		<script src="../../js/jquery-1.7.2.js"></script>
+		<!--<script src="../../js/jquery.form.js"></script>-->
+		<script src="../../js/tianzhuan.js"></script>
+		<script src="../../js/common.js"></script>
+		<script src="../../js/wode/geRen_ziLiao.js"></script>
+		<script type="text/javascript">
+			mui.init();
+
+		</script>
+	</body>
+
+</html>

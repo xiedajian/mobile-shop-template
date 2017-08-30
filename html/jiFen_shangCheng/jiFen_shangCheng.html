@@ -31,7 +31,7 @@
 			   	</li>	-->		   	
 		   </ul>
 		</header>
-		<div class="mui-content" >	
+		<div class="mui-content" id="pullrefresh">	
 			<div class="mui-scroll">
 			<!--积分商城首页表头轮播广告  -->							
 	    	<div id="slider" class="mui-slider" >
@@ -134,7 +134,7 @@
 	    			<div style="clear: both;"></div>
 	    		</div>
 	    	</div>
-	    	<div class="main" >
+	    	<div class="main">
 	    		<div class="huodong_tit">
 	    			<p style="width:80px;">
 	    				<img src="../../img/jiFen_shangCheng/xihuan.png" alt="" style="width: 15px;height: 15px;"/>
@@ -144,16 +144,16 @@
 	    		
 	    			<!--商品-->
 	    		
-	    		 <ul class="cont" id="duihuan"  id="pullrefresh">
+	    		 <ul class="cont" id="duihuan" >
 	    			<script  id="duihuanTemplate" type="text/html">
 	    			{{each list value i}}
 	    	           <li ><p ><img src="{{value.Pictures}}" alt="" data-proId="{{value.ProductId}}" class="prodct"/></p>
 	    	           <p class="mui-ellipsis" >{{value.Name}}</p>
 	    	           <p>{{value.Price}}积分</p></li>
+	    	           <p style="clear: both;height: 0;"></p>			
 	    	           {{/each}}
 	    			</script>
-	    			<p style="clear: both;height: 0;"></p>			
-	    			</ul> 
+	    			</ul>    
 	    	</div>
 	    	</div>
 		</div>

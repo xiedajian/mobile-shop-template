@@ -1,4 +1,9 @@
 mui.init();
+//如果是App环境，隐藏页面的tab导航
+if(mui.os.plus) {
+	$('.nav-tab-isshow').css('display', 'none');
+	$('.mui-content').css('padding-bottom', '0');
+}
 
 var source2 = '';
 var pageNo = 1;

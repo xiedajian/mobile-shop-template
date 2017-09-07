@@ -7,44 +7,60 @@
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<link href="../../css/mui.min.css" rel="stylesheet" />
 		<link rel="stylesheet" href="../../css/shouye/lvYou.css" />
+		<style type="text/css">
+			#pullrefresh1 {
+				height: 600px;
+			}
+			
+			.cont {
+				 margin-top: 0; 
+			}
+			
+			.cont_right p:nth-child(1) span {
+				display: inline-block;
+				max-width: 88.79%;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+			}
+		</style>
 	</head>
 
 	<body>
 		<header class="mui-bar mui-bar-nav">
-		    <a class="mui-action-back back">
-		    	<img src="../../img/shouye/icon_back@2x.png" alt="" />
-		    </a>
-		    <div class="mui-title">
-		    	旅游
-		    </div>
-		    <a href="javascript:;" class="ss">
+			<a class="mui-action-back back">
+				<img src="../../img/shouye/icon_back@2x.png" alt="" />
+			</a>
+			<div class="mui-title">
+				旅游
+			</div>
+			<!--<a href="javascript:;" class="ss">
 		    	<img src="../../img/shouye/icon_sousuo@2x.png"/>
-		    </a>
+		    </a>-->
 		</header>
-		<div class="mui-content">		    	    
-	    	<div id="ly" class="ly" style="display: block;">	    		
-				<div class="dingwei">
+		<div class="mui-content">
+			<div id="ly" class="ly" style="display: block;">
+				<div class="dingwei" style="display: none;">
 					<a href="javascript:;">
 						<span>郑州</span>
-					    <img src="../../img/shouye/jiantou-hui.png"/>
-					</a>	    					
-				</div>	    					    			    				    				<div id="pullrefresh1">
-	    			<div class="mui-scroll">	
-				    	<div class="cont" id="contAll">
-			    			
-			    		</div>
-	    			</div>
-	    		</div>
-	    	</div>
+						<img src="../../img/shouye/jiantou-hui.png" />
+					</a>
+				</div>
+				<div id="pullrefresh1">
+					<div class="mui-scroll">
+						<div class="cont" id="contAll">
+
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
-		
+
 		<script src="../../js/mui.min.js"></script>
 		<script src="../../js/jquery-1.7.2.js"></script>
-		<script src="../../js/common.js"></script>
 		<script src="../../js/template-web.js"></script>
-		<script src="../../js/shouye/lvYou.js"></script>
-			mui.init()
-		</script>
+		<script src="../../js/common.js"></script>
+		<script src="../../js/shouye/quanbu.js"></script>
 	</body>
 
 </html>

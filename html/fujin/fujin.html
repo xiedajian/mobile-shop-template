@@ -43,9 +43,9 @@
 						<div class="mui-scroll">
 							<div class="main">
 								<script type="text/html" id="main_templete">
-									<div class="main_list2">
 
-										{{each list value i}}
+									{{each list value i}}
+									<div class="main_list2">
 										<div class="item" data-shopId="{{value.shopId}}">
 											<div class="list_left">
 												<img src="{{value.shopLogo}}" alt="" />
@@ -94,7 +94,7 @@
 					    							<img src="../../img/shouye/star@2x.png" alt="" />
 					    						</span> {{/if}}
 													<span>
-				    							{{value.shopGrade}}
+				    							
 				    						</span>
 													<span>
 				    							人均{{value.avgPrice}}元
@@ -102,14 +102,14 @@
 												</p>
 												<p>
 													<span>{{value.shopNotice}}</span>
-													<span>{{value.distance}}m</span>
+													<span>{{value.distance}}km</span>
 												</p>
 											</div>
 											<a href="javascript:;"></a>
 											<div style="clear: both;"></div>
 										</div>
-										{{/each}}
 									</div>
+									{{/each}}
 								</script>
 							</div>
 						</div>
@@ -139,7 +139,7 @@
 			</div>
 		</div>
 
-		<nav class="mui-bar mui-bar-tab">
+		<nav class="mui-bar mui-bar-tab nav-tab-isshow">
 			<a href="../shouye/index.html">
 				<img src="../../img/shouye/Home@2x (2).png" />
 				<span>首页</span>

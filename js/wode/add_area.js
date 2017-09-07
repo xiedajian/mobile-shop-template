@@ -1,3 +1,17 @@
+mui.init({
+	//返回上一页需要刷新上一页
+	beforeback: function() {
+		if(mui.os.plus) {
+			//获得父页面的webview
+			var list = plus.webview.currentWebview().opener();　
+			//触发父页面的自定义事件(refresh),从而进行刷新
+			mui.fire(list, 'refresh');
+			//返回true,继续页面关闭逻辑
+			return true;
+		}
+	}
+});
+
 var provinceId = '';
 var cityId = '';
 var areaId = '';
@@ -7,14 +21,14 @@ checkIsLogin();
 if(localStorage.getItem('userId') && localStorage.getItem('userId') != '') {
 	//获取用户信息
 	userId = localStorage.getItem('userId');
-} 
+}
 
 $.getJSON("../../region.json", function(data) {
 	UplinkData = data.districtList[0].districtList;
 	//        console.log(UplinkData);
 	var mobileSelect5 = new MobileSelect({
 		trigger: '#address',
-		title: '车型选择',
+		title: '选择',
 		wheels: [{
 			data: UplinkData
 		}],
@@ -67,10 +81,14 @@ function addArea() {
 		success: function(data) {
 			console.log(data);
 			if(data.result == 'success') {
-				//返回上一页并刷新上一页
-				history.go(-1);
-				location.reload();
-				// self.location=document.referrer;
+//				console.log('opener',window.parent);return;
+				mui.alert('修改成功', function() {
+					//返回上一页并刷新上一页
+//					window.parent.location.reload();
+						mui.back();
+					//history.go(-1);location.reload();
+					// self.location=document.referrer;
+				});
 			} else {
 				mui.alert(data.msg);
 			}

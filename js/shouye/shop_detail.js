@@ -1,5 +1,23 @@
-var shopId=getQueryString('shopId');
-var productId=getQueryString('productId');
+var shopId;
+if(getQueryString('shopId')){
+	console.log('通过url传值');
+	shopId=getQueryString('shopId');
+}else if(window.localStorage.getItem('shop_detail-shopId')){
+	console.log('通过storage传值');
+	shopId=window.localStorage.getItem('shop_detail-shopId');
+}
+console.log('接受参数-shopId:',shopId);
+
+var productId;
+if(getQueryString('productId')){
+	console.log('通过url传值');
+	productId=getQueryString('productId');
+}else if(window.localStorage.getItem('shop_detail-productId')){
+	console.log('通过storage传值');
+	productId=window.localStorage.getItem('shop_detail-productId');
+}
+console.log('接受参数-productId:',productId);
+
 var buy_car=new Map();
 var buy_car_product=new Map();
 $(function(){

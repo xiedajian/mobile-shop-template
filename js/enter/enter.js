@@ -4,7 +4,13 @@ mui.init({
 		if(mui.os.plus) {
 			//获得父页面的webview
 			var list = plus.webview.currentWebview().opener();　
-			//触发父页面的自定义事件(refresh),从而进行刷新
+			//触发个人中心页面的自定义事件(refresh),从而进行刷新
+			gerenPage = plus.webview.getWebviewById('html/wode/geRen_center.html'); 
+			if(gerenPage != null) {
+				//触发下一个页面的自定义事件
+				mui.fire(gerenPage, 'refresh');
+			}
+			//触发上个页面的自定义事件
 			mui.fire(list, 'refresh');
 			//返回true,继续页面关闭逻辑
 			return true;

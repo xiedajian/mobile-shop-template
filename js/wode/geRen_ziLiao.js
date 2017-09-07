@@ -32,7 +32,8 @@ function getUserInfo() {
                 var sexVal = (data.data.sex == 'true') ? "男" : "女";
                 console.log(sexVal);
                 $("#sexName").html(sexVal);
-                if (data.data.consignee.addressDetailedInfo && data.data.consignee.addressDetailedInfo != '') {
+                console.log(data.data.consignee);
+                if (data.data.consignee && data.data.consignee.addressDetailedInfo && data.data.consignee.addressDetailedInfo != '' && data.data.consignee.addressDetailedInfo!=undefined) {
                     $("#address").html(data.data.consignee.addressDetailedInfo);
                 }
 
@@ -199,5 +200,6 @@ function updateNickname() {
 }
 $('.select-address').on('tap',function(){
 //	alert('dizhihuanli');
-	window.location.href='./diZhi_huanLi.html';
+//	window.location.href='./diZhi_huanLi.html';
+	goToPage('./diZhi_huanLi.html');
 })

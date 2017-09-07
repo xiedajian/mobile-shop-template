@@ -167,6 +167,47 @@ function addPingLun() {
 
 }
 
+function getInfo(jieKouUrl) {
+	$.ajax({
+		type: "GET",
+		url: jieKouUrl,
+		async: true,
+		dataType: "json",
+		success: function(data) {
+			console.log('success')
+			console.info(data);
+			if(data.resultSuccess) {
+				$('.title').text(data.data.name);
+				$('.title').attr('proId', data.data.productId);
+				title = data.data.name;
+				$('.pro').text(data.data.labelnotice);
+				$('.price').text(data.data.price);
+				//			$('#product_img').text(data.data.price);
+				//                     	$('#product_intro').empty.appendChild(data.data.intro);
+				$('.proImgUrl').attr('src', data.data.pictures);
+				picSrc = data.data.pictures;
+				$('#product_intro').empty().append(data.data.intro);
+				$('#product_contentFlag').empty().append(data.data.content);
+
+				if($('.sp') && $('.price') && $('.sum')) {
+					count = parseInt($('.sp').text());
+					price = parseInt($('.price').text());
+					$('.sum').text(count * price)
+
+				}
+				return data;
+			}else{
+				mui.toast(data.resultDesc);
+			}
+
+		},
+
+		error: function() {
+			console.log('请求超时')
+		}
+	});
+}
+
 //=============================分割线===================================
 //=============================分割线===================================
 //=============================分割线===================================

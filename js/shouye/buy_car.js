@@ -43,8 +43,8 @@ $(document).on("tap",".ss",function(){
 	//当商品数量为零时把商品从 购物车移除
 	if(sub1<=0){
 		$(this).next().html(0);
-		$(this).parent().css('display','none');
-		$(this).parent().prev().css('display','block');
+//		$(this).parent().css('display','none');
+//		$(this).parent().prev().css('display','block');
 		if($(this).hasClass('sub1')){
 			$(this).parent().parent().remove();
 		}

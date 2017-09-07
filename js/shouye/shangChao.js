@@ -93,19 +93,21 @@ mui.init({
 		//优惠专区跳转页面
 		$(document).on('tap','#recommand a',function(){
 			var url=this.dataset.url;
-			window.location.href=url;
+//			window.location.href=url;
 		});
 		//品牌优选跳转页面
 		$(document).on('tap','#pinpaiyouxuan a',function(){
 			var url=this.dataset.url;
-			window.location.href=url;
+//			window.location.href=url;
 		});
 		
+		//才你喜欢  列表
 		$(document).on('tap','.main_list',function(){
 			var shopId=this.dataset.shopid;
 			console.log(shopId);
 			window.location.href='dianPu_detail.html?shopId='+shopId;
 		});
+		//子分类
 		$(document).on('tap','#shangcao li a',function(){
 			var categoryId=this.dataset.categoryid;
 			window.location.href='shangChao_2.html?categoryId='+categoryId;

@@ -94,7 +94,7 @@ $('.duihuan').on('tap', function() {
 				orderId = data.data;
 				$('.zhifu_pop').css('display', 'block');
 			} else {
-				mui.toast('下单失败');
+				mui.toast(data.msg);
 			}
 
 		}

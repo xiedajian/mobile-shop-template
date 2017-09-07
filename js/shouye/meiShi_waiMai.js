@@ -1,12 +1,12 @@
 var categoryId;
 if(getQueryString('categoryId')) {
 	console.log('通过url传值');
-	categoryId = getQueryString('productId');
+	categoryId = getQueryString('categoryId');
 } else if(window.localStorage.getItem('meiShi_waiMaiPage-categoryId')) {
 	console.log('通过storage传值');
 	categoryId = window.localStorage.getItem('meiShi_waiMaiPage-categoryId');
 	//避免污染，记得销毁
-	window.localStorage.removeItem('meiShi_waiMaiPage-categoryId');
+//	window.localStorage.removeItem('meiShi_waiMaiPage-categoryId');
 }
 console.log('接受参数-categoryId:', categoryId);
 if(!categoryId || categoryId=='' || categoryId==undefined){

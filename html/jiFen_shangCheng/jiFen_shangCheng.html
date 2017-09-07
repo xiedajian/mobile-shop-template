@@ -1,5 +1,6 @@
 <!doctype html>
 <html>
+
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
@@ -7,122 +8,124 @@
 		<link href="../../css/mui.min.css" rel="stylesheet" />
 		<link rel="stylesheet" href="../../css/jiFen_shangCheng/jiFen_shangCheng.css" />
 		<script src="../../js/jquery-1.7.2.js"></script>
-		<script src="../../js/common.js"></script>	
 	</head>
+
 	<body>
 		<header class="mui-bar mui-bar-nav">
-		   <ul class="head">
-			   	<li class="">
-			   		<!--导航栏不需要加返回箭头-->
-			   		<!--<a>			  
+			<ul class="head">
+				<li class="">
+					<!--导航栏不需要加返回箭头-->
+					<!--<a>			  
 			   		    <img src="../../img/shouye/icon_back@2x.png" alt="" />
 			   		</a>			   		-->
-			   	</li>		   
-			   	<li>
-			   		<a href="javascript:;">
-				   		<img src="../../img/shouye/icon_sousuo_hui@2x.png" alt="" />
-				   		<input type="text" placeholder="输入商品名称" id="searchBox"/>
-			   		</a>
-			   	</li>
-<!--			   	<li class="sys" id="erweima">
+				</li>
+				<li>
+					<a href="javascript:;">
+						<img src="../../img/shouye/icon_sousuo_hui@2x.png" alt="" />
+						<input type="text" placeholder="输入商品名称" id="searchBox" />
+					</a>
+				</li>
+				<!--			   	<li class="sys" id="erweima">
 			   		<a href="javascript:;">
 			   		    <p><img src="../../img/jiFen_shangCheng/fenlei.png" alt="" /></p>
 			   		</a>
-			   	</li>	-->		   	
-		   </ul>
+			   	</li>	-->
+			</ul>
 		</header>
-		<div class="mui-content" id="pullrefresh">	
+		<div class="mui-content">
 			<div class="mui-scroll">
-			<!--积分商城首页表头轮播广告  -->							
-	    	<div id="slider" class="mui-slider" >
-	    		
-	    	</div>
-	    	<!--九宫格-->
-	    	 <div class="nav" id="brand"> 
-	    	 <!-- onclick="alert(1);selectBylei('{{value.categoryid}}');"-->	    		
-	    		<script id="brandTemplate" type="text/html">
-                    <ul>
-                    {{each list value i}}
-                     <li data-cid="{{value.categoryid}}"><a href="javascript:void(0);"  >
-                     <img src="{{value.picture}}"/>
-                     <span>{{value.name }}</span>
-                      </a>
-                     {{/each}}
-                      <li><a href="javascript:void(0);" onclick="selectBylei('0')"><img src="../../img/jiFen_shangCheng/btn_10.png" alt="" /><span>更多</span></a>
-                     </ul>
-                    </script>          
-	    		<p style="clear: both;height: 0;"></p>  
-	    	</div>	    	
-	    	<div class="shangpin">
-	    		<div class="huodong_tit">
-	    		    <p>
-	    				<img src="../../img/jiFen_shangCheng/beizi.png" alt="" style="width: 13px;"/>
-	    				<span>爱生活</span>
-	    			</p>	    			
-	       </div>	
-	      	 	<!--23/2-->
-	    	<div class="shangpin_top" id="aishenghuo">
-	    		<script id="aishenghuoTemplate" type="text/html">
-                    {{each list value i}}
-                    <a href="javascript:void(0);" data-adverttype="{{value.adverttype}}" data-shoporproductid="{{value.shoporproductid}}" data-adverturl="{{value.adverturl}}">
-                    <img src="{{value.advertpic}}" alt="" flag="{{value.adverturl}}" />
-                    </a>{{/each}}
-                </script> 
-                <p style="clear: both;height: 0;"></p>      			
-	    			
-	    	</div>
-	    	<div style="clear: both;"></div>
-	    	
-	    		<!--xiaozi 231/1-->
-	    		
-	    		<div class="shangpin_bot" id="xiaozi">
-	    		<script id="xiaoziTemplate" type="text/html">
-                   {{each list value i}}
-                    <a href="javascript:void(0);" data-adverttype="{{value.adverttype}}" data-shoporproductid="{{value.shoporproductid}}" data-adverturl="{{value.adverturl}}">
-                    <img src="{{value.advertpic}}" alt="" flag="{{value.adverturl}}" />
-                    <span>{{value.advertname}}</span>
-                    </a>{{/each}}
-                    
-                </script> 			
-                	    			
-	    		</div>
-	    		<div style="clear: both;"></div>
-	    	</div>
-	    	<div class="ban" id="hengda">	
-	    	<script id="hengdaTemplate" type="text/html">
-                    {{each list value i}}
-                    <a href="javascript:void(0);" data-adverttype="{{value.adverttype}}" data-shoporproductid="{{value.shoporproductid}}" data-adverturl="{{value.adverturl}}">
-                        <img src="{{value.advertpic}}" alt="" flag="{{value.adverturl}}" />                                       
-                    </a>
-                    {{/each}}
-                </script> 
-	    	</div>
-	    	<div class="shangpin">
-	    		<div class="huodong_tit">
-	    			<p>
-	    				<img src="../../img/jiFen_shangCheng/zhuanshi.png" alt="" style="width: 13px;"/>
-	    				<span>品质时尚</span>
-	    			</p>
-	    		</div>	
-	    		<div class="fenlei_txt" id="pingzhi">
-	    		<script id="pingzhiTemplate" type="text/html">
-                    {{each list value i}}                       
-                       <a href="javascript:void(0);" data-adverttype="{{value.adverttype}}" data-shoporproductid="{{value.shoporproductid}}" data-adverturl="{{value.adverturl}}">
-                        <img src="{{value.advertpic}}" alt="" flag="{{value.adverturl}}"/>                    
-                       </a>                                     
-                    {{/each}}
-                </script> 	    				    			
-	    			<div style="clear: both;"></div>
-	    		</div>
-	    		<div class="shangpin_bot1" id="pingzhida">
-	    		<script id="pingzhidaTemplate" type="text/html">
-                    {{each list value i}}                       
-                       <a href="javascript:void(0);" data-adverttype="{{value.adverttype}}" data-shoporproductid="{{value.shoporproductid}}" data-adverturl="{{value.adverturl}}">
-                        <img src="{{value.advertpic}}" alt="" flag="{{value.adverturl}}"/>                    
-                       </a>                                     
-                    {{/each}}
-                </script>   
-	    			<!-- <a href="javascript:;">
+				<!--积分商城首页表头轮播广告  -->
+				<div id="slider" class="mui-slider">
+
+				</div>
+				<!--九宫格-->
+				<div class="nav" id="brand">
+					<!-- onclick="alert(1);selectBylei('{{value.categoryid}}');"-->
+					<script id="brandTemplate" type="text/html">
+						<ul>
+							{{each list value i}}
+							<li data-cid="{{value.categoryid}}">
+								<a href="javascript:void(0);">
+									<img src="{{value.picture}}" />
+									<span>{{value.name }}</span>
+								</a>
+								{{/each}}
+								<li>
+									<a href="javascript:void(0);" onclick="selectBylei('0')"><img src="../../img/jiFen_shangCheng/btn_10.png" alt="" /><span>更多</span></a>
+						</ul>
+					</script>
+					<p style="clear: both;height: 0;"></p>
+				</div>
+				<div class="shangpin">
+					<div class="huodong_tit">
+						<p>
+							<img src="../../img/jiFen_shangCheng/beizi.png" alt="" style="width: 13px;" />
+							<span>爱生活</span>
+						</p>
+					</div>
+					<!--23/2-->
+					<div class="shangpin_top" id="aishenghuo">
+						<script id="aishenghuoTemplate" type="text/html">
+							{{each list value i}}
+							<a href="javascript:void(0);" data-adverttype="{{value.adverttype}}" data-shoporproductid="{{value.shoporproductid}}" data-adverturl="{{value.adverturl}}">
+								<img src="{{value.advertpic}}" alt="" flag="{{value.adverturl}}" />
+							</a>{{/each}}
+						</script>
+						<p style="clear: both;height: 0;"></p>
+
+					</div>
+					<div style="clear: both;"></div>
+
+					<!--xiaozi 231/1-->
+
+					<div class="shangpin_bot" id="xiaozi">
+						<script id="xiaoziTemplate" type="text/html">
+							{{each list value i}}
+							<a href="javascript:void(0);" data-adverttype="{{value.adverttype}}" data-shoporproductid="{{value.shoporproductid}}" data-adverturl="{{value.adverturl}}">
+								<img src="{{value.advertpic}}" alt="" flag="{{value.adverturl}}" />
+								<span>{{value.advertname}}</span>
+							</a>{{/each}}
+
+						</script>
+
+					</div>
+					<div style="clear: both;"></div>
+				</div>
+				<div class="ban" id="hengda">
+					<script id="hengdaTemplate" type="text/html">
+						{{each list value i}}
+						<a href="javascript:void(0);" data-adverttype="{{value.adverttype}}" data-shoporproductid="{{value.shoporproductid}}" data-adverturl="{{value.adverturl}}">
+							<img src="{{value.advertpic}}" alt="" flag="{{value.adverturl}}" />
+						</a>
+						{{/each}}
+					</script>
+				</div>
+				<div class="shangpin">
+					<div class="huodong_tit">
+						<p>
+							<img src="../../img/jiFen_shangCheng/zhuanshi.png" alt="" style="width: 13px;" />
+							<span>品质时尚</span>
+						</p>
+					</div>
+					<div class="fenlei_txt" id="pingzhi">
+						<script id="pingzhiTemplate" type="text/html">
+							{{each list value i}}
+							<a href="javascript:void(0);" data-adverttype="{{value.adverttype}}" data-shoporproductid="{{value.shoporproductid}}" data-adverturl="{{value.adverturl}}">
+								<img src="{{value.advertpic}}" alt="" flag="{{value.adverturl}}" />
+							</a>
+							{{/each}}
+						</script>
+						<div style="clear: both;"></div>
+					</div>
+					<div class="shangpin_bot1" id="pingzhida">
+						<script id="pingzhidaTemplate" type="text/html">
+							{{each list value i}}
+							<a href="javascript:void(0);" data-adverttype="{{value.adverttype}}" data-shoporproductid="{{value.shoporproductid}}" data-adverturl="{{value.adverturl}}">
+								<img src="{{value.advertpic}}" alt="" flag="{{value.adverturl}}" />
+							</a>
+							{{/each}}
+						</script>
+						<!-- <a href="javascript:;">
 	    				<img src="../../img/jiFen_shangCheng/images_11.png"/>	    				
 	    			</a>
 	    			<a href="javascript:;">
@@ -130,55 +133,58 @@
 	    			</a></p>
 	    			<a href="javascript:;">
 	    				<img src="../../img/jiFen_shangCheng/images_13.png"/>	    				
-	    			</a> -->	    			
-	    			<div style="clear: both;"></div>
-	    		</div>
-	    	</div>
-	    	<div class="main">
-	    		<div class="huodong_tit">
-	    			<p style="width:80px;">
-	    				<img src="../../img/jiFen_shangCheng/xihuan.png" alt="" style="width: 15px;height: 15px;"/>
-	    				<span>大家都在兑</span>
-	    			</p>
-	    		</div>
-	    		
-	    			<!--商品-->
-	    		
-	    		 <ul class="cont" id="duihuan" >
-	    			<script  id="duihuanTemplate" type="text/html">
-	    			{{each list value i}}
-	    	           <li ><p ><img src="{{value.Pictures}}" alt="" data-proId="{{value.ProductId}}" class="prodct"/></p>
-	    	           <p class="mui-ellipsis" >{{value.Name}}</p>
-	    	           <p>{{value.Price}}积分</p></li>
-	    	           <p style="clear: both;height: 0;"></p>			
-	    	           {{/each}}
-	    			</script>
-	    			</ul>    
-	    	</div>
-	    	</div>
+	    			</a> -->
+						<div style="clear: both;"></div>
+					</div>
+				</div>
+				<div class="main" style="display: none;">
+					<div class="huodong_tit">
+						<p style="width:80px;">
+							<img src="../../img/jiFen_shangCheng/xihuan.png" alt="" style="width: 15px;height: 15px;" />
+							<span>大家都在兑</span>
+						</p>
+					</div>
+
+					<!--商品-->
+
+					<ul class="cont" id="duihuan">
+						<script id="duihuanTemplate" type="text/html">
+							{{each list value i}}
+							<li>
+								<p><img src="{{value.Pictures}}" alt="" data-proId="{{value.ProductId}}" class="prodct" /></p>
+								<p class="mui-ellipsis">{{value.Name}}</p>
+								<p>{{value.Price}}积分</p>
+							</li>
+							<p style="clear: both;height: 0;"></p>
+							{{/each}}
+						</script>
+					</ul>
+				</div>
+			</div>
 		</div>
-		<nav class="mui-bar mui-bar-tab">
+		<nav class="mui-bar mui-bar-tab nav-tab-isshow">
 			<a href="../shouye/index.html">
-				<img src="../../img/shouye/Home@2x (2).png"/>
+				<img src="../../img/shouye/Home@2x (2).png" />
 				<span>首页</span>
 			</a>
 			<a href="../fujin/fujin.html">
-				<img src="../../img/shouye/fujin@2x.png"/>
+				<img src="../../img/shouye/fujin@2x.png" />
 				<span>附近</span>
 			</a>
 			<a href="javascript:;">
-				<img src="../../img/shouye/Wallet@2x.png"/>
+				<img src="../../img/shouye/Wallet@2x.png" />
 				<span>积分商城</span>
 			</a>
 			<a href="../wode/geRen_center.html">
-				<img src="../../img/shouye/wode@2x.png"/>
+				<img src="../../img/shouye/wode@2x.png" />
 				<span>我的</span>
 			</a>
 		</nav>
 		<script src="../../js/mui.min.js"></script>
-		<script src="../../js/jiFen_shangCheng/jiFen_shangCheng.js"></script>
 		<script src="../../js/template-web.js"></script>
 		<script src="../../js/tianzhuan.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/common.js"></script>
+		<script src="../../js/jiFen_shangCheng/jiFen_shangCheng.js"></script>
 	</body>
 
 </html>

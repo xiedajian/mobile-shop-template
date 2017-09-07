@@ -4,6 +4,8 @@ var miao=$('.miao').html();
 var active = 0;
 var orderId=getQueryString('orderId');
 var userId='';
+//初始化仿支付密码键盘
+PwdBox.init('', 'img/pwd_keyboard.png', '请输入支付密码', '安全支付环境，请放心使用！');
 
 if(localStorage.getItem('userId') && localStorage.getItem('userId') != '') {
 	//获取用户信息
@@ -26,7 +28,7 @@ $(function(){
 	dataType:'JSON',
 	success:function(data){
 		console.log(data);
-		data.data.rootPath=imgRootPath;
+//		data.data.rootPath=imgRootPath;
 		console.log(data.data);
 		document.getElementById('pay_money').innerHTML='￥'+data.data.actualPayment;
 		addHtmlForTemplte(data.data,'shop_info','shop_info_templete');
@@ -71,22 +73,55 @@ var timer=setInterval(function(){
 $('.quxiao').on('tap',function(){
 	$('.pop').css('display','none')
 })
+
+//确认支付按钮点击事件
 $('.btn').on('tap',function(){
-	$('.pop').css('display','block')
-    inputBtn = document.querySelectorAll('input');
-    for (var i = 0; i < inputBtn.length; i++) {
-        /*inputBtn[i].addEventListener('tap', function () {
-            inputBtn[active].focus();
-        }, false);*/
-        inputBtn[i].addEventListener('focus', function () {
-            this.addEventListener('keyup', listenKeyUp, false);
-        }, false);
-        inputBtn[i].addEventListener('blur', function () {
-            this.removeEventListener('keyup', listenKeyUp, false);
-        }, false);
-        inputBtn[active].focus();
-    }
-    
+	
+//	$('.pop').css('display','block')
+//  inputBtn = document.querySelectorAll('input');
+//  for (var i = 0; i < inputBtn.length; i++) {
+//      /*inputBtn[i].addEventListener('tap', function () {
+//          inputBtn[active].focus();
+//      }, false);*/
+//      inputBtn[i].addEventListener('focus', function () {
+//          this.addEventListener('keyup', listenKeyUp, false);
+//      }, false);
+//      inputBtn[i].addEventListener('blur', function () {
+//          this.removeEventListener('keyup', listenKeyUp, false);
+//      }, false);
+//      inputBtn[active].focus();
+//  }
+	document.querySelector('.password-box .inner-box').style.background = "url(../../img/pwd_keyboard.png) center bottom / 100% 100%";
+    	PwdBox.show(function(res) {
+		console.log(res);
+		PwdBox.reset();
+//		var data = {
+//			orderId: orderId,
+//			userId: userId,
+//			password: res.password
+//		}
+		//支付
+        $.ajax({
+        	type:'post',
+        	url:rootPath+'/orderControllerapi/payOrder',
+        	data:{'userId':userId,'password':res.password,'orderId':orderId},
+        	dataType:'JSON',
+        	success:function(data){
+        		console.log(data);
+        		if(data.result=='success'){
+        			document.getElementById('pay_info').innerHTML='支付成功';
+        			mui.alert('支付成功',function(){
+        				window.location.href='order_detail_3.html?type=1&orderId='+orderId;
+        			});
+
+        		}else {
+					mui.toast(data.msg);
+				}
+
+        	}
+        })
+
+	});
 })
 /**
  * 监听键盘的敲击事件

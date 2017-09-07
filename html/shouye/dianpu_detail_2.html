@@ -19,13 +19,13 @@
 			<div class="mui-title">
 				店铺详情
 			</div>
-			<a href="javascript:;" class="ss">
+			<!--<a href="javascript:;" class="ss">
 				<img src="../../img/wode/fenxiang.png" alt="" />
-			</a>
+			</a>-->
 		</header>
 		<div class="mui-content">
 		<input type="hidden" id="product_templete" value="1"/>
-		<div id="pullrefresh">
+		<div  id="pullrefresh">
 		<div class="mui-scroll">
 			<div class="main">
     			<div class="main_list" id="main_list">
@@ -83,7 +83,7 @@
 								<img src="../../img/shouye/star@2x.png" alt="" />
 							</p>
 							{{/if}}
-    					<p>
+    					<p style="display: none;">
     						<img src="../../img/shouye/hui.png"/>
     						<span>3种优惠券可选</span>
     					</p>
@@ -134,15 +134,15 @@
 										     {{value.name}}
 										</p>										
 										<p>
-											月售:<span>186</span>           
+											月售:<span>{{value.maxOrderCount || 0}}</span>           
 										</p>
 										<p>
 											<span>¥{{value.price}}</span>											
 										</p>
-										<p class="mai">
+										<p class="mai" style="display: none;">
 										
 										</p>
-										<p class="choose">
+										<p class="choose" style="display: block;">
 											<input type="button" class="sub ss"/>
 											<span class="fenshu1" id="jfscproductkey{{value.productId}}">0</span>
 											<input type="button" class="add aa"/>
@@ -160,7 +160,7 @@
 					<script id="item2mobile_templete1" type="text/html">
 						<p class="item2_tit">
 							<span>商家服务</span>
-							<span>{{shopGrade}}</span>
+							<span></span>
 							{{if shopGrade==1}}
 							<span>
 								<img src="../../img/shouye/star@2x.png" alt="" />
@@ -274,25 +274,27 @@
 						<div class="item3_txt" id="item3_txt">
 							<script id="item3_txt_templete" type="text/html">
 							<p class="item3_list">
+								<a href="tel:{{shopPhone}}">
 								<span>电话：</span>
 								<span class="mui-ellipsis">{{shopPhone}}</span>
 								<span><img src="../../img/shouye/phone.png" style="width: 11px;"/></span>
+								</a>
 							</p>
 							<p class="item3_list">
 								<span>地址：</span>
 								<span class="mui-ellipsis">{{shopAddress}}</span>							
 							</p>
-							<p class="item3_list">
-								<span>营业时间：</span>
+							<p class="item3_list" style="display: none;">
+								<span>营业时间</span>
 								<span class="mui-ellipsis">{{businesstime}}</span>
 								
 							</p>
 							<p id="business_license" class="item3_list" data-business-license="{{businessLicense}}">
-								<span>营业执照：</span>
+								<span>营业执照</span>
 								<span class="mui-ellipsis"></span>
 								<span><img src="../../img/wode/right.png" class="right"/></span>
 							</p>
-							<div class="huanjing">
+							<div class="huanjing" style="display: none;">
 								<p>商家环境照片</p>
 								<ul>
 									<li>
@@ -394,7 +396,7 @@
 			   		<!--<b class="mui-ellipsis">另需配送费￥3.00，餐盒费￥2.00</b>-->
 			   	</span>
 			</p>
-			<p class="submit_order">
+			<p class="submit_order" id="submit">
 				去结算
 			</p>
 			<div></div>
@@ -404,10 +406,10 @@
     <script src="../../js/jquery-1.7.2.js"></script>
 	<script src="../../js/mui.picker.min.js"></script>
 	<script type="text/javascript" src="../../js/map.js" ></script>
-	<script type="text/javascript" src="../../js/common.js" ></script>
+	<script src="../../js/template-web.js"></script>
+	<script src="../../js/common.js" ></script>
     <script src="../../js/shouye/dianPu_detail_2.js"></script>
     <script type="text/javascript" src="../../js/shouye/buy_car.js" ></script>
-    <script src="../../js/template-web.js"></script>
 	<script type="text/javascript">
 		mui.init({
 			swipeBack: false

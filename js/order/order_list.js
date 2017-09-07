@@ -69,7 +69,7 @@ function getOrderList(data, callback) {
 		url: rootPath + '/orderControllerapi/selectAllOrderByOrderType',
 		data: {
 			'userId': data.userId,
-			'status': data.status,
+			'statusId': data.statusId,
 			'pageNo': data.pageNo,
 			'pageSize': data.pageSize,
 		},
@@ -119,7 +119,7 @@ mui.init();
 						var self = this;
 						var _postData = {
 							'userId': userId,
-							'status': postData[index].statusId,
+							'statusId': postData[index].statusId,
 							'pageNo': postData[index].pageNo,
 							'pageSize': postData[index].pageSize,
 						}

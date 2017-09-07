@@ -196,7 +196,8 @@ img{padding:0; border:0;margin:0;display:block;}
 .nav_txt{
 	display: none;
 	width: 100%;
-	background: rgba(0,0,0,0.5);
+	/*background: rgba(0,0,0,0.5);*/
+	background: #f5f5f5;
     position:fixed;
     top:44px;
     left: 0;   
@@ -407,7 +408,7 @@ img{padding:0; border:0;margin:0;display:block;}
 .huodong_txt a{
 	display: inline-block;
 	float: left;
-	width:49.335%;
+	width: 33.33%;
 }
 .huodong_txt a img,.fenlei_txt a img{
 	width: 100%;

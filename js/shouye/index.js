@@ -66,8 +66,8 @@ function picTapCallback(el) {
 		window.localStorage.setItem('ad-page-url', adverturl);
 		goToPage('AD-detail.html', 'shouye/AD-detail.html');
 	} else if(adverttype == '2') {
-		window.localStorage.setItem('shangPin_detail-productId', shoporproductid);
-		goToPage('../jiFen_shangCheng/shangPin_detail.html', 'jiFen_shangCheng/shangPin_detail.html');
+		window.localStorage.setItem('shop_detail-productId', shoporproductid);
+		goToPage('shop_detail_cate.html', 'shouye/shop_detail_cate.html');
 	} else if(adverttype == '1') {
 		window.localStorage.setItem('dianPu_detail-shopId', shoporproductid);
 		goToPage('dianPu_detail.html', 'shoye/dianPu_detail.html');
@@ -93,7 +93,7 @@ function getShopsByCategory(categoryId) {
 		window.localStorage.setItem('meiShi_waiMaiPage-categoryId', categoryId);
 		goToPage('meiShi_waiMai.html', 'shouye/meiShi_waiMai.html');
 	} else {
-		window.localStorage.setItem('movice_listPage-categoryId', categoryId);
+		window.localStorage.setItem('meiShi_waiMaiPage-categoryId', categoryId);
 		goToPage('movice_list.html', 'shouye/movice_list.html');
 	}
 }

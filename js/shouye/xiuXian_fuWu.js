@@ -38,7 +38,8 @@ var source='{{each list value i}}'
 	  +'<div class="main_list" data-shopid="{{value.shopId}}">'
 	  +'<div class="list_left"><img src="{{value.shopLogo}}" alt="" /></div>'
 	  +'<div class="list_right">'
-	  +'<p><span class="mui-ellipsis"><a href="javascript:void(0);">{{value.shopName}}</a><a href="javascript:void(0);">({{value.shopNotice}})</a></span></p>'
+//	  +'<p><span class="mui-ellipsis"><a href="javascript:void(0);">{{value.shopName}}</a><a href="javascript:void(0);">({{value.shopNotice}})</a></span></p>'
+	  +'<p><span class="mui-ellipsis"><a href="javascript:void(0);">{{value.shopName}}</a><a href="javascript:void(0);"></a></span></p>'
 	  +'<p>'
 	  
 	  +'{{if (value.shopGrade==1)}}<span><img src="../../img/shouye/star@2x.png" alt="" />'
@@ -86,7 +87,7 @@ $(function(){
 		+	 '<span>{{value.name}}</span>'
 		+    '</a></li>' 
 		+    '{{/each}}'
-		+	 '<li><a href="quanBu.html"><img src="../../img/shouye/nav8.png"/><span>全部</span></a></li>';
+		+	 '<li><a href="javascript:void(0);" data-categoryid="3"><img src="../../img/shouye/nav8.png"/><span>全部</span></a></li>';
 	var queryTerm=new QueryTerm();
 	queryTerm.typeid=categoryId;
 	addDataToBox(queryTerm,source,'xiuxianfuwu',rootPath+'/api/shop/selectBymovebrand',2);
@@ -195,7 +196,8 @@ function selectPageInfo(multiDownFlag){
 
 $(document).on('tap','#renqi_txt a',function(){
 	var url=this.dataset.url;
-	window.location.href=url;
+	console.log(url);
+//	window.location.href=url;
 });
 
 $(document).on('tap','.main_list',function(){
@@ -210,8 +212,7 @@ $(document).on('tap','.main_list',function(){
 });
 $(document).on('tap','#xiuxianfuwu li a',function(){
 	var categoryId=this.dataset.categoryid;	
-	
-	
-	window.location.href='meiShi_waiMai.html?categoryId='+categoryId;
+	console.log(categoryId);
+	goToPage('movice_list.html?categoryId='+categoryId);
 });
 //

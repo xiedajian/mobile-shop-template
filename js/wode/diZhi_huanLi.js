@@ -9,8 +9,9 @@ if(localStorage.getItem('userId') && localStorage.getItem('userId') != '') {
 }
 
 function getUserAddress() {
+	var ran=Math.random();
 	$.ajax({
-		url: rootPath + "/UserConsigneeApi/appConsignee?userId=" + userId,
+		url: rootPath + "/UserConsigneeApi/appConsignee?userId=" + userId+"&ran="+ran,
 		dataType: 'json',
 		// async:false,
 		success: function(data) {
@@ -75,7 +76,8 @@ function selectOrderAddress(consigneeId) {
 	console.log(consigneeId);
 	if(orderId && orderId != null && orderId != '' && orderId != undefined) {
 		window.localStorage.setItem('address' + orderId, consigneeId);
-		window.history.go(-1);
+//		window.history.go(-1);
+		mui.back();
 	}
 }
 
@@ -149,3 +151,9 @@ function updateDefaultAdressStyle() {
 	$('.moren img').attr('src', '../../img/wode/check (2).png');
 	$('.moren[data-defaultStatus=true] img').attr('src', '../../img/wode/checked (2).png');
 }
+
+//返回上一页刷新上一页案例
+//在父页面中添加事件监听
+window.addEventListener('refresh', function(e) { //执行刷新
+	location.reload();
+});

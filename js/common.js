@@ -1,7 +1,8 @@
-var rootPath = 'http://192.168.3.172:80/jfsc';
+//var rootPath = 'http://122.114.181.158:8080/jfsc';
+//var imgRootPath = 'http://122.114.181.158:8080';
 
-var rootPath1 = 'http://192.168.3.172:80/jfsc';
-var imgRootPath = 'http://192.168.3.172:80';
+var rootPath = 'http://192.168.3.172/jfsc';
+var imgRootPath = 'http://192.168.3.172';
 var PRODUCTKEY = 'jfscproductkey';
 var SHOPKEY = 'jfscshopkey';
 
@@ -237,7 +238,7 @@ function sendSmsCode(mobile, successCallback, failCallback) {
 		async: false,
 		success: function(data) {
 			console.log(data);
-
+			alert(data.code);
 			if(data.result == "success") {
 				if(successCallback && typeof successCallback === "function") {
 					successCallback();
@@ -313,42 +314,6 @@ function getImg(jieKouUrl) {
 			$('.img2').attr('src', data.data[1].img1);
 			$('.img3').attr('src', data.data[2].img1);
 
-			return data;
-
-		},
-
-		error: function() {
-			console.log('请求超时')
-		}
-	});
-}
-
-function getInfo(jieKouUrl) {
-	$.ajax({
-		type: "GET",
-		url: jieKouUrl,
-		async: true,
-		dataType: "json",
-		success: function(data) {
-			console.log('success')
-			console.info(data);
-			$('.title').text(data.data.name);
-			$('.title').attr('proId', data.data.productId);
-			title = data.data.name;
-			$('.pro').text(data.data.labelnotice);
-			$('.price').text(data.data.price);
-			//                     	$('#product_intro').empty.appendChild(data.data.intro);
-			$('.proImgUrl').attr('src', data.data.pictures);
-			picSrc = data.data.pictures;
-			$('#product_intro').empty().append(data.data.intro);
-			$('#product_contentFlag').empty().append(data.data.content);
-
-			if($('.sp') && $('.price') && $('.sum')) {
-				count = parseInt($('.sp').text());
-				price = parseInt($('.price').text());
-				$('.sum').text(count * price)
-
-			}
 			return data;
 
 		},
@@ -456,7 +421,7 @@ function goToPage(pageHref, id) {
 	});
 }
 
-//检查是否需要登录
+//检查是否需要登录,在APP环境下会监听页面返回上一页刷新页面事件
 function checkIsLogin() {
 	if(localStorage.getItem('userId') && localStorage.getItem('userId') != '') {
 
@@ -474,4 +439,10 @@ function checkIsLogin() {
 			}
 		}, 'div');
 	}
+}
+
+//如果是App环境，隐藏页面的tab导航
+if(mui.os.plus) {
+	$('.nav-tab-isshow').css('display', 'none');
+	$('.mui-content').css('padding-bottom', '0');
 }

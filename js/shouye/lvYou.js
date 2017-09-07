@@ -7,7 +7,7 @@ $(function(){
 	$('.mui-title').html(categoryName);
 });
 
-
+mui.init();
 mui('#ly #pullrefresh1').pullRefresh({
 	container: '#pullrefresh1',		
 	up: {

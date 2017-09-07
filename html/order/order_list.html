@@ -84,11 +84,15 @@
 			{{each list value i}}
 			<div class="main_list2">
 				<div class="list_left">
-					<img src="{{value.pLogo}}" alt="" />
+					{{if value.shopId==0}}
+					<img src="{{value.pLogo}}" alt="" /> {{/if}} {{if value.shopId!=0}}
+					<img src="{{value.sLogo}}" alt="" /> {{/if}}
 				</div>
 				<div class="list_right">
 					<p>
-						<span class="mui-ellipsis">上海迪士尼乐园</span>
+						{{if value.shopId==0}}
+						<span class="mui-ellipsis">{{value.productName}}</span> {{/if}} {{if value.shopId!=0}}
+						<span class="mui-ellipsis">{{value.shopName}}</span> {{/if}}
 						<span>{{value.status}}</span>
 					</p>
 					<p>
@@ -134,9 +138,9 @@
 					<p class="link zhuangTai" data-link="../../html/order/faBiao_pingJia.html?orderId={{value.order_id}}">去评价</p>
 					{{/if}} {{if value.order_status==5}}
 					<p class="link zhuangTai" data-link="../../html/order/order_detail_3.html?orderId={{value.order_id}}">订单详情</a>
-					{{/if}} {{if value.order_status==6}}
-					<p class="link zhuangTai" data-link="../../html/order/tuiKuan_detail.html?orderId={{value.order_id}}">退款信息</p>
-					{{/if}}
+						{{/if}} {{if value.order_status==6}}
+						<p class="link zhuangTai" data-link="../../html/order/tuiKuan_detail.html?orderId={{value.order_id}}">退款信息</p>
+						{{/if}}
 				</div>
 
 				<div style="clear: both;"></div>
@@ -146,11 +150,11 @@
 
 		<script src="../../js/mui.min.js"></script>
 		<script src="../../js/jquery-1.7.2.js"></script>
-		<script src="../../js/common.js"></script>
 		<script src="../../js/mui.pullToRefresh.js"></script>
 		<script src="../../js/mui.pullToRefresh.material.js"></script>
 		<script src="../../js/template-web.js"></script>
 		<script src="../../js/tianzhuan.js"></script>
+		<script src="../../js/common.js"></script>
 		<script src="../../js/order/order_list.js"></script>
 	</body>
 

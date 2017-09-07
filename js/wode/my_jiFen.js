@@ -9,6 +9,9 @@ if(localStorage.getItem('userId') && localStorage.getItem('userId') != '') {
 	userId = localStorage.getItem('userId');
 }
 
+
+getJifenSum();
+
 mui.init({
 	//上拉加载
 	pullRefresh: {
@@ -26,7 +29,6 @@ mui.init({
 				_that = this;
 				getUserJifenList(function(returnData) {
 					if(returnData.result == "success") {
-						$("#jifenNum").html(returnData.data.totalRecord);
 						totalPage = returnData.data.totalPage;
 						addEleToList(returnData.data.listRoute);
 						if(pageNo >= totalPage) {
@@ -44,6 +46,22 @@ mui.init({
 		}
 	}
 });
+
+//获取用户积分
+function getJifenSum() {
+	$.ajax({
+		url: rootPath + "/userLoginRegisterjfsc/selecIntegralApi?userId=" + userId,
+		dataType: 'json',
+		async: false,
+		success: function(data) {
+			console.log(data.sum);
+			$("#jifenNum").html(data.sum);
+		},
+		error: function(err) {
+			console.log(err);
+		}
+	});
+}
 
 function getUserJifenList(callback) {
 	$.ajax({
@@ -96,3 +114,4 @@ function getLocalTime(nS) {
 function getLocalTime2(nS) {
 	return new Date(parseInt(nS) * 1000).toLocaleString().replace(/:\d{1,2}$/, ' ');
 }
+

@@ -173,6 +173,12 @@ function selectPageInfo(multiDownFlag) {
 	}
 }*/
 
+//如果是App环境，隐藏页面的tab导航
+if(mui.os.plus) {
+	$('.nav-tab-isshow').css('display', 'none');
+	$('.mui-content').css('padding-bottom', '0');
+}
+
 $('.main').on('tap', '.item', function() {
 	var shopId = $(this).attr('data-shopId');
 	//	window.location.href = '../shouye/dianPu_detail.html?shopId=' + shopId;
@@ -228,7 +234,7 @@ var postData = [
 		pageNo: 1,
 		pageSize: 10,
 		totalPage: 10,
-		categoryId: 4,
+		categoryId: 0,
 	},
 ];
 

@@ -1,24 +1,39 @@
 <!doctype html>
 <html>
+
 	<head>
 		<meta charset="UTF-8">
 		<title>注册</title>
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<link href="../../css/mui.min.css" rel="stylesheet" />
 		<link rel="stylesheet" href="../../css/enter/zhuce.css" />
-		
+		<style type="text/css">
+			#zhuce {
+				padding: 0;
+				margin: auto;
+				width: 76%;
+				height: 43px;
+				text-align: center;
+				line-height: 43px;
+				color: #fff;
+				font-size: 16px;
+				border: none;
+				background: #FD5100;
+				border-radius: 3px;
+			}
+		</style>
 	</head>
 
 	<body>
 		<header class="mui-bar mui-bar-nav">
-		    <a class="mui-action-back back">
-		    	<img src="../../img/shouye/icon_back@2x.png" alt="" />
-		    </a>
-		    <h1 class="mui-title">注册</h1>
-		</header>	
+			<a class="mui-action-back back">
+				<img src="../../img/shouye/icon_back@2x.png" alt="" />
+			</a>
+			<h1 class="mui-title">注册</h1>
+		</header>
 		<div class="mui-content">
-		     <form id='login-form' class="mui-input-group">
-				<div class="mui-input-row">				
+			<form id='login-form' class="mui-input-group">
+				<div class="mui-input-row">
 					<input id='account' type="number" class="mui-sinput" placeholder="请输入手机号">
 				</div>
 				<div class="mui-input-row yzm">
@@ -27,25 +42,25 @@
 				</div>
 				<div class="mui-input-row">
 					<input id='password1' type="password" class="mui-input" placeholder="请设置登录密码">
-				
+
 				</div>
 			</form>
 			<div class="mui-content-padded">
 				<button id='zhuce' class="mui-btn mui-btn-block mui-btn-primary" data-id="shouye">注册</button>
 				<p>注册即代表您同意<span id="yhxy">《用户协议》</span></p>
 			</div>
-			
+
 		</div>
-							
+
 		<script src="../../js/mui.min.js"></script>
 		<script src="../../js/jquery-1.7.2.js"></script>
 		<script src="../../js/common.js"></script>
 		<script src="../../js/enter/zhuce.js"></script>
 		<script type="text/javascript">
 			mui.init()
-			$('#yhxy').click(function () {
-				window.location.href='../wode/yonghuxieyi.html'
-            });
+			$('#yhxy').click(function() {
+				window.location.href = '../wode/yonghuxieyi.html'
+			});
 		</script>
 	</body>
 

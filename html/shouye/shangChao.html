@@ -46,7 +46,7 @@
 		    			<div style="clear: both;"></div> -->
 							<script id="recommand_activity" type="text/html">
 								{{each list value i}}
-								<a href="javascript:void(0);" data-url="{{value.adverturl}}"><img src="{{value.advertpic}}" /></a>
+								<a href="javascript:void(0);" data-adverttype="{{value.adverttype}}" data-shoporproductid="{{value.shoporproductid}}" data-adverturl="{{value.adverturl}}"><img src="{{value.advertpic}}" /></a>
 								{{/each}}
 								<div style="clear: both;"></div>
 							</script>
@@ -67,7 +67,7 @@
 		    			<div style="clear: both;"></div> -->
 							<script id="pinpaiyouxuan_templete" type="text/html">
 								{{each list value i}}
-								<a href="javascript:void(0);" data-url="{{value.adverturl}}">
+								<a href="javascript:void(0);" data-adverttype="{{value.adverttype}}" data-shoporproductid="{{value.shoporproductid}}" data-adverturl="{{value.adverturl}}">
 									<img src="{{value.advertpic}}" />
 								</a>
 								{{/each}}
@@ -75,7 +75,7 @@
 							</script>
 						</div>
 					</div>
-					<!--<div class="cont" id="cont">
+					<div class="cont" id="cont">
 						<div class="huodong_tit">
 							<p>
 								<img src="../../img/shouye/tjsp@2x.png" alt="" style="width: 12px;" />
@@ -84,7 +84,7 @@
 						</div>
 						<div class="main" id="cainixihuan">
 						</div>
-					</div>-->
+					</div>
 				</div>
 			<!--</div>-->
 		</div>

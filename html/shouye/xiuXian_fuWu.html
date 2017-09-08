@@ -7,6 +7,12 @@
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<link href="../../css/mui.min.css" rel="stylesheet" />
 		<link rel="stylesheet" href="../../css/shouye/xiuXian_fuWu.css" />
+		<style type="text/css">
+			.mui-slider-item {
+    /* border-top: 1px solid #c8c7cc; */
+    	 border-bottom: none !important; 
+		}
+		</style>
 		<script src="../../js/mui.min.js"></script>
 		<script src="../../js/jquery-1.7.2.js"></script>
 		<script src="../../js/template-web.js"></script>
@@ -15,123 +21,122 @@
 
 	<body>
 		<header class="mui-bar mui-bar-nav">
-		    <a class="mui-action-back back">
-		    	<img src="../../img/shouye/icon_back@2x.png" alt="" />
-		    </a>
-		    <h1 class="mui-title">休闲服务</h1>
-		    <!--<a href="javascript:;" class="ss">
+			<a class="mui-action-back back">
+				<img src="../../img/shouye/icon_back@2x.png" alt="" />
+			</a>
+			<h1 class="mui-title">休闲服务</h1>
+			<!--<a href="javascript:;" class="ss">
 		    	<img src="../../img/shouye/icon_sousuo@2x.png"/>
 		    </a>-->
 		</header>
 		<div class="mui-content">
-		<div id="pullrefresh" class="mui-content mui-scroll-wrapper">
-			<div class="mui-scroll">
-		         <input type="hidden" id="shop_page_templete" value="2"/>		    
-	    	           <div id="dy" class="dy" style="margin-top:44px">	    		
-				    		<div class="nav">
-					    		<ul id="xiuxianfuwu">
-					    			
-					    		</ul>
-					    	</div>
-				
-					    	<div class="renqi">
-					    		<div class="huodong_tit">
-					    			<p>
-					    				<img src="../../img/shouye/52@2x.png" alt=""  style="width: 12px;"/>
-					    				<span>热门商铺</span>
-					    			</p>
-					    		</div>	
-					    		<div class="renqi_txt" id="renqi_txt">
-					    		</div>
-					    	</div>
-				    	    <div id="slider" class="mui-slider" >
-								<div id="sliderSegmentedControl" class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
-									<a value="0" class="mui-control-item mui-active" href="#item1mobile">
-								洗浴推荐
-							</a>
-									<a value="1" class="mui-control-item" href="#item2mobile">
-								美发推荐
-							</a>
-									<a value="2" class="mui-control-item" href="#item3mobile">
-								按摩推荐
-							</a>
-							        <a value="3" class="mui-control-item" href="#item4mobile">
-								全部推荐
-							</a>
+			<div id="pullrefresh" class="mui-content mui-scroll-wrapper">
+				<div class="mui-scroll">
+					<input type="hidden" id="shop_page_templete" value="2" />
+					<div id="dy" class="dy" style="margin-top:44px">
+						<div class="nav">
+							<ul id="xiuxianfuwu">
+
+							</ul>
+						</div>
+
+						<div class="renqi">
+							<div class="huodong_tit">
+								<p>
+									<img src="../../img/shouye/52@2x.png" alt="" style="width: 12px;" />
+									<span>热门商铺</span>
+								</p>
+							</div>
+							<div class="renqi_txt" id="renqi_txt">
+							</div>
+						</div>
+						<div id="slider" class="mui-slider">
+							<div id="sliderSegmentedControl" class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+								<!--<a value="0" class="mui-control-item mui-active" href="#item1mobile">
+									洗浴推荐
+								</a>
+								<a value="1" class="mui-control-item" href="#item2mobile">
+									美发推荐
+								</a>
+								<a value="2" class="mui-control-item" href="#item3mobile">
+									按摩推荐
+								</a>
+								<a value="3" class="mui-control-item" href="#item4mobile">
+									全部推荐
+								</a>-->
+							</div>
+							<div id="sliderProgressBar" class="mui-slider-progress-bar mui-col-xs-3"></div>
+							<div class="mui-slider-group">
+								<div id="item1mobile" class="mui-slider-item mui-control-content mui-active">
+
 								</div>
-								<div id="sliderProgressBar" class="mui-slider-progress-bar mui-col-xs-3"></div>
-								<div class="mui-slider-group">
-									<div id="item1mobile" class="mui-slider-item mui-control-content mui-active">
-										
-									</div>
-									<div id="item2mobile" class="mui-slider-item mui-control-content">
-										
-										
-									</div>
-									<div id="item3mobile" class="mui-slider-item mui-control-content">
-										
-									</div>
-									<div id="item4mobile" class="mui-slider-item mui-control-content">
-										
-									</div>
+								<div id="item2mobile" class="mui-slider-item mui-control-content">
+
+								</div>
+								<div id="item3mobile" class="mui-slider-item mui-control-content">
+
+								</div>
+								<div id="item4mobile" class="mui-slider-item mui-control-content">
+
 								</div>
 							</div>
-					    </div>
-		    	    </div>
-		    	</div>
+						</div>
+					</div>
+				</div>
 			</div>
-		
+		</div>
+
 		<script src="../../js/common.js"></script>
 		<script src="../../js/shouye/xiuXian_fuWu.js"></script>
 		<script type="text/javascript">
 			mui.init()
-			
-			var slider = mui("#pullrefresh");
-			document.getElementById("sliderProgressBar").addEventListener('toggle', function(e) {
-				if (e.detail.isActive) {
-					slider.slider({
-						interval: 5000
-					});
-				} else {
-					slider.slider({
-						interval:0
-					});
-				}
-			});
-			mui.init({
-				swipe: true, //默认为true
-			});
 
-			document.getElementById("slider").addEventListener("swipe",function(){
-			    console.log("你正在向左滑动");
-			    var index;
-			    setTimeout(function(){
-			    	index =$('#sliderSegmentedControl .mui-active').index('#sliderSegmentedControl a');
-			    	var ext=$('#sliderSegmentedControl .mui-active').attr('value');
-					var hei=$('#item'+(index+1)+'mobile').height();
-					if(hei==0){
-						setTimeout(function(){
-							hei=$('#item'+(index+1)+'mobile').height();
-							hei=hei+412;
-							$('.mui-scroll').css('height',hei);
-						},1000);
-						selectPageInfo(index);
-						if(totalPageUse==0||pageNoUse<totalPageUse){
-							pageNoUse++;
-							var queryTerm=new QueryTerm();
-							queryTerm.categoryId=parseInt(ext)+1;
-							queryTerm.pageNo=pageNoUse;
-							queryTerm.pageSize=pageSizeUse;
-							addDataToBox(queryTerm,source,'item'+(index+1)+'mobile',rootPath+'/api/shop/selectByleisureshop',1,index);
-						}
-					}else{
-						hei=hei+412;
-						$('.mui-scroll').css('height',hei);
-					}
-						
-			    },1000);
-				
-			});
+//			var slider = mui("#pullrefresh");
+//			document.getElementById("sliderProgressBar").addEventListener('toggle', function(e) {
+//				if(e.detail.isActive) {
+//					slider.slider({
+//						interval: 5000
+//					});
+//				} else {
+//					slider.slider({
+//						interval: 0
+//					});
+//				}
+//			});
+//			mui.init({
+//				swipe: true, //默认为true
+//			});
+
+//			document.getElementById("slider").addEventListener("swipe", function() {
+//				console.log("你正在向左滑动");
+//				var index;
+//				setTimeout(function() {
+//					index = $('#sliderSegmentedControl .mui-active').index('#sliderSegmentedControl a');
+//					var ext = $('#sliderSegmentedControl .mui-active').attr('value');
+//					var hei = $('#item' + (index + 1) + 'mobile').height();
+//					if(hei == 0) {
+//						setTimeout(function() {
+//							hei = $('#item' + (index + 1) + 'mobile').height();
+//							hei = hei + 412;
+//							$('.mui-scroll').css('height', hei);
+//						}, 1000);
+//						selectPageInfo(index);
+//						if(totalPageUse == 0 || pageNoUse < totalPageUse) {
+//							pageNoUse++;
+//							var queryTerm = new QueryTerm();
+//							queryTerm.categoryId = parseInt(ext) + 1;
+//							queryTerm.pageNo = pageNoUse;
+//							queryTerm.pageSize = pageSizeUse;
+//							addDataToBox(queryTerm, source, 'item' + (index + 1) + 'mobile', rootPath + '/api/shop/selectByleisureshop', 1, index);
+//						}
+//					} else {
+//						hei = hei + 412;
+//						$('.mui-scroll').css('height', hei);
+//					}
+//
+//				}, 1000);
+//
+//			});
 		</script>
 	</body>
 

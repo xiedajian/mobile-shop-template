@@ -38,11 +38,20 @@ var source = '{{each list value i}}' +
 	'{{if (value.shopGrade==5)}}<span><img src="../../img/shouye/star@2x.png" alt="" />' +
 	'<img src="../../img/shouye/star@2x.png" alt="" /><img src="../../img/shouye/star@2x.png" alt="" />' +
 	'<img src="../../img/shouye/star@2x.png" alt="" /><img src="../../img/shouye/star@2x.png" alt="" /></span>{{/if}}' +
-	'<span>{{value.shopGrade}}</span><span>人均{{value.avgPrice}}元</span>' +
+	'<span>&nbsp;&nbsp;</span><span>人均{{value.avgPrice}}元</span>' +
 	'</p>' +
-	'<p><span>{{value.shopNotice}}</span><span>{{value.distance}}Km</span></p>' +
+	'<p><span>{{value.shopNotice}}</span><span>&nbsp;&nbsp;{{value.distance}}Km</span></p>' +
 	'</div>' +
 	'<a href="javascript:;"></a><div style="clear: both;"></div></div>{{/each}}';
+
+
+//才你喜欢  列表
+$(document).on('tap', '.cont_list', function() {
+	var shopId = this.dataset.shopid;
+	console.log(shopId);
+	//	window.location.href = 'dianPu_detail.html?shopId=' + shopId;
+	goToPage('dianpu_detail_2.html?shopId=' + shopId);
+});
 
 //向列表追加
 function addEleToList(list) {

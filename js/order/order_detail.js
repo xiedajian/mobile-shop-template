@@ -6,11 +6,13 @@ $(function(){
 			dataType:'JSON',
 			success:function(data){
 				console.log(data);
+				if(data.data){
 				data.data.rootPath=imgRootPath;
 				console.log(data.data);
 				addHtmlForTemplte(data.data,'order_info','order_info_templete');
 				addHtmlForTemplte(data.data,'order','order_templete');
 				addHtmlForTemplte(data.data,'express_info','express_info_templete');
+				}
 			}
 		});
  })

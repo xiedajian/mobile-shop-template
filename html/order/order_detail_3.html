@@ -42,6 +42,10 @@
 							<p>
 								<span>数量：</span>
 								<span>x{{value.quantity}}</span>
+								&nbsp;&nbsp;&nbsp;
+								{{if value.remark}}
+								<span style="float: right;right: 10px;">有效期至:{{value.remark}}</span>
+								{{/if}}
 							</p>						
 						</div>
 						{{/each}}
@@ -52,16 +56,19 @@
 			<div class="main_one" id="express_info">
 				<script type="text/html" id="express_info_templete" >
 				<p>
-					<span>有效期至</span>
-					<span>2017-12-31</span>
+					<span style="display: none;">有效期至</span>
+					<span style="display: none;">2017-12-31</span>
 					{{if orderStatus<=2}}
-					<span class="yiWanCheng link" data-link="tuikuan.html?orderId={{orderId}}">申请退款</span>
+					<span class="yiWanCheng link" onclick="tuikuan({{orderId}})">申请退款</span>
 					{{/if}}
 				</p>
 				<p>
-					<span>状态/兑换码</span>
-					<span>{{password}}</span>
-					<span>{{status}}</span>
+					<!--<span>状态/兑换码</span>-->
+					<span>劵码</span>
+					<!--<span>{{password}}</span>-->
+					<!--<span>{{status}}</span>-->
+					<span></span>
+					<span>{{omredeemcode}}</span>
 				</p>
 				</script>
 			</div>			

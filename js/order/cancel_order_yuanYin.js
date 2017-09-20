@@ -29,16 +29,17 @@ var submit_btn = document.getElementById("submit");
  		reasonId=document.getElementsByClassName('check1')[0].parentNode.parentNode.dataset.reasonId;
  	}else{
  		mui.alert('请选择取消订单的原因！');
+ 		return;
  	}
  	$.ajax({
  		type:'post',
  		url:rootPath+'/orderControllerapi/updateOrder',
  		data:{'orderId':orderId,'reasonId':reasonId,'describe':describe,'orderStatus':'6'},
- 		dataType:'JSON',
+ 		dataType:'json',
  		success:function(data){
  			console.log(data);
  			if(data.resultSuccess){
- 				window.location.href=rootPath+'/jfscHtml/html/order/tuiKuan_detail.html?orderId='+data.data;
+ 				window.location.href='tuiKuan_detail.html?orderId='+data.data;
  			}
  		}
  	})

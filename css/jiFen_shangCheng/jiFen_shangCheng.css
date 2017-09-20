@@ -17,7 +17,7 @@ p{margin: 0;padding: 0;}
 img{padding:0; border:0;margin:0;display:block;}
 .mui-bar{
 	height:44px;
-	padding: 0 ;
+	padding: 0 14px;
 	background: #fd5100;
 	box-shadow: none;
 	-webkit-box-shadow: none;
@@ -26,7 +26,7 @@ ul.head>li{
 	float: left;
 	height:44px;
 }
-ul.head>li:nth-child(1) {
+/*ul.head>li:nth-child(1) {
 	width:13.335%;
 	position: relative;
 }
@@ -41,7 +41,6 @@ ul.head>li:nth-child(1) a{
 ul.head>li:nth-child(1) a img{
 	margin: auto;
 	margin-top:13px;	
-	/*float: right;*/
 	width:11px;	
 	height: 19px;
 }
@@ -62,32 +61,31 @@ ul.head>li:nth-child(3) a p:nth-child(1)>img{
 	width:18px;
 
 
-}
+}*/
 
-ul.head>li:nth-child(2){
-	margin:8px 0;
-	width:73%;
+ul.head>li:nth-child(1){
+	margin:8px auto;
+	width:100%;
 	height:29px;
-	line-height:29px;
+	line-height:28px;
 	border-radius:15px;
     background: #fff;
-	background-size: contain;
 }
-ul.head>li:nth-child(2) a{
+ul.head>li:nth-child(1) a{
 	display: inline-block;
 	width: 100%;
 	height: 100%;
 }
-ul.head>li:nth-child(2)  a img{
+ul.head>li:nth-child(1)  a img{
 	float: left;
 	width:14px;
 	height:13px;
-	margin:8px 0 0 14px;
+	margin:8px 0px 0 14px;
 	
 }
-ul.head>li:nth-child(2) a input{
+ul.head>li:nth-child(1) a input{
 	float: left;
-	width:70%;
+	width:80%;
 	height:25px;
 	line-height:25px;
 	margin:2px 7px ;
@@ -96,6 +94,7 @@ ul.head>li:nth-child(2) a input{
 	border: none;
 	font-size:12px;
 	color:#333;
+	background: #fff;
 	vertical-align: bottom;
 }
 ::-webkit-input-placeholder { color:#999;font-size:12px; }
@@ -118,6 +117,7 @@ input:-moz-placeholder { color:#999; font-size:12px;}
 }
 .mui-slider img{
 	width: 100%;
+	height: 100%;
 }
 .mui-slider-indicator{
 	bottom: 4px;
@@ -229,9 +229,11 @@ input:-moz-placeholder { color:#999; font-size:12px;}
 	background: #fff;
 }
 .fenlei_txt a{
-	margin: 0 0.43%;
+	margin: 5px 0.43%;
 	float: left;
 	width:24.095%;
+	height: 73px;
+	overflow: hidden;
 	position: relative;
 }
 .fenlei_txt a span{
@@ -263,21 +265,33 @@ input:-moz-placeholder { color:#999; font-size:12px;}
 	margin: 0 0.5%;
 	margin-bottom: 3px;
 	width:49%;
+	height: 105px;
 	position: relative;
+	overflow: hidden;
 }
 .shangpin_top a img,.shangpin_bot a img,
 .shangpin_bot1 a img{
 	width: 100%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	-webkit-transform: translate(-50%,-50%);
 }
 .shangpin_top a span,.shangpin_bot a span{
 	padding:3px 4px;
 	display: inline-block;
 	width: 20px;
-	height: 35px;
+	height: 65px;
 	line-height: 14px;
 	background: rgba(0,0,0,0.5);
 	color: #fff;
 	font-size:12px ;
+	overflow : hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 4;
+	-webkit-box-orient: vertical;
 	position: absolute;
 	left: 0;
 	top: 0;
@@ -292,7 +306,7 @@ input:-moz-placeholder { color:#999; font-size:12px;}
 	line-height: 20px;
 	background: rgba(0,0,0,0.5);
 	color: #fff;
-	font-size:12px ;
+	font-size:12px ;	
 	position: absolute;
 	left: 0;
 	bottom: 0;
@@ -309,15 +323,24 @@ input:-moz-placeholder { color:#999; font-size:12px;}
 	margin: 0 0.5%;
 	margin-bottom: 3px;
 	width:32.336%;
+	height: 95px;
 	position: relative;
+	overflow: hidden;
 }
 .ban{
 	margin: 10px 0;
 	width: 100%;
-
+	height: 100px;
+	overflow: hidden;
+	position: relative;
 }
 .ban img{
 	width: 100%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	-webkit-transform: translate(-50%,-50%);
 }
 /**/
 .main{

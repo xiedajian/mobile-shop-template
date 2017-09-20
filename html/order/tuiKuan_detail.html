@@ -8,70 +8,70 @@
 		<meta name="format-detection" content="telephone=no">
 		<meta http-equiv="x-rim-auto-match" content="none">
 		<link href="../../css/mui.min.css" rel="stylesheet" />
-		<link rel="stylesheet" href="../../css/order/order_detail.css" />		
+		<link rel="stylesheet" href="../../css/order/order_detail.css" />
 	</head>
 
 	<body>
 		<header class="mui-bar mui-bar-nav">
-			<a class="mui-action-back back">
+			<a class="back">
 				<img src="../../img/wode/icon_back@2x.png" alt="" />
 			</a>
 			<div class="mui-title">
 				退款详情
-			</div>			
+			</div>
 		</header>
 		<div class="mui-content">
 			<div class="main_one">
 				<img src="../../img/order/peisong.png" alt="" />
 				<span id="refunds_status">退款已完成</span>
 			</div>
-			 
-		    <div class="main_two" id="order_info">
-		    	<script type="text/html" id="order_info_templete">
-		    		<div class="two_tit" >
-			    		<!--<a href="../../html/shouye/dianPu_detail.html?shopId={{shopId}}">-->
-			    		<a href="javascript:void(0);">
-				    		<span></span>
-				    		<span>{{shopName}}</span>
-				    		<span><img src="../../img/wode/right.png" alt="" /></span>
-			    		</a>
-		    		</div>
-			    	<div class="two_txt">
-			    		{{each orderChildList value i}}
-			    		<div class="two_txt_list">
-			    			<div>
-			    				<img src="{{value.pictures}}"/>
-			    			</div>
-			    			<div>
-			    				<p>
-			    					<span>{{value.name}}</span>
-			    					<span>￥{{value.price}}</span>
-			    				</p>
-			    				<p>
-			    					x{{value.quantity}}
-			    				</p>
-			    			</div>
-			    			<p style="clear: both;"></p>
-			    		</div>
-			    		{{/each}}
-			    	</div>
-			    	<div class="two_jiage">
-			    		<p>
-			    			<span>应付</span>
-			    			<span>￥{{actualPayment}}</span>
-			    		</p>
-			    	</div>
+
+			<div class="main_two" id="order_info">
+				<script type="text/html" id="order_info_templete">
+					<div class="two_tit">
+						<!--<a href="../../html/shouye/dianPu_detail.html?shopId={{shopId}}">-->
+						<a href="javascript:void(0);">
+							<span></span>
+							<span>{{shopName}}</span>
+							<span><img src="../../img/wode/right.png" alt="" /></span>
+						</a>
+					</div>
+					<div class="two_txt">
+						{{each orderChildList value i}}
+						<div class="two_txt_list">
+							<div>
+								<img src="{{value.pictures}}" />
+							</div>
+							<div>
+								<p>
+									<span>{{value.name}}</span>
+									<span>￥{{value.price}}</span>
+								</p>
+								<p>
+									x{{value.quantity}}
+								</p>
+							</div>
+							<p style="clear: both;"></p>
+						</div>
+						{{/each}}
+					</div>
+					<div class="two_jiage">
+						<p>
+							<span>应付</span>
+							<span>￥{{actualPayment}}</span>
+						</p>
+					</div>
 				</script>
-			</div>	
-		    <div class="main_three" id="express_info">
-		    	<script type="text/html" id="express_info_templete" >
-		    	<!--<p>
+			</div>
+			<div class="main_three" id="express_info">
+				<script type="text/html" id="express_info_templete">
+					<!--<p>
 		    		<span>期望时间</span>
 		    		<span>7月12日 12：00</span>
 		    	</p>-->
-		    	<p>
-		    		<span>配送地址</span>
-		    		<span>
+					<p>
+						<span>配送地址</span>
+						<span>
 		    			<a href="javascript:;" class="mui-ellipsis">
 		    				{{address}}
 		    			</a>
@@ -79,91 +79,94 @@
 		    				{{shippingName}}
 		    			</a>
 		    		</span>
-		    	</p>
-		    	<p>
-		    		<span>配送方式</span>
-		    		<span>{{shipping}}</span>
-		    	</p>
-		    	<p>
-		    		<span>备注留言</span>
-		    		<span class="mui-ellipsis">{{remark}}</span>
-		    	</p>
-		    	</script>		    	
-		    </div>
-		   <div class="main_fore" id="order">
-		    	<script type="text/html" id="order_templete">
-		    	<p>
-		    		<span>订单号码</span>
-		    		<span>{{orderId}}</span>
-		    	</p>
-		    	<p>
-		    		<span>订单时间</span>
-		    		<span>
-		    			{{updateTime}}
+					</p>
+					<p>
+						<span>配送方式</span>
+						<span>{{shipping}}</span>
+					</p>
+					<p>
+						<span>备注留言</span>
+						<span class="mui-ellipsis">{{remark}}</span>
+					</p>
+				</script>
+			</div>
+			<div class="main_fore" id="order">
+				<script type="text/html" id="order_templete">
+					<p>
+						<span>订单号码</span>
+						<span>{{orderId}}</span>
+					</p>
+					<p>
+						<span>订单时间</span>
+						<span>
+		    			{{createTimeStr}}
 		    		</span>
-		    	</p>
-		    	<p>
-		    		<span>支付方式</span>
-		    		<span>在线支付</span>
-		    	</p>
-		    	</script>
-		    </div>
-		    <div class="main_fore" id="refunds_info">
-		    	<script type="text/html" id="refunds_info_templete">
-			    	<p>
-			    		<span>退款金额</span>
-			    		<span>￥{{refunds}}</span>
-			    	</p>
-			    	<p>
-			    		<span>申请时间</span>
-			    		<span>
+					</p>
+					<p>
+						<span>支付方式</span>
+						<span>在线支付</span>
+					</p>
+				</script>
+			</div>
+			<div class="main_fore" id="refunds_info">
+				<script type="text/html" id="refunds_info_templete">
+					<p>
+						<span>退款金额</span>
+						<span>￥{{refunds}}</span>
+					</p>
+					<p>
+						<span>申请时间</span>
+						<span>
 			    			{{createTimeStr}}
 			    		</span>
-			    	</p>
-			    	{{if reviewStatus==0}}
-			    	<p>
-			    		<span>审核状态</span>
-			    		<span>
+					</p>
+					{{if reviewStatus==0}}
+					<p>
+						<span>审核状态</span>
+						<span>
 			    			{{reviewStatus1}}
 			    		</span>
-			    	</p>
-			    	{{/if}}
-			    	{{if reviewStatus==1}}
-			    	<p>
-			    		<span>退款时间</span>
-			    		<span>
+					</p>
+					{{/if}} {{if reviewStatus==1}}
+					<p>
+						<span>退款时间</span>
+						<span>
 			    			{{updateTimeStr}}
 			    		</span>
-			    	</p>
-			    	{{/if}}
-			    	{{if reviewStatus==2}}
-			    	<p>
-			    		<span>拒绝原因</span>
-			    		<span>
+					</p>
+					{{/if}} {{if reviewStatus==2}}
+					<p>
+						<span>拒绝原因</span>
+						<span>
 			    			{{rejectReason}}
 			    		</span>
-			    	</p>
-			    	{{/if}}
-			    	<p>
-			    		<span>退回账户</span>
-			    		<span>账户余额</span>
-			    	</p>
-		    	</script>
-		    </div>
-		</div> 												
-		
+					</p>
+					{{/if}}
+					<p>
+						<span>退回账户</span>
+						<span>账户余额</span>
+					</p>
+				</script>
+			</div>
+		</div>
+
 	</body>
-	
-	
-	
+
 	<script src="../../js/mui.min.js"></script>
 	<script src="../../js/jquery-1.7.2.js"></script>
-	<script type="text/javascript" src="../../js/template-web.js" ></script>
-	<script type="text/javascript" src="../../js/common.js" ></script>
-	<script type="text/javascript" src="../../js/order/order_detail.js" ></script>
-	<script type="text/javascript" src="../../js/order/refunds_detail.js" ></script>
+	<script type="text/javascript" src="../../js/template-web.js"></script>
+	<script type="text/javascript" src="../../js/common.js"></script>
+	<script type="text/javascript" src="../../js/order/order_detail.js"></script>
+	<script type="text/javascript" src="../../js/order/refunds_detail.js"></script>
 	<script type="text/javascript">
-		
+		$('.back').on('tap', function() {
+			var form=getQueryString('from')
+			if(form && form==2){				
+				mui.back();
+			}else{
+				window.history.go(-2);
+			}
+		})
 	</script>
 	<script>
 	</script>

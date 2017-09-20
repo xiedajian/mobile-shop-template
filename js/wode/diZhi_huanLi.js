@@ -59,7 +59,7 @@ function addEleToList(list) {
 			'<p>' +
 			'<span class="moren" data-defaultStatus="' + list[i].defaultStatus + '" onclick="setDefaultAdress(' + list[i].consigneeId + ',this)"><img class="imgs" src="../../img/wode/checked (2).png"/>默认地址</span>' +
 			'<span class="del" onclick="delAdress(' + list[i].consigneeId + ')">删除</span>' +
-			'<span>编辑<a href="bianJi_area.html?consigneeId=' + list[i].consigneeId + '"></a></span></p></div>';
+			'<span>编辑<a href="javascript:void(0)" onclick="binjiArea(' + list[i].consigneeId + ')"></a></span></p></div>';
 
 		fragment.appendChild(li);
 	}
@@ -69,6 +69,10 @@ function addEleToList(list) {
 
 	//本地样式修改
 	updateDefaultAdressStyle();
+}
+
+function binjiArea(id){
+	goToPage('bianJi_area.html?consigneeId=' + id);
 }
 
 //从订单页面进入时，选择地址，并返回订单页面

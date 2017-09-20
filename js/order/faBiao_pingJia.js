@@ -34,24 +34,21 @@ $('.two_bot').toggle(function(){
 	document.getElementById('niming').dataset.yl=1;
 })
 $('#submit').on('tap',function(){
-	alert('111')
+//	alert('111')
 	var userId=localStorage.getItem('userId');
 	var level=document.getElementById('level').innerHTML;
 	var yl=document.getElementById('niming').dataset.yl;
-	if(userId==null||userId==undefined){
-		window.location.href=rootPath+'jfscHtml/html/enter/enter.html';
-		return false;
-	}else{
-		orderEntity.userId=userId;
-	}
+	console.log('pingjia');
 	$.ajax({
-		type:'post',
 		url:rootPath+'/orderControllerapi/insertordercomment',
+		type:'post',
 		data:{'orderid':orderId,'userid':userId,'productPing':level,'yl':yl,'yl2':shopId},
-		dataType:'JSON',
+		dataType:'json',
 		success:function(data){
-			if(resultSuccess){
-				mui.alert('评价成功');
+			if(data.resultSuccess){
+				mui.alert('评价成功',function(){
+					mui.back();
+				});
 			}else{
 				mui.alert('评价失败');
 			}

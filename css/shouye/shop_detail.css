@@ -123,14 +123,14 @@ p {
 
 .banner {
 	width: 100%;
-	/*height: 150px;*/
+	height: 150px;
 	position: relative;
 	overflow: hidden;
 }
 
 .banner div {
 	width: 100%;
-	/*height: 100%;*/
+	height: 100%;
 }
 
 .banner div a {
@@ -143,6 +143,7 @@ p {
 	display: block;
 	border: 0;
 	width: 100%;
+	height: 100%;
 }
 
 .banner div a input {
@@ -223,10 +224,10 @@ input:-moz-placeholder {
 	color: #FD5100;
 }
 .projectList1 p:nth-child(4){
-	width:55px;
-	height:15px;
+	width:120px;
+	height:44px;
 	position: absolute;
-	bottom: 11px;
+	bottom: 0px;
 	right:10px;
 }
 .projectList1 p:nth-child(4) .sub{
@@ -234,11 +235,11 @@ input:-moz-placeholder {
 	float: left;
 	padding: 0;
 	margin: 0;
-	width:15px;
-	height:15px;
+	width:44px;
+	height:44px;
 	border: none;
-	background: url(../../img/shouye/jian.png) no-repeat center;
-	background-size: 15px 15px;
+	background: url(../../img/shouye/jian.png) no-repeat center center;
+	background-size: 20px 20px;
 }
 .projectList1 p:nth-child(4) span:nth-child(2){
 	float: left;
@@ -246,8 +247,8 @@ input:-moz-placeholder {
 	padding: 0;
 	margin: 0;
 	width:24px;
-	height:15px;
-	line-height:15px;
+	height:44px;
+	line-height:44px;
 	text-align: center;
     color: #06c1ae;
     font-size:12px;
@@ -258,11 +259,11 @@ input:-moz-placeholder {
 	float: right;
 	padding: 0;
 	margin: 0;
-	width:15px;
-	height:15px;
+	width:44px;
+	height:44px;
 	border: none;
-	background:url(../../img/shouye/jia.png) no-repeat center;
-	background-size:15px 15px;
+	background:url(../../img/shouye/jia.png) no-repeat center center;
+	background-size:20px 20px;
 }
 /**/
 .main_two{
@@ -281,10 +282,13 @@ input:-moz-placeholder {
 .dianpu_left{
 	margin-right: 10px;
 	float: left;
-	width: 66px;		
+	width: 66px;
+	height: 66px;
+	overflow: hidden;		
 }
 .dianpu_left img{
 	width: 100%;
+	height: 100%;
 }
 .dianpu_right{
 	float: left;
@@ -309,7 +313,9 @@ input:-moz-placeholder {
 	padding: 0 10px;
 	width: 100%;
 	background: #fff;
+	
 }
+
 .three_tit{
 	padding:7px 10px;
 	width: 100%;
@@ -335,7 +341,9 @@ input:-moz-placeholder {
 	top: 5px;
 }
 .three_txt{
+	padding: 0 10px;
 	width: 100%;
+	overflow: hidden;
 }
 .three_txt p{
 	width: 100%;
@@ -343,7 +351,10 @@ input:-moz-placeholder {
 	color: #333333;
 	font-size: 12px;
 }
-
+.three_txt p img{
+	margin: 10px 0;
+	width: 100% !important;
+}
 /*//单击购物车图标//*/
 .mui-backdrop{
 	z-index: 8;
@@ -427,6 +438,7 @@ input:-moz-placeholder {
 	float: left;
 }
 .LI>p:nth-child(1){
+	width: 45%;
 	height: 45px;
 	line-height: 45px;
 	color: #333333;
@@ -443,19 +455,20 @@ input:-moz-placeholder {
 	-webkit-transform: translateX(-50%);
 }
 .LI>p:nth-child(3){
+	height: 20px;
 	position: absolute;
-	top:15px;
+	top:13px;
 	right:12px;
 }
 .sub1{
 	float: left;
 	padding: 0;
 	margin: 0;
-	width:15px;
-	height:15px;
+	width:20px;
+	height:20px;
 	border: none;
-	background: url(../../img/shouye/jian.png) no-repeat center;
-	background-size: 15px 15px;
+	background: url(../../img/shouye/jian.png) no-repeat center center;
+	background-size: 20px 20px;
 }
 .LI>p:nth-child(3)>span,
 .fenshu1{
@@ -464,8 +477,8 @@ input:-moz-placeholder {
 	padding: 0;
 	margin: 0;
 	width:27px;
-	height:15px;
-	line-height:15px;
+	height:20px;
+	line-height:20px;
 	text-align: center;
     color: #2F9EF0;
     font-size:12px;
@@ -475,11 +488,11 @@ input:-moz-placeholder {
 	float: left;
 	padding: 0;
 	margin: 0;
-	width:15px;
-	height:15px;
+	width:20px;
+	height:20px;
 	border: none;
-	background:url(../../img/shouye/jia.png) no-repeat center;
-	background-size:15px 15px;
+	background:url(../../img/shouye/jia.png) no-repeat center center;
+	background-size:20px 20px;
 }
 
 /*底部*/
@@ -521,7 +534,7 @@ nav>p:nth-child(1)>span.sum1{
 	width: 56%;
 	padding: 5px 0;
     height:50px;
-    line-height:20px;
+    line-height:40px;
 	/*font-size:14px;
 	color: #999999;*/
 	position: absolute;

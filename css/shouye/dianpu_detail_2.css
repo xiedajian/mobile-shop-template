@@ -126,12 +126,12 @@ p {
 	height: 150px;
 	position: relative;
 	overflow: hidden;
-	;
 }
 
 .banner div {
 	width: 100%;
 	height: 100%;
+    
 }
 
 .banner div a {
@@ -217,6 +217,7 @@ input:-moz-placeholder {
 	border: 0;
 	margin: 0;
 	width: 100%;
+	height: 100%;
 }
 
 .dianpu_bottom span {
@@ -236,6 +237,8 @@ input:-moz-placeholder {
 	top: 50%;
 	-webkit-transform: translateY(-50%);
 	transform: translateY(-50%);
+	
+	
 }
 
 .i_right {
@@ -386,28 +389,31 @@ ul.listt>li {
 	padding: 10px;
 	position: relative;
 	width: 100%;
-	/*height: 104px;*/
+	height: 84px;
 	background: #fff;
+	
 }
 
 ul.listt>li div.listt_left {
 	float: left;
 	margin-right: 10px;
 	width:19.715%;
-	/*height: 55px;*/
+	height: 55px;
 	overflow: hidden;
 }
 
 ul.listt>li div.listt_left img {
 	width: 100%;
+	height: 100%;
 }
 
 .listt_right {
 	padding-bottom: 10px;
 	float: left;
 	width:76.9%;
-	/*height: 94px;*/
+	height: 94px;
 	border-bottom: 1px solid #ccc;
+	
 }
 
 ul.listt>li:last-child .listt_right {
@@ -448,22 +454,23 @@ ul.listt>li:last-child .listt_right {
 
 .listt_right p:nth-child(5) {
 	display: none;
-	width: 55px;
-	height: 15px;
+	width: 120px;
+	height:44px;
 	position: absolute;
-	bottom: 35px;
+	bottom: 0px;
 	right: 10px;
+	z-index: 999;
 }
 
 .listt_right p:nth-child(5) input.sub {
 	float: left;
 	padding: 0;
 	margin: 0;
-	width: 15px;
-	height: 15px;
+	width: 44px;
+	height: 44px;
 	border: none;
-	background: url(../../img/shouye/jian.png) no-repeat center;
-	background-size: 15px 15px;
+	background: url(../../img/shouye/jian.png) no-repeat center center;
+	background-size: 20px 20px;
 }
 
 .listt_right p:nth-child(5) span {
@@ -472,8 +479,8 @@ ul.listt>li:last-child .listt_right {
 	padding: 0;
 	margin: 0;
 	width: 24px;
-	height: 15px;
-	line-height: 15px;
+	height: 44px;
+	line-height: 44px;
 	text-align: center;
 	color: #06c1ae;
 	font-size: 12px;
@@ -484,11 +491,11 @@ ul.listt>li:last-child .listt_right {
 	float: right;
 	padding: 0;
 	margin: 0;
-	width: 15px;
-	height: 15px;
+	width: 44px;
+	height: 44px;
 	border: none;
-	background: url(../../img/shouye/jia.png) no-repeat center;
-	background-size: 15px 15px;
+	background: url(../../img/shouye/jia.png) no-repeat center center;
+	background-size: 20px 20px;
 }
 
 
@@ -855,10 +862,16 @@ ul.listt>li:last-child .listt_right {
 	float: left;
 }
 .LI>p:nth-child(1){
+	width: 45%;
 	height: 45px;
 	line-height: 45px;
 	color: #333333;
 	font-size:14px;
+	overflow : hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 1;
+	-webkit-box-orient: vertical;
 }
 .LI>p:nth-child(2){
 	height: 45px;
@@ -872,18 +885,18 @@ ul.listt>li:last-child .listt_right {
 }
 .LI>p:nth-child(3){
 	position: absolute;
-	top:15px;
+	top:12px;
 	right:12px;
 }
 .sub1{
 	float: left;
 	padding: 0;
 	margin: 0;
-	width:15px;
-	height:15px;
+	width:20px;
+	height:20px;
 	border: none;
 	background: url(../../img/shouye/jian.png) no-repeat center;
-	background-size: 15px 15px;
+	background-size: 20px 20px;
 }
 .LI>p:nth-child(3)>span,
 .fenshu1{
@@ -892,8 +905,8 @@ ul.listt>li:last-child .listt_right {
 	padding: 0;
 	margin: 0;
 	width:27px;
-	height:15px;
-	line-height:15px;
+	height:20px;
+	line-height:20px;
 	text-align: center;
     color: #2F9EF0;
     font-size:12px;
@@ -903,11 +916,11 @@ ul.listt>li:last-child .listt_right {
 	float: left;
 	padding: 0;
 	margin: 0;
-	width:15px;
-	height:15px;
+	width:20px;
+	height:20px;
 	border: none;
 	background:url(../../img/shouye/jia.png) no-repeat center;
-	background-size:15px 15px;
+	background-size:20px 20px;
 }
 
 
@@ -964,7 +977,7 @@ nav>p:nth-child(1)>span.sum1{
 	width: 56%;
 	padding: 5px 0;
     height:50px;
-    line-height:20px;
+    line-height:40px;
 	/*font-size:14px;
 	color: #999999;*/
 	position: absolute;
@@ -1071,9 +1084,10 @@ nav>p:nth-child(2){
 .main_list{
 	padding:10px;
 	width: 100%;
-/*	height: 87px;*/
+	height: 87px;
 	background: #fff;
 	position: relative;
+	
 }
 .main_list>a{
 	display: inline-block;
@@ -1088,11 +1102,13 @@ nav>p:nth-child(2){
 	margin-right:2.67%;
 	float: left;
 	width:22% ;
-	/*height: 66px;*/
+	height: 66px;
+	overflow: hidden;
 }
 
 .list_left img{
 	width: 100%;
+	height: 100%;
 }
 .list_right{
 	float: left;

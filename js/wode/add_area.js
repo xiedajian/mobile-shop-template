@@ -82,7 +82,7 @@ function addArea() {
 			console.log(data);
 			if(data.result == 'success') {
 //				console.log('opener',window.parent);return;
-				mui.alert('修改成功', function() {
+				mui.alert('添加成功', function() {
 					//返回上一页并刷新上一页
 //					window.parent.location.reload();
 						mui.back();

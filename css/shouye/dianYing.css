@@ -232,7 +232,7 @@ img{padding:0; border:0;margin:0;display:block;}
 	margin-bottom: 8px;
 	padding:10px;
 	width: 100%;
-/*	height: 87px;*/
+	height: 87px;
 	background: #fff;
 	position: relative;
 }
@@ -249,11 +249,19 @@ img{padding:0; border:0;margin:0;display:block;}
 	margin-right:2.67%;
 	float: left;
 	width:22% ;
-	/*height: 66px;*/
+	height: 66px;
+	overflow: hidden;
+	position: relative;
 }
 
 .list_left img{
 	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	-webkit-transform: translate(-50%,-50%);
 }
 .list_right{
 	float: left;
@@ -295,9 +303,31 @@ img{padding:0; border:0;margin:0;display:block;}
 .list_right p:nth-child(3){
 	width: 100%;
 	height: 13px;
-	line-height: 13px;
 	color: #666;
-	font-size: 12px;	
+	font-size: 12px;
+	position: relative;	
+}
+.list_right p:nth-child(3) span:nth-child(1){
+	display: inline-block;
+	width: 89%;
+	height: 13px;
+	line-height: 13px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	overflow : hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 1;
+	-webkit-box-orient: vertical;
+}
+.list_right p:nth-child(3) span:nth-child(2){
+	display: inline-block;
+	height: 13px;
+	line-height: 13px;
+	position: absolute;
+	top: 0;
+	right: 0;
 }
 .list_right p:nth-child(3) img{
 	display: inline-block;
@@ -407,17 +437,22 @@ img{padding:0; border:0;margin:0;display:block;}
 }
 .huodong_txt a{
 	display: inline-block;
+	margin: 0 0.5%;
 	float: left;
-	width: 33.33%;
+	width: 32.3%;
+	height: 106px;
+	overflow: hidden;
 }
 .huodong_txt a img,.fenlei_txt a img{
 	width: 100%;
+	height: 100%;
 }
 .huodong_txt a:nth-child(2){
 	float: right;
 }
 .renqi a img{
 	width: 100%;
+	height: 100%;
 }
 
 .renqi{
@@ -431,6 +466,8 @@ img{padding:0; border:0;margin:0;display:block;}
 	margin: 0 0.5%;
 	margin-bottom: 3px;
 	width:32.336%;
+	height: 106px;
+	overflow: hidden;
 	position: relative;
 }
 .fenlei{
@@ -443,6 +480,8 @@ img{padding:0; border:0;margin:0;display:block;}
 	margin: 0 0.43%;
 	float: left;
 	width:24.095%;
+	height: 74px;
+	overflow: hidden;
 	position: relative;
 }
 

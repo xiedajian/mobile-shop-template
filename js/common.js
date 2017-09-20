@@ -1,8 +1,8 @@
-//var rootPath = 'http://122.114.181.158:8080/jfsc';
-//var imgRootPath = 'http://122.114.181.158:8080';
+var rootPath = 'http://118.190.150.148:9001/jfsc';
+var imgRootPath = 'http://118.190.150.148:9001';
 
-var rootPath = 'http://192.168.3.172/jfsc';
-var imgRootPath = 'http://192.168.3.172';
+//var rootPath = 'http://192.168.3.172/jfsc';
+//var imgRootPath = 'http://192.168.3.172';
 var PRODUCTKEY = 'jfscproductkey';
 var SHOPKEY = 'jfscshopkey';
 

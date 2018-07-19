@@ -1,8 +1,10 @@
+
     var map, geolocation;
     //加载地图，调用浏览器定位服务
     map = new AMap.Map('container', {
         resizeEnable: true
     });
+
     map.plugin('AMap.Geolocation', function() {
         geolocation = new AMap.Geolocation({
             enableHighAccuracy: true,//是否使用高精度定位，默认:true

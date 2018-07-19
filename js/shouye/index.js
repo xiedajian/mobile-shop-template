@@ -1,60 +1,27 @@
-$(function() {
-	$.ajax({
-		url: rootPath + '/api/index/getPartentCategory',
-		dataType: 'JSON',
-		success: function(data) {
-			var html = template('category', data);
-			$('.nav').empty().append(html);
-		},
-		error: function(data) {}
-	});
-	//推荐分类
-	var source = document.getElementById('recommendCategory_templete').innerHTML;
-	var queryTerm = new QueryTerm();
-	queryTerm.pageNo = 1;
-	queryTerm.adsenseid = 12;
-	//queryTrem.advertstatus=1;
-	addDataToBox(queryTerm, source, 'recommendCategory', rootPath + '/advertControllerapi/selectByfirst', 2);
-	//推荐活动
-	var source = document.getElementById('activity').innerHTML;
-	var queryTerm = new QueryTerm();
-	queryTerm.pageNo = 1;
-	queryTerm.adsenseid = 4;
-	//queryTrem.advertstatus=1;
-	addDataToBox(queryTerm, source, 'huodong_txt', rootPath + '/advertControllerapi/selectByfirst', 2);
 
-	//推荐商品
-	$.ajax({
-		url: rootPath + '/advertControllerapi/selectByfirst',
-		data: {
-			'pageNo': 1,
-			'adsenseid': 5,
-			'advertstatus': true
-		},
-		dataType: 'JSON',
-		success: function(data) {
-			var html = template('recommendProductBig', data);
-			$('.shangpin_top').empty().append(html);
-			var html = template('recommendProductSmall', data);
-			$('.shangpin_bot').empty().append(html);
-		}
-	});
-	carousel(1);
-});
 
-//图片点击事件处理
+//banner
 $(document).on('tap', '.mui-slider-item a', function() {
-	picTapCallback(this)
+    goToPage('AD-detail.html', 'shouye/AD-detail.html');
 });
+// nav分类
+$(document).on('tap', '.nav li a', function() {
+    var index = $(this).attr('data-cate');
+    getShopsByCategory(index);
+});
+// 活动
 $(document).on('tap', '#huodong_txt a', function() {
-	picTapCallback(this)
+    goToPage('shop_detail_cate.html', 'shouye/shop_detail_cate.html');
 });
+// 推荐分类
 $(document).on('tap', '#recommendCategory a', function() {
-	picTapCallback(this)
+    goToPage('dianPu_detail.html', 'shoye/dianPu_detail.html');
 });
+// 商品
 $(document).on('tap', '.sp a', function() {
-	picTapCallback(this)
+    goToPage('shop_detail_cate.html', 'shouye/shop_detail_cate.html');
 });
+
 
 //首页-图片跳转统一处理
 function picTapCallback(el) {
@@ -76,7 +43,7 @@ function picTapCallback(el) {
 
 /**
  * 点击分类跳转页面
- * 
+ *
  * @param categoryId
  */
 function getShopsByCategory(categoryId) {
@@ -100,15 +67,12 @@ function getShopsByCategory(categoryId) {
 
 //搜索
 $(document).on('keyup', '#searchBox', function(e) {
-	//	console.log($(this).val());
-	//	console.log(e.keyCode);
 	var val = $(this).val();
 	if(val == undefined || val == '') {
 		mui.toast('请输入搜索内容')
 		return;
 	}
 	if(e.keyCode === 13) {
-//		window.location.href = 'search.html?shopname=' + val;
 		window.localStorage.setItem('search-shopname', val);
 		goToPage('search.html', 'shouye/search.html');
 	}

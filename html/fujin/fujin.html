@@ -21,7 +21,9 @@
 				<input data-link="search.html" type="search" placeholder="搜索附近门店" id="searchBox" />
 			</a>
 		</header>
+
 		<div class="mui-content">
+
 			<div id="slider" class="mui-slider">
 				<div id="sliderSegmentedControl" class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
 					<a value="1" class="mui-control-item mui-active" href="#item1mobile">
@@ -37,14 +39,17 @@
 						全部
 					</a>
 				</div>
+
 				<div id="sliderProgressBar" class="mui-slider-progress-bar mui-col-xs-3"></div>
+
 				<div class="mui-slider-group">
+
+					<!-- 爱美食 -->
 					<div id="item1mobile" class="mui-slider-item aa mui-control-content mui-active">
 						<div class="mui-scroll">
 							<div class="main">
 								<script type="text/html" id="main_templete">
 
-									{{each list value i}}
 									<div class="main_list2">
 										<div class="item" data-shopId="{{value.shopId}}">
 											<div class="list_left">
@@ -109,11 +114,12 @@
 											<div style="clear: both;"></div>
 										</div>
 									</div>
-									{{/each}}
 								</script>
 							</div>
 						</div>
 					</div>
+
+					<!-- 享休闲 -->
 					<div id="item2mobile" class="mui-slider-item bb mui-control-content">
 						<div class="mui-scroll">
 							<div class="main">
@@ -121,6 +127,8 @@
 							</div>
 						</div>
 					</div>
+
+					<!-- 爱逛街 -->
 					<div id="item3mobile" class="mui-slider-item cc mui-control-content">
 						<div class="mui-scroll">
 							<div class="main">
@@ -128,6 +136,8 @@
 							</div>
 						</div>
 					</div>
+
+					<!-- 全部 -->
 					<div id="item4mobile" class="mui-slider-item dd mui-control-content">
 						<div class="mui-scroll">
 							<div class="main">
@@ -135,12 +145,14 @@
 							</div>
 						</div>
 					</div>
+
 				</div>
+
 			</div>
 		</div>
 
 		<nav class="mui-bar mui-bar-tab nav-tab-isshow">
-			<a href="../shouye/index.html">
+			<a href="../index/index.html">
 				<img src="../../img/shouye/Home@2x2.png" />
 				<span>首页</span>
 			</a>
@@ -148,11 +160,11 @@
 				<img src="../../img/shouye/Send@2x.png" />
 				<span>附近</span>
 			</a>
-			<a href="../jiFen_shangCheng/jiFen_shangCheng.html">
+			<a href="../jifen/index.html">
 				<img src="../../img/shouye/jifenshagncheng@2x.png" />
 				<span>积分商城</span>
 			</a>
-			<a href="../wode/geRen_center.html">
+			<a href="../mine/index.html">
 				<img src="../../img/shouye/wode@2x.png" />
 				<span>我的</span>
 			</a>

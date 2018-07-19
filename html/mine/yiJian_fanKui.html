@@ -6,7 +6,7 @@
 		<title></title>
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<link href="../../css/mui.min.css" rel="stylesheet" />
-		<link rel="stylesheet" href="../../css/wode/updata_enter_mima.css" />
+		<link rel="stylesheet" href="../../css/wode/yiJian_fanKui.css" />
 	</head>
 
 	<body>
@@ -14,33 +14,28 @@
 		    <a class="mui-action-back back">
 		    	<img src="../../img/shouye/icon_back@2x.png" alt="" />
 		    </a>
-		    <h1 class="mui-title">修改支付密码</h1>
+		    <h1 class="mui-title">意见反馈</h1>
 		</header>
 		<div class="mui-content">
-		   	<div class="main">
-		   		<p>
-		   			<input type="password" placeholder="请输入原密码" id="account"/>
-		   		</p>
-		   		<p>
-		   			<input type="password" placeholder="请输入新密码" id="password"/>
-		   		</p>
-		   		<p>
-		   			<input type="password" placeholder="请再次输入新密码" id="password1"/>
-		   		</p>
-		   		
-		   	</div>
-		   
+		   	<textarea name="" rows="" cols="" placeholder="请输入您的意见我们将尽快回复您，感谢您的支持" id="yijian"></textarea>
 		</div>	
-		<nav class="mui-bar mui-bar-tab" id='login'>
-		   确认修改
-		</nav>
+        <nav class="mui-bar mui-bar-tab">
+            <a href="javascript:;">
+            	提交反馈
+            </a>
+        </nav>
 		<script src="../../js/mui.min.js"></script>
 		<script src="../../js/jquery-1.7.2.js"></script>
 		<script src="../../js/common.js"></script>
-		<script src="../../js/wode/update_zhiFu_mima.js"></script>
 		<script type="text/javascript">
 			mui.init();
-			
+
+			$('a').click(function () {
+                mui.alert('反馈成功',function () {
+                    history.go(-1);location.reload();
+                })
+
+            });
 		</script>
 	</body>
 

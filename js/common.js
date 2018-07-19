@@ -1,8 +1,6 @@
 var rootPath = 'http://118.190.150.148:9001/jfsc';
 var imgRootPath = 'http://118.190.150.148:9001';
 
-//var rootPath = 'http://192.168.3.172/jfsc';
-//var imgRootPath = 'http://192.168.3.172';
 var PRODUCTKEY = 'jfscproductkey';
 var SHOPKEY = 'jfscshopkey';
 
@@ -134,84 +132,8 @@ function getQueryString(name) {
 		return decodeURI(r[2]);
 	return null;
 }
-/**
- * 轮播图展示
- * 
- * @param adsenseid
- */
 
-function carousel(adsenseid) {
-	mui
-		.ajax({
-			url: rootPath + '/advertControllerapi/selectByfirst',
-			data: {
-				'pageNo': 1,
-				'adsenseid': adsenseid,
-				'advertstatus': true
-			},
-			dataType: 'JSON',
-			success: function(data) {
-				var advertStr = '';
-				var advertPoint = '<div class="mui-slider-indicator">';
-				var arr = JSON.parse(data).data;
-				var length = arr.length;
-				//				console.log('轮播图');
-				//				console.log(arr)
 
-				$.each(
-					arr,
-					function(index, value) {
-
-						if(index == 0) {
-							advertStr = '<div class="mui-slider-group mui-slider-loop"><div class="mui-slider-item mui-slider-item-duplicate">' +
-								'<a href="javascript:void(0);"  data-adverttype="' + value.adverttype + '" data-shoporproductid="' + value.shoporproductid + '"  data-adverturl="' +
-								value.adverturl +
-								'"><img src="' +
-								value.advertpic +
-								'" id="banner"> </a></div>' +
-								advertStr;
-							advertPoint = advertPoint +
-								'<div class="mui-indicator mui-active"></div>'
-						} else {
-							advertPoint = advertPoint +
-								'<div class="mui-indicator"></div>'
-						}
-
-						advertStr = advertStr +
-							'<div class="mui-slider-item">' +
-							'<a href="javascript:void(0);" data-adverttype="' + value.adverttype + '" data-shoporproductid="' + value.shoporproductid + '" data-adverturl="' +
-							value.adverturl +
-							'"><img src="' +
-							value.advertpic +
-							'" id="banner"> </a></div>';
-						if(index == length - 1) {
-							advertStr = advertStr +
-								'<div class="mui-slider-item mui-slider-item-duplicate">' +
-								'<a href="javascript:void(0);" data-adverttype="' + value.adverttype + '" data-shoporproductid="' + value.shoporproductid + '" data-adverturl="' +
-								value.adverturl +
-								'"><img src="' +
-								value.advertpic +
-								'" id="banner"> </a></div>';
-						}
-					});
-				var box = document.getElementById('slider');
-				box.innerHTML = (advertStr + '</div>' + advertPoint + '</div>');
-				var gallery = mui('.mui-slider');
-				gallery.slider({
-					interval: 4000
-					// 自动轮播周期，若为0则不自动播放，默认为0；
-				});
-
-			}
-
-		});
-
-	function skipPage(url) {
-
-		window.location.href = url;
-
-	}
-}
 /**
  * 验证手机号是否标准
  *
@@ -225,82 +147,9 @@ function checkMobilePhone(mobile) {
 	}
 	return result;
 }
-/**
- * 发送验证码
- *
- *   @param mobile -手机号
- *   @return bool  true表示发送成功
- * */
-function sendSmsCode(mobile, successCallback, failCallback) {
-	$.ajax({
-		url: rootPath + "/userLoginRegisterjfsc/getValidateCode?mobile=" + mobile,
-		dataType: 'json',
-		async: false,
-		success: function(data) {
-			console.log(data);
-			alert(data.code);
-			if(data.result == "success") {
-				if(successCallback && typeof successCallback === "function") {
-					successCallback();
-				}
-			} else {
-				if(failCallback && typeof failCallback === "function") {
-					failCallback();
-				}
-			}
-		},
-		error: function(err) {
-			console.log(err);
-			if(failCallback && typeof failCallback === "function") {
-				failCallback();
-			}
-		}
-	});
-}
 
-/**
- * 验证验证码是否正确
- *
- *   @param mobile 手机号  ，code 验证码
- *   @return bool  true表示发送成功
- * */
-function checkSmsCode(mobile, code, successCallback, failCallback) {
-	$.ajax({
-		url: rootPath + "/userLoginRegisterjfsc/checkValidateCode",
-		type: 'POST',
-		data: {
-			mobile: mobile,
-			code: code
-		},
-		dataType: 'json',
-		async: false,
-		success: function(data) {
-			console.log(data);
 
-			if(data.result == "success") {
-				if(successCallback && typeof successCallback === "function") {
-					successCallback();
-				}
-			} else {
-				if(failCallback && typeof failCallback === "function") {
-					failCallback(data);
-				}
-			}
-		},
-		error: function(err) {
-			console.log(err);
-			if(failCallback && typeof failCallback === "function") {
-				failCallback();
-			}
-		}
-	});
-}
 
-//
-//$(document).on('tap', '.mui-slider-item a', function() {
-//	var url = this.dataset.url;
-//	window.location.href = url;
-//});
 function getImg(jieKouUrl) {
 	$.ajax({
 		type: "GET",

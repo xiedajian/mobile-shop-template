@@ -64,36 +64,36 @@
     <div class="nav">
         <ul>
             <li>
-                <a href="javascript:void(0);" data-cate="1">
-                    <img src="../../img/shouye/nav1.png" alt=""/>
+                <a href="./meishi.html" data-cate="1">
+                    <img src="../../img/shouye/ms@2x.png" alt=""/>
                     <span>美食</span>
                 </a>
             </li>
             <li>
-                <a href="javascript:void(0);" data-cate="2">
-                    <img src="../../img/shouye/nav2.png" alt=""/>
+                <a href="./dianying.html" data-cate="2">
+                    <img src="../../img/shouye/nav7.png" alt=""/>
                     <span>电影</span>
+                </a>
+            </li>            <li>
+                <a href="./lvyou.html" data-cate="2">
+                    <img src="../../img/shouye/nav1.png" alt=""/>
+                    <span>旅游</span>
                 </a>
             </li>
             <li>
-                <a href="javascript:void(0);" data-cate="3">
-                    <img src="../../img/shouye/nav3.png" alt=""/>
+                <a href="./xiuxian.html" data-cate="3">
+                    <img src="../../img/shouye/nav4.png" alt=""/>
                     <span>休闲</span>
                 </a>
             </li>
             <li>
-                <a href="javascript:void(0);" data-cate="4">
-                    <img src="../../img/shouye/nav4.png" alt=""/>
+                <a href="./shangchao.html" data-cate="4">
+                    <img src="../../img/shouye/nav2.png" alt=""/>
                     <span>商超</span>
                 </a>
             </li>
 
-            <li>
-                <a href="javascript:;" data-cate="5">
-                    <img src="../../img/shouye/more@2x.png" alt=""/>
-                    <span>更多</span>
-                </a>
-            </li>
+
         </ul>
         <div style="clear: both;"></div>
     </div>
@@ -222,6 +222,7 @@
     </a>
 </nav>
 
+<script src="../../js/common.js"></script>
 <script type="text/javascript">
     mui.init();
 
@@ -248,9 +249,39 @@
             cityPicker.show();
         });
     });
-</script>
-<script src="../../js/common.js"></script>
-<script src="../../js/shouye/index.js"></script>
-</body>
 
+    //banner
+    $(document).on('tap', '.mui-slider-item a', function() {
+        goToPage('AD-detail.html', 'shouye/AD-detail.html');
+    });
+
+    // 活动
+    $(document).on('tap', '#huodong_txt a', function() {
+        goToPage('shop_detail_cate.html', 'shouye/shop_detail_cate.html');
+    });
+    // 推荐分类
+    $(document).on('tap', '#recommendCategory a', function() {
+        goToPage('dianPu_detail.html', 'shoye/dianPu_detail.html');
+    });
+    // 商品
+    $(document).on('tap', '.sp a', function() {
+        goToPage('shop_detail_cate.html', 'shouye/shop_detail_cate.html');
+    });
+
+
+
+    //搜索
+    $(document).on('keyup', '#searchBox', function(e) {
+        var val = $(this).val();
+        if(val == undefined || val == '') {
+            mui.toast('请输入搜索内容')
+            return;
+        }
+        if(e.keyCode === 13) {
+            window.localStorage.setItem('search-shopname', val);
+            goToPage('search.html', 'shouye/search.html');
+        }
+    })
+</script>
+</body>
 </html>

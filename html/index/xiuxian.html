@@ -52,7 +52,7 @@
 						</div>
 						<div id="slider" class="mui-slider">
 							<div id="sliderSegmentedControl" class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
-								<!--<a value="0" class="mui-control-item mui-active" href="#item1mobile">
+								<a value="0" class="mui-control-item mui-active" href="#item1mobile">
 									洗浴推荐
 								</a>
 								<a value="1" class="mui-control-item" href="#item2mobile">
@@ -63,7 +63,7 @@
 								</a>
 								<a value="3" class="mui-control-item" href="#item4mobile">
 									全部推荐
-								</a>-->
+								</a>
 							</div>
 							<div id="sliderProgressBar" class="mui-slider-progress-bar mui-col-xs-3"></div>
 							<div class="mui-slider-group">
@@ -91,52 +91,35 @@
 		<script type="text/javascript">
 			mui.init()
 
-//			var slider = mui("#pullrefresh");
-//			document.getElementById("sliderProgressBar").addEventListener('toggle', function(e) {
-//				if(e.detail.isActive) {
-//					slider.slider({
-//						interval: 5000
-//					});
-//				} else {
-//					slider.slider({
-//						interval: 0
-//					});
-//				}
-//			});
-//			mui.init({
-//				swipe: true, //默认为true
-//			});
 
-//			document.getElementById("slider").addEventListener("swipe", function() {
-//				console.log("你正在向左滑动");
-//				var index;
-//				setTimeout(function() {
-//					index = $('#sliderSegmentedControl .mui-active').index('#sliderSegmentedControl a');
-//					var ext = $('#sliderSegmentedControl .mui-active').attr('value');
-//					var hei = $('#item' + (index + 1) + 'mobile').height();
-//					if(hei == 0) {
-//						setTimeout(function() {
-//							hei = $('#item' + (index + 1) + 'mobile').height();
-//							hei = hei + 412;
-//							$('.mui-scroll').css('height', hei);
-//						}, 1000);
-//						selectPageInfo(index);
-//						if(totalPageUse == 0 || pageNoUse < totalPageUse) {
-//							pageNoUse++;
-//							var queryTerm = new QueryTerm();
-//							queryTerm.categoryId = parseInt(ext) + 1;
-//							queryTerm.pageNo = pageNoUse;
-//							queryTerm.pageSize = pageSizeUse;
-//							addDataToBox(queryTerm, source, 'item' + (index + 1) + 'mobile', rootPath + '/api/shop/selectByleisureshop', 1, index);
-//						}
-//					} else {
-//						hei = hei + 412;
-//						$('.mui-scroll').css('height', hei);
-//					}
-//
-//				}, 1000);
-//
-//			});
+            //图片广告
+            $(document).on('tap', '#renqi_txt a', function() {
+                var url = this.dataset.url;
+                console.log(url);
+
+            });
+
+            //列表点击
+            $(document).on('tap', '.main_list', function() {
+                var shopId = this.dataset.shopid;
+                var shop_page_templete_flag = $('#shop_page_templete').val();
+                shop_page_templete_flag = 1;
+                if(shop_page_templete_flag == 1) {
+                    //		window.location.href='dianPu_detail.html?shopId='+shopId;
+                    goToPage('dianPu_detail.html?shopId=' + shopId);
+
+                } else {
+                    //		window.location.href='dianpu_detail_2.html?shopId='+shopId;
+                    goToPage('dianpu_detail_2.html?shopId=' + shopId);
+                }
+            });
+
+            //分类
+            $(document).on('tap', '#xiuxianfuwu li a', function() {
+                var categoryId = this.dataset.categoryid;
+                console.log(categoryId);
+                goToPage('movice_list.html?categoryId=' + categoryId);
+            });
 		</script>
 	</body>
 

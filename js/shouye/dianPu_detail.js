@@ -1,101 +1,123 @@
-var pageNo = 1;
-var pageSize = 10;
-var totalPage = 0;
-var buy_car = new Map();
-
-var shopId;
-if(getQueryString('shopId')) {
-	console.log('通过url传值');
-	shopId = getQueryString('shopId');
-}else if(window.localStorage.getItem('dianPu_detail-shopId')) {
-	console.log('通过storage传值');
-	shopId = window.localStorage.getItem('dianPu_detail-shopId');
-}
-console.log('接受参数-shopId:', shopId);
-
-$(function() {
-	var buy_car_str = localStorage.getItem(SHOPKEY + shopId);
-	var buy_car_obj;
-	$.ajax({
-		url: rootPath + '/api/shop/getShopProductInfo',
-		data: {
-			'shopId': shopId
-		},
-		dataType: 'JSON',
-		success: function(data) {
-			console.log(data);
-			if(!data.resultSuccess) {
-				mui.toast('店铺信息查询失败');
-				return;
-			}
-			data.data.rootPath = imgRootPath;
-			data.data.PRODUCTKEY = PRODUCTKEY;
-			console.log(data.data);
-			//			document.getElementById('search_url').setAttribute('href','Search1.html?shopId='+data.data.shopId);
-
-			addHtmlForTemplte(data.data, 'buy_car_shopname', 'buy_car_shopname_templete');
-			//店铺详情
-			addHtmlForTemplte(data.data, 'dianpu', 'dianpu_templete');
-			//优惠列表
-			addHtmlForTemplte(data.data, 'segmentedControls1', 'segmentedControls1_templete');
-			//var index=$('#segmentedControls1 .mui-active').index('#segmentedControls1 a');
-			//获取含有.mui-active的a标签的跳转位置
-			var activeDom = document.getElementById('segmentedControls1').getElementsByClassName('mui-active')[0];
-			console.log(activeId)
-			if(activeDom) {
-				var activeId = activeDom.attributes['href'].value;
-				data.data.ext1 = activeId.replace(/#item/, '');
-			} else {
-				activeId = '';
-			}
-			data.data.rootPath = imgRootPath;
-			//商品列表
-			addHtmlForTemplte(data.data, 'segmentedControlContents1', 'segmentedControlContents1_templete');
-			//店铺星级
-			addHtmlForTemplte(data.data, 'item2mobile', 'item2mobile_templete1');
-			//店铺详情
-			addHtmlForTemplte(data.data, 'item3_txt', 'item3_txt_templete');
-			//用户评价
-			var source = $("#item2mobile_templete2").html();
-			var queryTerm = new QueryTerm();
-			queryTerm.shopid = shopId;
-			queryTerm.pageNo = pageNo;
-			queryTerm.pageSize = pageSize;
-			addDataToBox(queryTerm, source, 'item2mobile2', rootPath + '/api/shop/selectByshopcommenet', 1);
-
-			/**
-			 * 根据本地存储的内容更新页面
-			 */
-			//把localstorage的数据放到map集合里
-			if(buy_car_str != undefined) {
-				buy_car_obj = JSON.parse(buy_car_str);
-				console.log(buy_car_obj);
-				for(var i = 0; i < buy_car_obj.keys.length; i++) {
-					buy_car.put(buy_car_obj.keys[i], buy_car_obj.data[buy_car_obj.keys[i]]);
-					document.getElementById(buy_car_obj.keys[i]).innerHTML = buy_car_obj.data[buy_car_obj.keys[i]].quantity;
-					$("#" + buy_car_obj.keys[i]).parent().css('display', 'block');
-				};
-				var sum = sub();
-				if(sum > 0) {
-					$('.submit_order').css({
-						'background-color': '#FD5100',
-						'color': '#fff'
-					});
-					$(".fenshu").css('display', 'block');
-				}
-				//计算总价
-				getTotalMoney(buy_car);
-			}
-
-		},
-		error: function(err) {
-			mui.toast('店铺信息查询失败');
-			return;
-		}
-	});
-})
 
 //
+$(document).on('tap','.mai',function(){
+    $(this).next().css('display','block');
+    $('.mai').css('display','block');
+    $(this).css('display','none');
+    $('.add').on('tap',function(){
+    })
+    sub()
+})
+
+//商品中的点击加一事件
+$(document).on("tap",".aa",function(){
+    $(this).prev().html(parseInt($(this).prev().html())+1);
+    var add=$(this).prev().html();
+    var productId=$(this).parent().parent().attr('data-id');
+    $("#"+PRODUCTKEY+productId).html(add);
+    if(add>0){
+        $('.submit_order').css({'background-color':'#FD5100','color':'#fff'});
+        $(".fenshu").css('display','block');
+    }
+    var price=$(this).parent().parent().attr('data-price');
+    var name=$(this).parent().parent().attr('data-name');
+    var product=new Product();
+    product.productId=productId;
+    product.price=price;
+    product.quantity=add;
+    product.money=add*price;
+    product.name=name;
+    buy_car.put(PRODUCTKEY+productId,product);
+    //计算总价
+    var total_money=getTotalMoney(buy_car);
+    sub()
+})
+
+//商品中的点击减一事件
+$(document).on("tap",".ss",function(){
+    $(this).next().html(parseInt($(this).next().html())-1);
+    var sub1=$(this).next().html();
+    var productId=$(this).parent().parent().attr('data-id');
+    $("#"+PRODUCTKEY+productId).html(sub1);
+    //当商品数量为零时把商品从 购物车移除
+    if(sub1<=0){
+        $(this).next().html(0);
+//		$(this).parent().css('display','none');
+//		$(this).parent().prev().css('display','block');
+        if($(this).hasClass('sub1')){
+            $(this).parent().parent().remove();
+        }
+        var fenshu=document.getElementsByClassName('fenshu')[0].innerHTML;
+        if(fenshu<=1){
+            $('.submit_order').css({'background-color':'#999999','color':'#fff'});
+            $(".fenshu").css('display','none');
+        }
+        buy_car.remove(PRODUCTKEY+productId);
+        //计算总价
+        var total_money=getTotalMoney(buy_car);
+    }else{
+        var price=$(this).parent().parent().attr('data-price');
+        var name=$(this).parent().parent().attr('data-name');
+        var product=new Product();
+        product.productId=productId;
+        product.price=price;
+        product.quantity=sub1;
+        product.money=sub1*price;
+        product.name=name;
+        buy_car.put(PRODUCTKEY+productId,product);
+        //计算总价
+        var total_money=getTotalMoney(buy_car);
+    }
+    sub();
+})
+
+function sub(){
+    var sum=0;
+    $(".choose").each(function(a){
+        sum+=parseInt($(".choose").eq(a).find(".fenshu1").html())
+    })
+//	$(".fenshu").css('display','block');
+    $(".fenshu").html(sum);
+    return sum;
+}
+
+function getTotalMoney(map){
+    var total_money=0;
+    map.each(function(key,value,index){
+        total_money+=value.money;
+    })
+    document.getElementById('total_money').innerHTML='￥'+total_money;
+    localStorage.setItem(SHOPKEY+shopId,JSON.stringify(map));
+    return total_money;
+}
+
+//更新购物车
+$(document).on('tap','#end',function(){
+    console.log(buy_car.data);
+    addHtmlForTemplte(buy_car,'buy_car_info','buy_car_info_templete');
+})
+//清空购物车
+$(document).on('tap','#clear_buy_car',function(){
+    localStorage.removeItem(SHOPKEY+shopId);
+    document.getElementById("buy_car_info").innerHTML="";
+    location.reload();
+})
+
+function BuyCar(){};
+
+function Product(){
+    this.productId;
+    this.price;
+    this.quantity;
+    this.money;
+    this.name;
+}
+
+
+
+
+var buy_car = new Map();
+
 var hei = $('body').height() - $('.banner').height() - $('.dianpu').height();
 console.log(hei);
 $('.mui-slider').css('height', hei);

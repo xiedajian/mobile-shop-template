@@ -1,0 +1,228 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <link href="../../css/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../../css/shouye/dianYing.css"/>
+    <script src="../../js/jquery-1.7.2.js"></script>
+    <script src="../../js/mui.min.js"></script>
+    <script src="../../js/template-web.js"></script>
+</head>
+
+<body>
+<header class="mui-bar mui-bar-nav">
+    <a class="mui-action-back back">
+        <img src="../../img/shouye/icon_back@2x.png" alt=""/>
+    </a>
+    <h1 class="mui-title" style="color: white">旅游</h1>
+
+</header>
+<div class="mui-content">
+    <input type="hidden" id="shop_page_templete" value="2"/>
+
+    <div id="ly">
+        <div>
+            <div class="mui-scroll">
+                <div class="dingwei" style="display: none;">
+                    <a href="javascript:;">
+                        <span>郑州</span>
+                        <img src="../../img/shouye/jiantou-hui.png"/>
+                    </a>
+                </div>
+                <div class="main_one" id="ly_main_one">
+                    <div id="slider" class="mui-slider">
+                        <div class="mui-slider-group">
+                            <div class="mui-slider-item"><a href="#"><img src="../../img/shouye/ban1.png"/></a></div>
+                            <div class="mui-slider-item"><a href="#"><img src="../../img/shouye/ban2.png"/></a></div>
+                            <div class="mui-slider-item"><a href="#"><img src="../../img/shouye/ban3.png"/></a></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="huodong">
+                    <div class="huodong_tit">
+                        <p>
+                            <img src="../../img/shouye/130@2x.png" alt=""/>
+                            <span>主题推荐</span>
+                        </p>
+                    </div>
+                    <div class="huodong_txt" id="huodong_txt">
+                        <p>
+                            <a href="javascript:void(0);" data-categoryid="{{value.categoryid}}"
+                               data-categoryname="{{value.name}}">
+                                <img src="../../img/shouye/huangjing1.png"/>
+                                <span>{{value.name}}</span>
+                            </a>
+                        </p>
+                        <p>
+                            <a href="javascript:void(0);" data-categoryid="{{value.categoryid}}"
+                               data-categoryname="{{value.name}}">
+                                <img src="../../img/shouye/huangjing1.png"/>
+                                <span>{{value.name}}</span>
+                            </a>
+                        </p>
+                        <p>
+                            <a href="javascript:void(0);" data-categoryid="{{value.categoryid}}"
+                               data-categoryname="{{value.name}}">
+                                <img src="../../img/shouye/huangjing1.png"/>
+                                <span>{{value.name}}</span>
+                            </a>
+                        </p>
+                        <div style="clear: both;"></div>
+                    </div>
+                </div>
+
+                <div class="renqi">
+                    <div class="huodong_tit">
+                        <p>
+                            <img src="../../img/shouye/renqi.png" alt="" style="width: 12px;"/>
+                            <span>人气推荐</span>
+                        </p>
+                    </div>
+                    <div class="renqi_txt" id="renqi_txt">
+                        <p>
+                            <a href="javascript:void(0);" data-categoryid="{{value.categoryid}}"
+                               data-categoryname="{{value.name}}">
+                                <img src="../../img/shouye/huangjing1.png"/>
+                                <span>{{value.name}}</span>
+                            </a>
+                        </p>
+                        <p>
+                            <a href="javascript:void(0);" data-categoryid="{{value.categoryid}}"
+                               data-categoryname="{{value.name}}">
+                                <img src="../../img/shouye/huangjing1.png"/>
+                                <span>{{value.name}}</span>
+                            </a>
+                        </p>
+                        <p>
+                            <a href="javascript:void(0);" data-categoryid="{{value.categoryid}}"
+                               data-categoryname="{{value.name}}">
+                                <img src="../../img/shouye/huangjing1.png"/>
+                                <span>{{value.name}}</span>
+                            </a>
+                        </p>
+                        <div style="clear: both;"></div>
+                    </div>
+                </div>
+                <div class="fenlei">
+                    <div class="fenlei_tit">
+                        <p>
+                            <img src="../../img/shouye/tjsp@2x.png" alt="" style="width: 13px;"/>
+                            <span>猜你喜欢</span>
+                        </p>
+                    </div>
+                    <div class="fenlei_txt" id="fenlei_txt">
+                        <p>
+                            <a href="javascript:void(0);" data-categoryid="{{value.categoryid}}"
+                               data-categoryname="{{value.name}}">
+                                <img src="../../img/shouye/huangjing1.png"/>
+                                <span>{{value.name}}</span>
+                            </a>
+                        </p>
+                        <p>
+                            <a href="javascript:void(0);" data-categoryid="{{value.categoryid}}"
+                               data-categoryname="{{value.name}}">
+                                <img src="../../img/shouye/huangjing1.png"/>
+                                <span>{{value.name}}</span>
+                            </a>
+                        </p>
+                        <p>
+                            <a href="javascript:void(0);" data-categoryid="{{value.categoryid}}"
+                               data-categoryname="{{value.name}}">
+                                <img src="../../img/shouye/huangjing1.png"/>
+                                <span>{{value.name}}</span>
+                            </a>
+                        </p>
+                        <p>
+                            <a href="javascript:void(0);" data-categoryid="{{value.categoryid}}"
+                               data-categoryname="{{value.name}}">
+                                <img src="../../img/shouye/huangjing1.png"/>
+                                <span>{{value.name}}</span>
+                            </a>
+                        </p>
+                        <div style="clear: both;"></div>
+                    </div>
+                </div>
+                <div class="cont" id="cont">
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../../js/common.js"></script>
+<script >
+
+
+    var pageNo = 1;
+    var pageSize = 10;
+    var totalPage = 10;
+    var shopListSource = '';
+
+    $(function() {
+        var hei = $('.mui-content').height();
+        if(hei < $('body').height()) {
+            $('.nav_txt').css('height', '100%')
+        } else {
+            $('.nav_txt').css('height', hei)
+        }
+        $('.head_tit p').css({
+            'color': '#fff',
+            'background': '#fd5100'
+        });
+        $("#lvyou").css({
+            'color': '#fd5100',
+            'background': '#fff'
+        });
+
+
+    })
+
+    $(document).on('tap', '#huodong_txt a', function() {
+        var url = this.dataset.url;
+        picTapCallback(this);
+//	window.location.href = url;
+    });
+    $(document).on('tap', '#renqi_txt a', function() {
+        var url = this.dataset.url;
+        picTapCallback(this);
+//	window.location.href = url;
+    });
+    $(document).on('tap', '#fenlei_txt a', function() {
+        var url = this.dataset.url;
+        picTapCallback(this);
+//	window.location.href = url;
+    });
+
+    $(document).on('tap', '.cont_list', function() {
+        var shopId = this.dataset.shopid;
+        var shop_page_templete_flag = $('#shop_page_templete').val();
+        if(shop_page_templete_flag == 1) {
+            window.location.href = 'dianPu_detail.html?shopId=' + shopId;
+        } else {
+            window.location.href = 'dianpu_detail_2.html?shopId=' + shopId;
+        }
+    })
+    //切换至电影
+    $(document).on('tap', '#dianying', function() {
+        mui.back();
+    });
+    //点击分类跳转页面
+    $(document).on('tap', '#ly_main_one a', function() {
+        var categoryId = this.dataset.categoryid;
+        var categoryName = this.dataset.categoryname;
+        console.log(categoryName);
+//	window.location.href = 'quanBu.html?categoryId=' + categoryId + '&categoryName=' + categoryName;
+        goToPage('quanBu.html?categoryId=' + categoryId + '&categoryName=' + categoryName);
+    })
+
+
+</script>
+</body>
+
+</html>

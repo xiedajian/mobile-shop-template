@@ -7,94 +7,57 @@
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<link href="../../css/mui.min.css" rel="stylesheet" />
 		<link rel="stylesheet" href="../../css/shouye/shangChao.css" />
-		<script src="../../js/jquery-1.7.2.js"></script>
-		<script src="../../js/template-web.js"></script>
 	</head>
 
 	<body>
 		<header class="mui-bar mui-bar-nav">
-			<a class="mui-action-back">
-				<img src="../../img/shouye/icon_back@2x.png" alt="" />
-			</a>
-			<a href="javascript:;">
-				<img src="../../img/shouye/icon_sousuo_hui@2x.png" alt="" />
-				<input data-link="search.html" type="search" placeholder="输入关键字" id="searchBox" />
-			</a>
+		    <a class="mui-action-back back">
+		    	<img src="../../img/shouye/icon_back@2x.png" alt="" />
+		    </a>
+		    <h1 class="mui-title" style="color: #fff;">商超</h1>
 		</header>
-		<div class="mui-content">
-			<div id="slider" class="mui-slider">
-
-			</div>
-			<div class="nav">
-				<ul id="shangcao">
-
-				</ul>
-			</div>
-			<!--<div id="pullrefresh">-->
-
-				<div class="mui-scroll">
-					<div class="huodong" id="slider">
-						<div class="huodong_tit">
-							<p>
-								<img src="../../img/shouye/54@2x.png" alt="" style="width: 12px;" />
-								<span>优惠专区</span>
-							</p>
-						</div>
-						<div class="huodong_txt" id="recommand">
-							<!-- <a href="javascript:;"><img src="../../img/shouye/youhui1.png"/></a>
-		    			<a href="javascript:;"><img src="../../img/shouye/youhui2.png"/></a>
-		    			<div style="clear: both;"></div> -->
-							<script id="recommand_activity" type="text/html">
-								{{each list value i}}
-								<a href="javascript:void(0);" data-adverttype="{{value.adverttype}}" data-shoporproductid="{{value.shoporproductid}}" data-adverturl="{{value.adverturl}}"><img src="{{value.advertpic}}" /></a>
-								{{/each}}
-								<div style="clear: both;"></div>
-							</script>
-						</div>
-					</div>
-
-					<div class="renqi" id="renqi">
-						<div class="huodong_tit">
-							<p>
-								<img src="../../img/shouye/55@2x.png" alt="" style="width: 12px;" />
-								<span>品牌优选</span>
-							</p>
-						</div>
-						<div class="renqi_txt" id="pinpaiyouxuan">
-							<!-- <a href="javascript:;"><img src="../../img/shouye/pinpai1.png"/></a>
-		    			<a href="javascript:;"><img src="../../img/shouye/pinpai2.png"/></a>
-		    			<a href="javascript:;"><img src="../../img/shouye/pinpai3.png"/></a>
-		    			<div style="clear: both;"></div> -->
-							<script id="pinpaiyouxuan_templete" type="text/html">
-								{{each list value i}}
-								<a href="javascript:void(0);" data-adverttype="{{value.adverttype}}" data-shoporproductid="{{value.shoporproductid}}" data-adverturl="{{value.adverturl}}">
-									<img src="{{value.advertpic}}" />
-								</a>
-								{{/each}}
-								<div style="clear: both;"></div>
-							</script>
-						</div>
-					</div>
-					<div class="cont" id="cont">
-						<div class="huodong_tit">
-							<p>
-								<img src="../../img/shouye/tjsp@2x.png" alt="" style="width: 12px;" />
-								<span>猜你喜欢</span>
-							</p>
-						</div>
-						<div class="main" id="cainixihuan">
-						</div>
+		<div class="mui-content" id="pullrefresh">
+			<div class="mui-scroll">									    			    			    			    		    	
+		    	<div class="cont">					
+					<div class="main">
+						<div class="main_list">
+		    				<div class="list_left">
+		    					<img src="../../img/shouye/wm1.png" alt="" />
+		    				</div>
+		    				<div class="list_right">
+		    					<p>
+		    						<span class="mui-ellipsis"><a href="javascript:;">必胜客欢乐餐厅</a><a href="javascript:;">(电厂路店)</a></span>		    				
+	
+		    					</p>
+		    					<p>
+		    						<span>
+		    							<img src="../../img/shouye/star@2x.png" alt="" />
+		    							<img src="../../img/shouye/star@2x.png" alt="" />
+		    							<img src="../../img/shouye/star@2x.png" alt="" />
+		    							<img src="../../img/shouye/star@2x.png" alt="" />
+		    							<img src="../../img/shouye/star_1@2x.png" alt="" />
+		    						</span>
+		    						<span>
+		    							4.0
+		    						</span>
+		    						
+		    					</p>
+		    					<p>	    						
+		    						<span><100m</span>
+		    					</p>
+		    				</div>
+		    				<a href="javascript:;"></a>
+		    				<div style="clear: both;"></div>
+		    			</div>
 					</div>
 				</div>
-			<!--</div>-->
+			</div>
 		</div>
-
 		<script src="../../js/mui.min.js"></script>
-		<script src="../../js/common.js"></script>
+		<script src="../../js/jquery-1.7.2.js"></script>
 		<script src="../../js/shouye/shangChao.js"></script>
 		<script type="text/javascript">
-			mui.init();
-			carousel(3);
+			mui.init()
 		</script>
 	</body>
 

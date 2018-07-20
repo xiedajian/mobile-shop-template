@@ -26,27 +26,24 @@
 		<div class="mui-content">
 			<div class="banner">
 				<div id="product_img">
-					<script id="product_img_templet" type="text/html">
 						<a href="javascript:void(0);">
-							<img src="{{pictures}}" alt="" />
+							<img src="../../img/shouye/ban3.png" alt="" />
 						</a>
-					</script>
 				</div>
 
 			</div>
 			<div id="product_info">
-			<script id="product_info_templet" type="text/html" >
-				<div class="projectList1"  data-id="{{productId}}" data-price="{{price}}" data-name="{{name}}">
+				<div class="projectList1"  data-id="1" data-price="10" data-name="烤鸭">
 				<p>
 					<span class="mui-ellipsis">
-						<a href="javascript:void(0);">{{name}}</a>
+						<a href="javascript:void(0);">烤鸭</a>
 					</span>
 				</p>
 				<p>
-					月售：<span>{{0}}</span>
+					月售：<span>0</span>
 				</p>
 				<p>
-					￥{{price}}
+					￥10
 				</p>
 			
 				<p class="choose">
@@ -55,19 +52,16 @@
 					<span class="add aa"></span>
 				</p>
 				</div>
-			</script>
 			</div>
 			<div class="main_two">
 				<div class="dianpu" id="shop"> 
-				<script id="shop_templet" type="text/html">          
 			    	<div class="dianpu_left">
-			    		<img src="{{shopLogo}}"/>
+			    		<img src="../../img/shouye/dishini.png"/>
 			    	</div>
 			    	<div class="dianpu_right">
-			    		<p class="mui-ellipsis">{{shopName}}</p>
-			    		<p class="mui-ellipsis">{{shopNotice}}</p>
+			    		<p class="mui-ellipsis">烤鸭</p>
+			    		<p class="mui-ellipsis">好吃的烤鸭</p>
 			    	</div>
-				</script>
 			    </div>
 			</div>
 			<div class="main_three">
@@ -76,16 +70,15 @@
 					<span>商品详情</span>
 				</div>
 				<div class="three_txt" id="product_content">
-					<script id="product_content_templete" type="text/html">
 					<p>
-						{{#content}}
+						content
 					</p>
-					</script>
 				</div>
 			</div>		
 		</div>
 		<div id="bottomPopover" class="mui-popover mui-popover-bottom Q">
-			<p id="buy_car_shopname"><script type="text/html" id="buy_car_shopname_templete">{{shopName}}<span id="clear_buy_car"><img src="../../img/shouye/qingkong.png"/>清空购物车</span></script></p>
+			<p id="buy_car_shopname">
+				<script type="text/html" id="buy_car_shopname_templete">{{shopName}}<span id="clear_buy_car"><img src="../../img/shouye/qingkong.png"/>清空购物车</span></script></p>
 			<div class="mui-scroll-wrapper">
 				<div class="mui-scroll">
 					<ul class="mui-table-view UL" id="buy_car_info">
@@ -108,41 +101,12 @@
 							</li>
 						{{/each}}	
 					</script>
+
 				</div>
 			</div>
 
 		</div>
-		<div class="fenxiang">
-			<div class="fenxiang_box">
-				<p>分享至</p>
-				<ul>
-					<li>
-						<img src="../../img/shouye/icon_wechat@2x.png" alt="" />
-						<span>微信</span>
-					</li>
-					<li>
-						<img src="../../img/shouye/icon_weibo@2x.png" alt="" />
-						<span>微博</span>
-					</li>
-					<li>
-						<img src="../../img/shouye/icon_qqzone@2x.png" alt="" />
-						<span>QQ空间</span>
-					</li>
-					<li>
-						<img src="../../img/shouye/pengyouquan .png" alt="" />
-						<span>朋友圈</span>
-					</li>
-					<li>
-						<img src="../../img/shouye/icpn_duanxin@2x.png" alt="" />
-						<span>短信</span>
-					</li>
-					<li>
-						<img src="../../img/shouye/icon_copy@2x.png" alt="" />
-						<span>复制</span>
-					</li>
-				</ul>
-			</div>
-		</div> 
+
 		<nav class="mui-bar mui-bar-tab">
 			<p class="nav">
 				<a href="#bottomPopover">
@@ -171,7 +135,6 @@
 	<script src="../../js/common.js"></script>
 	<script src="../../js/map.js" ></script>
 	<script src="../../js/shouye/shop_detail.js"></script>
-    <!--<script src="../../js/shouye/buy_car_product.js" ></script>-->
     <script src="../../js/shouye/buy_car.js" ></script>
 	<script type="text/javascript">
 		mui.init({

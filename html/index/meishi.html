@@ -1,0 +1,225 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../css/mui.min.css" />
+		<link rel="stylesheet" href="../../css/shouye/meiShi_waiMai.css" />
+		<script src="../../js/jquery-1.7.2.js"></script>
+		<script src="../../js/mui.min.js"></script>
+		<script src="../../js/template-web.js"></script>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back">
+				<img src="../../img/shouye/icon_back@2x.png" alt="" />
+			</a>
+			<a href="javascript:;">						
+				<img src="../../img/shouye/icon_sousuo_hui@2x.png" alt="" />
+				<input data-link="search.html" type="search" placeholder="搜索附近门店" id="searchBox" />
+			</a>
+		</header>
+		<div class="mui-content">
+			<input type="hidden" id="shop_page_templete" value="1" />
+			<div class="nav">
+				<div class="nav_tit">
+					<p value="0">
+						全部美食
+						<img src="../../img/shouye/jiantou-hui.png" alt="" />
+					</p>
+					<p value="0">
+						附近
+						<img src="../../img/shouye/jiantou-hui.png" alt="" />
+					</p>
+					<p value="0">
+						智能排序
+						<img src="../../img/shouye/jiantou-hui.png" alt="" />
+					</p>
+					<p value="0">
+						筛选
+						<img src="../../img/shouye/jiantou-hui.png" alt="" class="sx" />
+					</p>
+				</div>
+				<div class="nav_txt">
+					<div class="txt_one" id="txt_one">
+
+							<p value="{{value.categoryid}}">中餐</p>
+							<p value="{{value.categoryid}}">火锅</p>
+							<p value="{{value.categoryid}}">甜点</p>
+							<p value="{{value.categoryid}}">西餐</p>
+					</div>
+					<div class="txt_one">
+						<p value="1">1km</p>
+						<p value="3">3km</p>
+						<p value="5">5km</p>
+						<p value="10">10km</p>
+						<p value="0">附近</p>
+					</div>
+					<div class="txt_one">
+						<p value="0">智能排序</p>
+						<p value="1">离我最近</p>
+					</div>
+					<div class="txt_two">
+						<div>
+							<p>服务</p>
+							<ul class="lb" id="txt_two_lb">
+									<li data-serviceid="{{value.ssid}}">外卖</li>
+									<li data-serviceid="{{value.ssid}}">嘿嘿嘿</li>
+									<li data-serviceid="{{value.ssid}}">嘿嘿嘿</li>
+									<li data-serviceid="{{value.ssid}}">嘿嘿嘿</li>
+									<li data-serviceid="{{value.ssid}}">嘿嘿嘿</li>
+									<li data-serviceid="{{value.ssid}}">嘿嘿嘿</li>
+							</ul>
+							<div style="clear: both;"></div>
+						</div>
+
+						<div>
+							<p>价格</p>
+							<ul class="lb1">
+								<li data-avgprice="0-50">50以下</li>
+								<li data-avgprice="50-100">50-100</li>
+								<li data-avgprice="100-300">100-300</li>
+								<li data-avgprice="300">300以上</li>
+							</ul>
+							<div style="clear: both;"></div>
+						</div>
+
+						<div class="txt_btn">
+							<p class="reset">重置</p>
+							<p class="enter">确定</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="pullrefresh">
+				<div class="mui-scroll">
+					<div class="main" id="main">
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="../../js/common.js"></script>
+		<script>
+			mui.init();
+
+            // 搜索
+            $(document).on('keyup', '#searchBox', function(e) {
+                var link = this.dataset.link;
+                var shopname = $('#searchBox').val();
+                if(shopname == undefined || shopname == '') {
+                    mui.toast('请输入搜索内容');
+                    return;
+                }
+                if(e.keyCode === 13) {
+                    var url = encodeURI(link + '?shopname=' + shopname + '&categoryId=' + categoryId);
+                    //$('.mui-content').css('display','none');
+                    //		window.location.href = url;
+                    goToPage(url);
+                }
+
+            })
+
+
+            //点击列表进店铺详情
+            $(document).on('tap', '.main_list', function() {
+                var shopId = this.dataset.shopid;
+                var shop_page_templete_flag = $('#shop_page_templete').val();
+                goToPage('dianPu_detail.html?shopId=' + shopId);
+                //		window.location.href = 'dianPu_detail.html?shopId=' + shopId;
+
+            });
+            var hei = $('.mui-content').height();
+            var hei1 = $('body').height() - 88;
+            if(hei < $('body').height()) {
+                $('.nav_txt').css('height', '100%');
+                $('#pullrefresh').css('height', '500px');
+            } else {
+                $('.nav_txt').css('height', hei)
+                $('#pullrefresh').css('height', hei);
+            }
+            $('.txt_two').css('height', hei1);
+            //
+            $('.nav_tit p').on('tap', function() {
+                $('.nav_tit p').css('color', '#333');
+                $('.nav_tit img').attr('src', '../../img/shouye/jiantou-hui.png');
+                $(this).css('color', '#2F9EF0');
+                $(this).find('img').attr('src', '../../img/shouye/jiantou-lan.png');
+                $('.nav_txt').css('display', 'block');
+                $('.nav_txt>div').css('display', 'none');
+                $('.nav_txt').children().eq($(this).index()).css('display', 'block');
+                //
+            })
+
+
+            $(document).on('tap', '.lb li', function() {
+                $('.lb li').css({
+                    'color': '#333',
+                    'background': '#fff',
+                    'border': '1px solid #ccc'
+                });
+                $(this).css({
+                    'color': '#fff',
+                    'background': '#fd5100',
+                    'border': '1px solid #fd5100'
+                });
+                $('.lb li').removeClass('selected');
+                $(this).addClass('selected');
+            });
+            $(document).on('tap', '.lb1 li', function() {
+                $('.lb1 li').css({
+                    'color': '#333',
+                    'background': '#fff',
+                    'border': '1px solid #ccc'
+                });
+                $(this).css({
+                    'color': '#fff',
+                    'background': '#fd5100',
+                    'border': '1px solid #fd5100'
+                });
+                $('.lb1 li').removeClass('selected1');
+                $(this).addClass('selected1');
+            });
+
+            //筛选重置
+            $('.reset').on('tap', function() {
+                $('.txt_two li').css({
+                    'color': '#333',
+                    'background': '#fff',
+                    'border': '1px solid #ccc'
+                });
+            });
+
+            //刷选选择确定
+            $(document).on('tap', '.txt_one p', function() {
+
+                $('.txt_one p').css('color', '#333');
+                $(this).css('color', '#2F9EF0');
+                $('.nav_tit').children().eq($(this).parent().index()).html($(this).html() + '<img src="../../img/shouye/jiantou-hui.png"/>');
+                $('.nav_tit').children().eq($(this).parent().index()).attr('value', $(this).attr('value'));
+                //$('.nav_txt').hide();
+                var target = document.getElementsByClassName('nav_txt')[0];
+                target.style.display = 'none';
+
+                //console.log($(this).parent().index())
+
+                var all = $('.nav_tit p').eq(0).attr('value');
+                var distance = $('.nav_tit p').eq(1).attr('value');
+                var auto = $('.nav_tit p').eq(2).attr('value');
+                console.log(distance);
+
+            });
+
+            $('.enter').on('tap', function() {
+                $('.nav_txt').css('display', 'none');
+                mui('#pullrefresh').pullRefresh().refresh(true);
+                $('#main').empty();
+            });
+
+		</script>
+	</body>
+
+</html>

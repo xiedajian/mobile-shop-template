@@ -48,20 +48,6 @@ var pageIndex = getQueryString('index');
 console.log('page', pageIndex);
 $('.mui-slider-item').eq(pageIndex).addClass('mui-active');
 $('.mui-control-item').eq(pageIndex).addClass('mui-active');
-var userId = '';
-if(localStorage.getItem('userId') && localStorage.getItem('userId') != '') {
-	//获取用户信息
-	userId = localStorage.getItem('userId');
-} else {
-	mui.confirm('需要登录', ' ', ['返回', '去登录'], function(val) {
-		console.log(val);
-		if(val.index === 1) {
-			window.location.href = "../enter/enter.html";
-		} else {
-			window.history.back();
-		}
-	}, 'div');
-}
 
 //获取订单列表
 function getOrderList(data, callback) {

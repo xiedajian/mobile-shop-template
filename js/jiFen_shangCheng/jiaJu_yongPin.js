@@ -1,18 +1,6 @@
 var categoryId;
 
-if(getQueryString('categoryId')) {
-	console.log('通过url传值');
-	categoryId = getQueryString('categoryId');
-} else if(window.localStorage.getItem('jiaJu_yongPinPage-categoryId')) {
-	console.log('通过storage传值');
-	categoryId = window.localStorage.getItem('jiaJu_yongPinPage-categoryId');
-	//避免污染，记得销毁
-	//	window.localStorage.removeItem('jiaJu_yongPinPage-categoryId');
-} else {
-	console.log('没有传参');
-	categoryId = '';
-}
-console.log('接受参数-categoryId:', categoryId);
+
 
 
 var pageNo = 1;
@@ -24,6 +12,7 @@ var source = $("#jiajuTemplate").html();
 //	console.info(source)
 var queryTerm = new QueryTerm();
 queryTerm.typeid = 19; //积分商城首页分类
+
 addDataToBox(queryTerm, source, 'jiaju', rootPath + '/api/shop/selectBymovebrand', 2);
 var timer = setInterval(function() {
 
@@ -43,17 +32,17 @@ var timer = setInterval(function() {
 	}
 }, 10);
 
-$('.mui-slider-group').css('display', 'none');
-$('.mui-fullscreen').css('height', '50px')
-// 点击二级导航跳转逻辑
-$('#erjiTemplate').on('tap', '.nav2', function() {
-	clickNav()
-})
+// $('.mui-slider-group').css('display', 'none');
+// $('.mui-fullscreen').css('height', '50px')
+// // 点击二级导航跳转逻辑
+// $('#erjiTemplate').on('tap', '.nav2', function() {
+// 	clickNav()
+// })
 
 //
-$('#feilei').on('tap', function() {
-	$('.fenlei_pop').css('display', 'block');
-});
+// $('#feilei').on('tap', function() {
+// 	$('.fenlei_pop').css('display', 'block');
+// });
 
 //处理点击选项卡重新加载列表
 $(document).on('tap', '.wrapper p', function() {

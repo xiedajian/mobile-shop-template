@@ -16,48 +16,54 @@
 				<img src="../../img/shouye/icon_back@2x.png" alt="" />
 			</a>
 
-			<!--<h1 class="mui-title">全部</h1>-->
+			<h1 class="mui-title">全部</h1>
 
-			<h1 class="mui-title" id="biaotou">
- 				全部
-		    </h1>
+			<!--<h1 class="mui-title" id="biaotou">-->
+ 				<!--全部-->
+		    <!--</h1>-->
 
 		</header>
+
 		<div class="mui-content">
+
 			<div class="fenlei_pop">
+
 				<div id="slider" class="mui-slider mui-fullscreen">
 					<!--二级页面导航-->
 					<div id="sliderSegmentedControl" class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
 						<div class="mui-scroll" id="jiaju">
-							<script id="jiajuTemplate" type="text/html">
-								{{each list item i}}
-								<a id="item{{item.categoryid}}" rflag='{{item.categoryid}}' class="mui-control-item" href="#mobile" style="z-index: -999;">
-									<span>{{item.name}}</span>
+
+								<a id="item1" rflag='item1mobile' class="mui-control-item" href="#item1mobile" style="z-index: -999;">
+									<span>家具</span>
 								</a>
-								{{/each}}
+								<a id="item2" rflag='{{item.categoryid}}' class="mui-control-item" href="#mobile" style="z-index: -999;">
+									<span>家具</span>
+								</a>
+								<a id="item7" rflag='{{item.categoryid}}' class="mui-control-item" href="#mobile" style="z-index: -999;">
+									<span>家具</span>
+								</a>
+								<a id="item3" rflag='{{item.categoryid}}' class="mui-control-item" href="#mobile" style="z-index: -999;">
+									<span>家具</span>
+								</a>
+								<a id="item4" rflag='{{item.categoryid}}' class="mui-control-item" href="#mobile" style="z-index: -999;">
+									<span>家具</span>
+								</a>
+								<a id="item5" rflag='{{item.categoryid}}' class="mui-control-item" href="#mobile" style="z-index: -999;">
+									<span>家具</span>
+								</a>
+								<a id="item6" rflag='{{item.categoryid}}' class="mui-control-item" href="#mobile" style="z-index: -999;">
+									<span>家具</span>
+								</a>
+
 								<a class="mui-control-item " id="item" href="#item10mobile">
 									<span>全部商品</span>
 								</a>
-							</script>
 						</div>
 
 					</div>
-					<!--二级页面二级导航-->
-					<div class="mui-slider-group" id="erjiBox">
-						<div id="mobile" class="mui-slider-item mui-control-content mui-active">
-							<div class="wrapper" data-link="jiaJu_yongPin.html" id="wrapper">
-								<script id="erjiTemplate" type="text/html">
-									{{each list value i}}
-									<p flag="{{value.categoryid}}" class='nav2'>{{value.name}} </p>
-									{{/each}}
 
-								</script>
 
-							</div>
-						</div>
-
-					</div>
-					<!--<div class="mui-slider-group">
+					<div class="mui-slider-group">
 						<div id="item1mobile" class="mui-slider-item mui-control-content mui-active">
 							<div class="wrapper" data-link="jiaJu_yongPin.html">
 								<p>餐厨百货</p>
@@ -126,9 +132,10 @@
 								
 							</div>
 						</div>
-					</div>-->
+					</div>
 				</div>
 			</div>
+
 			<div id="pullrefresh">
 				<div class="mui-scroll">
 					<div class="main">
@@ -151,30 +158,12 @@
 			</div>
 		</div>
 
-		<!--<nav class="mui-bar mui-bar-tab">
-			<a href="../shouye/index.html">
-			  	<img src="../../img/shouye/Home@2x (2).png"/>
-			  	<span>首页</span>
-			</a>
-			<a href="../fujin/fujin.html">
-			  	<img src="../../img/shouye/fujin@2x.png"/>
-			  	<span>附近</span>
-			</a>
-			<a href="jiFen_shangCheng.html">
-			  	<img src="../../img/shouye/Wallet@2x.png"/>
-			  	<span>恒币商城</span>
-			</a>
-			<a href="../wode/geRen_center.html">
-			  	<img src="../../img/shouye/wode@2x.png"/>
-			  	<span>我的</span>
-			</a>
-		</nav>-->
+
 		<script src="../../js/jquery-1.7.2.js"></script>
 		<script src="../../js/mui.min.js"></script>
 		<script src="../../js/template-web.js"></script>
-		<script src="../../js/tianzhuan.js"></script>
 		<script src="../../js/common.js"></script>
-		<script src="../../js/jiFen_shangCheng/jiaJu_yongPin.js"></script>
+		<!--<script src="../../js/jiFen_shangCheng/jiaJu_yongPin.js"></script>-->
 		<script type="text/javascript">
 			mui.init()
 		</script>
